@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+    <VBox padding="0,0,0,0" width="600" height="385"  margin="199,123,0,0" bkcolor="areabk_color" visible="false"  >
+
+      <HBox height="57" >
+        <Label text="选择区服" font="system_14" margin="22,19,0,0" width="56" height="20"  normaltextcolor="white"/>
+        <Control />
+        <Button name="server_window_close_btn" width="24" height="24" margin="0,17,4,0"  halign="right"
+        normalimage="file='btn/common_close_btn.png' source='0,0,24,24'"
+        hotimage="file='btn/common_close_btn.png' source='24,0,48,24'"
+        pushedimage="file='btn/common_close_btn.png' source='48,0,72,24'"
+        disabledimage="file='btn/common_close_btn.png' source='72,0,96,24'"/>
+
+      </HBox>
+      <HBox    height="1"   bkcolor="gapline_bkcolor"/>
+      
+      <!--
+		<Button name="server_window_close_btn" width="24" height="24" margin="0,17,16,0" halign="right"  
+				normalimage="file='btn/common_close_btn.png' source='0,0,24,24'" 
+				hotimage="file='btn/common_close_btn.png' source='24,0,48,24'" 
+				pushedimage="file='btn/common_close_btn.png' source='48,0,72,24'" 
+				disabledimage="file='btn/common_close_btn.png' source='72,0,92,24'"/>
+				
+		<Label text="选择区服" font="system_14" margin="0,0,0,0" width="56" height="20" halign="left" normaltextcolor="black"/>
+		-->
+		<TileListBox  name="server_listbox"  columns="3" childmargin="18" padding="-10,0,0,0" margin="30,20,11,35" bkcolor="" vscrollbar="true" visible="true">
+		 </TileListBox>
+		
+    </VBox>
+</Window>

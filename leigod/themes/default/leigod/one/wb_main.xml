@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window size="1024,645" caption="0,0,0,68" roundcorner="4,4">
+	<VBox  name="main_bk" bkimage="file='bk_photo/bk_main.png'" >
+	
+		<!--头部区-->
+		<HBox name="head_box" height="68" >
+		
+			<HBox name="lg_logo_box" width="190" height="32" margin="11,9,0,0" childmargin="2" bkcolor="" mouse="false">
+				<Button name="lg_logo_btn" width="142" height="32" halign="left" valign="center" 
+						normalimage="file='btn/lg_logo_btn.png' source='0,0,142,32'" 
+						hotimage="file='btn/lg_logo_btn.png' source='142,0,284,32'" 
+						pushedimage="file='btn/lg_logo_btn.png' source='284,0,426,32'" 
+						disabledimage="file='btn/lg_logo_btn.png' source='426,0,568,32'" />
+				<Label name="version_photo_label" width="40" height="15" valign="center" bkcolor="red" bkimage="label/version_photo_label.png"/>
+			</HBox>
+			<Control />
+			<HBox name="system_btn" width="173" height="18" margin="0,7,13,0" bkcolor="" mouse="false">
+				
+				<Label name="exe_version" text="V5.0" font="system_12" normaltextcolor="version_name_color" bkcolor=""/>
+				<Control  width="21"/>
+				<Button name="kf_btn" width="18" height="18" valign="center" tooltiptext="客服"
+						normalimage="file='btn/main_kf_btn.png' source='0,0,18,18'" 
+						hotimage="file='btn/main_kf_btn.png' source='18,0,36,18'" 
+						pushedimage="file='btn/main_kf_btn.png' source='36,0,54,18'" 
+						disabledimage="file='btn/main_kf_btn.png' source='54,0,72,18'"/>
+				<Control width="18"/>
+				<Button name="menu_btn" width="18" height="18" valign="center" tooltiptext="菜单"
+						normalimage="file='btn/main_set_btn.png' source='0,0,18,18'" 
+						hotimage="file='btn/main_set_btn.png' source='18,0,36,18'" 
+						pushedimage="file='btn/main_set_btn.png' source='36,0,54,18'" 
+						disabledimage="file='btn/main_set_btn.png' source='54,0,72,18'"/>
+				<Control width="14"/>
+				<Button name="minbtn" width="18" height="18" valign="center" tooltiptext="最小化"
+						normalimage="file='btn/main_min_btn.png' source='0,0,18,18'" 
+						hotimage="file='btn/main_min_btn.png' source='18,0,36,18'" 
+						pushedimage="file='btn/main_min_btn.png' source='36,0,54,18'" 
+						disabledimage="file='btn/main_min_btn.png' source='54,0,72,18'"/>
+				<Control width="11"/>
+				<Button name="closebtn" width="18" height="18" valign="center" tooltiptext="关闭"
+						normalimage="file='btn/main_close_btn.png' source='0,0,18,18'" 
+						hotimage="file='btn/main_close_btn.png' source='18,0,36,18'" 
+						pushedimage="file='btn/main_close_btn.png' source='36,0,54,18'" 
+						disabledimage="file='btn/main_close_btn.png' source='54,0,72,18'"/>
+				
+			</HBox>
+		</HBox >
+		
+		<!--中间选择区-->
+		<HBox name="type_and_nick_box" height="42" bkcolor="" >
+			<Control width="180"/>
+			<HBox name="type_box" height="42" bkcolor="" >
+				<ButtonBox name="myspeed_btn" width="90" height="19" margin="5,0,0,0" 
+						bkcolor="" font="microsoft_14" text="我的加速" valign="center" textpadding="15,1,0,0"
+						normaltextcolor="yellow" hottextcolor="yellow" pushedtextcolor="yellow" disabledtextcolor="tab_btn_color" 
+						normalimage="file='btn/myspeed_btn.png' dest='2,3,18,19' source='16,0,32,16'"                                                       
+						hotimage="file='btn/myspeed_btn.png' dest='2,3,18,19' source='16,0,32,16'" 
+						pushedimage="file='btn/myspeed_btn.png' dest='2,3,18,19' source='32,0,48,16' " 
+						disabledimage="file='btn/myspeed_btn.png' dest='2,3,18,19' source='48,0,64,16'"/>
+				<Control width="20"/>
+				<HBox width="370" childmargin="20" bkcolor="">
+					<Button name="all_btn" height="20"  text="全部" font="microsoft_14" valign="center"
+							normaltextcolor="tab_btn_color"
+							hottextcolor="white"
+							pushedtextcolor="white"
+							disabledtextcolor="tab_btn_color"/>
+					<Button name="platform_btn" height="20"  text="平台" font="microsoft_14" valign="center"
+							normaltextcolor="tab_btn_color"
+							hottextcolor="white"
+							pushedtextcolor="white"
+							disabledtextcolor="tab_btn_color" visible="false"/>
+					<Button name="Steam_btn" height="20"  text="Steam" font="microsoft_14" valign="center"
+							normaltextcolor="tab_btn_color"
+							hottextcolor="white"
+							pushedtextcolor="white"
+							disabledtextcolor="tab_btn_color"/>
+					<Button name="Origin_btn" height="20"  text="Origin" font="microsoft_14" valign="center"
+							normaltextcolor="tab_btn_color"
+							hottextcolor="white"
+							pushedtextcolor="white"
+							disabledtextcolor="tab_btn_color"/>
+					<Button name="Uplay_btn" height="20"  text="Uplay" font="microsoft_14" valign="center"
+							normaltextcolor="tab_btn_color"
+							hottextcolor="white"
+							pushedtextcolor="white"
+							disabledtextcolor="tab_btn_color"/>
+					<Button name="Epic_btn" height="20"  text="Epic" font="microsoft_14" valign="center"
+							normaltextcolor="tab_btn_color"
+							hottextcolor="white"
+							pushedtextcolor="white"
+							disabledtextcolor="tab_btn_color"/>
+					<Button name="zw_btn" height="20"  text="战网" font="microsoft_14" valign="center"
+							normaltextcolor="tab_btn_color"
+							hottextcolor="white"
+							pushedtextcolor="white"
+							disabledtextcolor="tab_btn_color"/>
+					<Button name="gf_btn" height="20"  text="国服" font="microsoft_14" valign="center"
+							normaltextcolor="tab_btn_color"
+							hottextcolor="white"
+							pushedtextcolor="white"
+							disabledtextcolor="tab_btn_color"/>
+				</HBox>
+				<HBox width="126" height="28" bkcolor="" valign="center" margin="6,0,0,0">
+					<Box>
+						<RichEdit name="nick" width="126" height="28"  padding="14,5,20,2" prompttext="搜索游戏" 
+								multiline="false"
+								promptcolor="tab_btn_color" 
+								normaltextcolor="white" 
+								caretcolor="white"
+								bkimage="file='label/nick.png'"/>
+						<Button name="nick_btn" width="16" height="16"  margin="100,7,0,0" visible="true" 
+								normalimage="file='label/nick_btn.png' source='0,0,16,16'" 
+								hotimage="file='label/nick_btn.png' source='16,0,32,16'" 
+								pushedimage="file='label/nick_btn.png' source='32,0,48,16'" 
+								disabledimage="file='label/nick_btn.png' source='42,0,64,16'"/>
+					</Box>
+				</HBox>
+				
+			</HBox>
+			<Control width="113"/>
+		</HBox>
+		
+		<!--主要功能区-->
+		<VBox name="main_box" width="stretch" height="stretch">
+		</VBox>
+		<!--选择弹框-->
+		<VBox name="push_window_box" margin="0,0,0,0" float="true" alpha="255"  borderround="2,2" visible="false">
+		</VBox>
+		
+		<!--搜索弹框-->
+		<VBox name="nick_window_box" margin="634,122,193,129" visible="false" float="true">
+			<Label margin="98,0,0,0" bkimage="bk_photo/nick_window_1.png"/>
+			<VBox name="nick_game_list" bkimage="file='bk_photo/nick_window.png' dest='0,0,197,390' corner='10,10,10,10'" visible="true">
+			</VBox>
+		</VBox>
+
+		<!--操作成功提示-->
+		<VBox name="operiton_successful_tip_label" margin="0,68,0,0" float="true" alpha="255" visible="false">
+			<VBox margin="285,127,309,172" bkcolor="" bkimage="file='bk_photo/nick_window.png' corner='15,15,15,15'">
+				<HBox height="33" bkcolor="">
+					<Label margin="17,16,0,0" text="温馨提示" font="system_14"/>
+					<Button name="close_Tip_window_btn" width="24" height="24" margin="311,10,0,0" bkcolor=""
+							normalimage="file='btn/common_close_btn.png' source='0,0,24,24'" 
+							hotimage="file='btn/common_close_btn.png' source='24,0,48,24'" 
+							pushedimage="file='btn/common_close_btn.png' source='48,0,72,24'" 
+							disabledimage="file='btn/common_close_btn.png' source='72,0,96,24'"/>
+				</HBox>
+				<VBox bkcolor="">
+					<Label margin="193,40,0,0" bkimage="label/success_yes.png"/>
+					<Label name="successful_text_label" text="支付成功" font="system_14" valign="center" halign="center" visible="true"/>	
+				</VBox>
+				
+				<Box height="35" margin="0,0,0,40" bkcolor="" >
+					
+					<Button name="operiton_successful_ok_btn" text="确定" width="110" height="35"   font="system_16"  halign="center"
+							normalimage="file='label/ok_btn.png' source='0,0,110,35'" 
+							hotimage="file='label/ok_btn.png' source='110,0,220,35'" 
+							pushedimage="file='label/ok_btn.png' source='220,0,330,35'" 
+							disabledimage="file='label/ok_btn.png' source='330,0,440,36'"/><!--margin="161,60,0,29"-->
+					
+				</Box>
+			</VBox>
+		</VBox>
+		<!--抽奖界面-->
+		<VBox name="lottery_box" margin="1,68,1,1" float="true" bkcolor="green" visible="false">
+			<CefControl name="cef_reward" bkcolor=""/>
+		</VBox>
+				
+		<!--菜单框-->
+		<VBox name="menu_window_box" margin="880,37,22,470" width="122" float="true" visible="false">
+			<Label width="16" height="8" bkimage="file='bk_photo/nick_window_1.png'" margin="55,0,0,0"/>
+			<VBox bkimage="file='bk_photo/nick_window.png' corner='10,10,10,10'" childmargin="4">
+				<Control height="10"/>
+				<ButtonBox name="set_btnbox" width="122" height="34" text="设置" nofocus="false"
+					hotcolor="set_select_color"
+					pushedcolor="set_select_color"
+					normalimage="file='btn/set_btn.png' dest='17,10,31,24'" >
+				</ButtonBox>
+				<ButtonBox name="net_btnbox" width="122" height="34" text="网络修复" textpadding="10,0,0,0" nofocus="false"
+					hotcolor="set_select_color"
+					pushedcolor="set_select_color"
+					normalimage="file='btn/repair_btn.png' dest='17,10,31,24'" >
+				</ButtonBox >
+				<ButtonBox name="clean_btnbox" width="122" height="34" text="清除缓存" textpadding="10,0,0,0" nofocus="false"
+					hotcolor="set_select_color"
+					pushedcolor="set_select_color"
+					normalimage="file='btn/clearn_btn.png' dest='17,10,31,24'" >
+				</ButtonBox >
+			</VBox>
+		</VBox>
+		<!--监控-->
+		<VBox name="monitor_box" margin="0,0,0,0" float="true" borderround="4,4" visible="false">
+		</VBox>
+		<!--退出设置-->
+		<VBox name="set_box" margin="0,0,0,0" float="true" alpha="255" borderround="4,4" visible="false">
+		</VBox>
+		<!--提示更新框-->
+		<VBox name="system_tip_box" margin="0,68,0,0" alpha="255" float="true"  visible="false" >
+			<HBox margin="345,200,345,278" bkcolor="" bkimage="file='bk_photo/nick_window.png' corner='15,15,15,15'">
+				<Label width="32" height="32" bkcolor="" margin="28,30,0,0" bkimage="file='gif/ani_loading_ex.gif'"/>
+				
+				<Box height="32" margin="16,30,0,0" bkcolor="">
+					<Label name="sys_tip_text" text="游戏资源更新中..." font="system_15"  valign="center" visible="true"/>
+				</Box>
+			</HBox>
+		</VBox>
+		<!---微信绑定弹框-->
+		<VBox name="wx_bind_wnd_box" margin="0,68,0,0" alpha="255" float="true" visible="false">
+			<VBox margin="282,103,242,124" bkimage="file='bk_photo/nick_window.png' corner='15,15,15,15'">
+				<HBox height="40">
+					<Label margin="20,16,0,0" text="微信登录" font="system_18"/>
+					<Button name="close_wx_window_btn" width="24" height="24" margin="360,10,0,0" bkcolor=""
+							normalimage="file='btn/common_close_btn.png' source='0,0,24,24'" 
+							hotimage="file='btn/common_close_btn.png' source='24,0,48,24'" 
+							pushedimage="file='btn/common_close_btn.png' source='48,0,72,24'" 
+							disabledimage="file='btn/common_close_btn.png' source='72,0,96,24'"/>
+					
+				</HBox>
+				<CefControl name="cef_bind" bkcolor=""/>
+			</VBox>
+		</VBox>
+	</VBox>
+</Window>
+

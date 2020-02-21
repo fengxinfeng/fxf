@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+    <VBox bkcolor="" margin="0,12,44,43" visible="false" >
+		<Label width="20" height="11" bkimage="bk_photo/sj_1.png" margin="150,0,0,0" bkcolor=""/>
+		<RichEdit name="edit_aoo_log" padding="35,26,0,25" bkcolor="monitor_net_bk_color" text=""  vscrollbar="true" readonly="true" autovscroll="true"/> <!--bkimage1="file='bk_photo/nick_window.png' corner='10,10,10,10'"-->
+		<Button name="btn_copy_log_clipbox" height="46" text="复制日志" font="system_14" valign="center" halign="center" bkcolor=""/>
+    </VBox>
+</Window>

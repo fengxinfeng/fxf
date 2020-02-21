@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+    <VBox name="" width="stretch" height="stretch" childmargin="" padding="13,0,13,16">
+		
+		<!--游戏选择区-->
+		<HBox name="" childmargin="10" padding="62,0,101,0" bkcolor="">
+			<VBox name="" bkcolor="">
+				<HBox height="29" childmargin="10">
+					<Label name="current_game_name_label" height="29" text="绝地求生" font="microsoft_22" width="auto" normaltextcolor="white" valign="bottom"/>
+					<Label name="current_game_stem_label" height="20" text="已为您同时加速Steam社区" bkcolor="" font="system_15" width="auto" normaltextcolor="tab_btn_color" valign="bottom" visible="false"/>
+				</HBox>
+				<Control bkcolor=""/>
+				<HBox height="24">
+					<HBox bkcolor="" width="300">
+						<Label name="game_h_time_label" height="24" text="00" font="microsoft_18" normaltextcolor="numb_color" valign="center"/>
+						<Label name="" height="24" text=":" font="microsoft_18" normaltextcolor="numb_color" valign="center"/>
+						<Label name="game_m_time_label" height="24" text="00" font="microsoft_18" normaltextcolor="numb_color" valign="center"/>
+						<Label name="" height="24" text=":" font="microsoft_18" normaltextcolor="numb_color" valign="center"/>
+						<Label name="game_s_time_label" height="24" text="00" font="microsoft_18" normaltextcolor="numb_color" valign="center"/>
+					</HBox>
+					<ButtonBox name="monitor_btnbox" bkcolor="" width="55" height="16" margin="20,4,0,0" 
+						normalimage="file='btn/monitor_btnbox.png' dest='0,0,16,16' source='0,0,16,16' " 
+						hotimage="file='btn/monitor_btnbox.png' dest='0,0,16,16' source='16,0,32,16' " 
+						pushedimage="file='btn/monitor_btnbox.png' dest='0,0,16,16' source='32,0,48,16' " 
+						disabledimage="file='btn/monitor_btnbox.png' dest='0,0,16,16' source='48,0,64,16'"
+						text="监控" font="system_15" textpadding="10,0,0,0" 
+						normaltextcolor="tab_btn_color" 
+						hottextcolor="white" 
+						pushedtextcolor="white"
+						disabledtextcolor="tab_btn_color">
+					</ButtonBox>
+				</HBox>
+				<Control bkcolor=""/>
+				<HBox height="60" childmargin="10">
+					<Box width="86"  bkcolor="">
+						<HBox height="40" bkcolor="">
+							<Label name="acc_engin_delay" text="00"  font="microsoft_30" normaltextcolor="numb_color" margin="0,4,0,0"/>
+							<Label name="acc_engin_delay_ms"text="MS"  font="system_bold_14" normaltextcolor="numb_color" valign="bottom"/>
+						</HBox>
+						<Label text="游戏延迟" font="system_bold_12" normaltextcolor="numb_color" margin="0,41,0,0"/>
+					</Box>
+					
+					<Box width="70"  bkcolor="">
+						<HBox height="40">
+							<Label name="acc_engin_improve" text="00" font="microsoft_30" normaltextcolor="numb_color" margin="0,4,0,0"/>
+							<Label name="acc_engin_improve_percent"text="%" font="system_bold_14" normaltextcolor="numb_color" valign="bottom"/>
+						</HBox>
+						<Label text="综合提升" font="system_bold_12" normaltextcolor="numb_color" margin="0,41,0,0"/>
+					</Box>
+					
+					<Box width="70"  bkcolor="">
+						<HBox height="40">
+							<Label name="acc_engin_loss" text="00" font="microsoft_30" normaltextcolor="numb_color" margin="0,4,0,0"/>
+							<Label name="acc_engin_loss_percent"text="%" font="system_bold_14" normaltextcolor="numb_color" valign="bottom"/>
+						</HBox>
+						<Label text="丢包率" font="system_bold_12" normaltextcolor="numb_color" margin="0,41,0,0"/>
+					</Box>
+					
+					<Box width="80"  bkcolor="">
+						<HBox height="40">
+							<Label name="acc_engin_flush_mb"  text="00" font="microsoft_30" normaltextcolor="numb_color" margin="0,4,0,0"/>
+							<Label name="acc_engin_flush_ms" text="M" font="system_bold_14" normaltextcolor="numb_color" valign="bottom"/>
+						</HBox>
+						<Label text="加速流量" font="system_bold_12" normaltextcolor="numb_color" margin="0,41,0,0"/>
+					</Box >
+					
+				</HBox>
+				<Control bkcolor=""/>
+				<HBox height="24">
+					<ButtonBox name="server_btnbox" bkcolor="" width="120"
+						normalimage="file='btn/server_photo.png' dest='0,0,24,24' source='0,0,24,24' " 
+						hotimage="file='btn/server_photo.png' dest='0,0,24,24' source='24,0,48,24' " 
+						pushedimage="file='btn/server_photo.png' dest='0,0,24,24' source='48,0,72,24' " 
+						disabledimage="file='btn/server_photo.png' dest='0,0,24,24' source='72,0,96,24'" 
+						text="全区服" font="system_15" textpadding="30,2,0,0" align="left"
+						normaltextcolor="tab_btn_color" 
+						hottextcolor="white" 
+						pushedtextcolor="white"
+						disabledtextcolor="tab_btn_color">
+					</ButtonBox>
+					<ButtonBox name="area_btnbox"  
+						normalimage="file='btn/area_photo.png' dest='0,0,24,24' source='0,0,24,24' " 
+						hotimage="file='btn/area_photo.png' dest='0,0,24,24' source='24,0,48,24' " 
+						pushedimage="file='btn/area_photo.png' dest='0,0,24,24' source='48,0,72,24' " 
+						disabledimage="file='btn/area_photo.png' dest='0,0,24,24' source='72,0,96,24'"
+						text="内蒙古"  font="system_15" textpadding="30,2,0,0" align="left"
+						normaltextcolor="tab_btn_color"
+						hottextcolor="white" 
+						pushedtextcolor="white"
+						disabledtextcolor="tab_btn_color">
+					</ButtonBox >
+					<ButtonBox name="operator_btnbox"  
+						normalimage="file='btn/operator_photo.png' dest='0,0,24,24' source='0,0,24,24' " 
+						hotimage="file='btn/operator_photo.png' dest='0,0,24,24' source='24,0,48,24' " 
+						pushedimage="file='btn/operator_photo.png' dest='0,0,24,24' source='48,0,72,24' " 
+						disabledimage="file='btn/operator_photo.png' dest='0,0,24,24' source='72,0,96,24'"
+						text="电信"  font="system_15" textpadding="30,2,0,0" align="left"
+						normaltextcolor="tab_btn_color" 
+						hottextcolor="white" 
+						pushedtextcolor="white" 
+						disabledtextcolor="tab_btn_color" >		
+					</ButtonBox >
+					<ButtonBox name="auto_btnbox"  width="140"
+						normalimage="file='btn/auto_photo.png' dest='0,0,24,24' source='0,0,24,24' " 
+						hotimage="file='btn/auto_photo.png' dest='0,0,24,24' source='24,0,48,24' " 
+						pushedimage="file='btn/auto_photo.png' dest='0,0,24,24' source='48,0,72,24' " 
+						disabledimage="file='btn/auto_photo.png' dest='0,0,24,24' source='72,0,96,24'"
+						text="自动" font="system_15" textpadding="30,2,0,0" align="left"
+						normaltextcolor="tab_btn_color" 
+						hottextcolor="white" 
+						pushedtextcolor="white" 
+						disabledtextcolor="tab_btn_color">
+					</ButtonBox>
+					<Control bkcolor=""/>
+				</HBox>
+				<Control bkcolor=""/>
+				<Box height="40" bkcolor="">
+					<ButtonBox name="start_accrate_btn" width="124" margin="0,0,0,0" visible="true"
+							text="开始加速" font="system_16" normaltextcolor="black"
+							normalimage="file='btn/start_btn.png' source='0,0,124,40'" 
+							hotimage="file='btn/start_btn.png' source='124,0,248,40'" 
+							pushedimage="file='btn/start_btn.png' source='248,0,372,40'" 
+							disabledimage="file='btn/start_btn.png' source='372,0,496,40'">
+					</ButtonBox>
+					<Label name="accrate_fill" width="124" margin="0,0,0,0" bkimage="file='label/accrate_fill_photo.png' dest='0,0,124,40' source='0,0,124,40'" visible="false"/>
+					<Button name="accrate_btn" width="124" text="正在加速0%" margin="0,0,0,0" bkimage="file='label/accrate_photo.png'" font="system_14" normaltextcolor="yellow" visible="false" >
+					</Button>
+					<ButtonBox name="stop_accrate_btn" width="124" margin="0,0,0,0" visible="false"
+							text="停止加速" font="system_16" normaltextcolor="white"
+							normalimage="file='btn/stop_btn.png' source='0,0,124,40'" 
+							hotimage="file='btn/stop_btn.png' source='124,0,248,40'" 
+							pushedimage="file='btn/stop_btn.png' source='248,0,372,40'" 
+							disabledimage="file='btn/stop_btn.png' source='124,0,496,40'">
+					</ButtonBox>
+					<Button name="open_game" width="124" margin="200,0,0,0" visible="false"
+							text="启动游戏" font="system_16" normaltextcolor="white"
+							normalimage="file='btn/open_game_btn.png' source='0,0,124,40'" 
+							hotimage="file='btn/open_game_btn.png' source='124,0,248,40'" 
+							pushedimage="file='btn/open_game_btn.png' source='248,0,372,40'" 
+							disabledimage="file='btn/open_game_btn.png' source='124,0,496,40'">
+					</Button>
+				</Box>
+				<Control bkcolor=""/>
+			</VBox>
+			<!--游戏图片-->
+			<Box name="" width="315" bkcolor="" padding="0,36,0,0">
+				<Button name="cruuent_photo_btn" width="315" height="155" bkcolor="" 
+						normalimage=""
+						hotimage="file='btn/change_game_btn.png'">
+				</Button>
+			</Box>
+		</HBox>
+		<!--支付和广告-->
+		<VBox name="pay_and_advertiseing_box">
+		</VBox>
+		
+    </VBox>
+</Window>

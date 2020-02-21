@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+    <!--时间和广告区-->
+	<VBox visible="false">
+		<HBox name="" height="252" childmargin="19" padding="21,16,18,16" bkcolor="" >
+			<VBox name="" bkcolor="">
+				<HBox name="time_show_box" height="43" bkcolor="">
+					<Label name="big_logo_label" width="40" height="40" bkimage="label/big_logo_label.png"/>
+					<VBox width="180" height="42" bkcolor="">
+						<HBox width="180" height="28" valign="center" margin="7,0,0,0">
+							<Label name="wb_name_label_sm" text="" font="system_bold_20" normaltextcolor="white"/>
+							<Control width="6"/>
+							<Label name="version_name_label_sm" text="扫码版" font="system_bold_12" normaltextcolor="white" valign="center"/>
+						</HBox>
+						<Box padding="7,0,0,0">
+							<Label name="login_tip_label" text="微信登录" font="system_12" valign="center" visible="false"/>
+							<ButtonBox name="tip_btn" align="left" width="79" height="20" visible="true" 
+								text="游客登录" font="system_12" normaltextcolor="white1"
+								normalimage="file='label/query_flag.png' dest='54,1,68,15' source='0,0,14,14'" 
+								hotimage="file='label/query_flag.png' dest='54,1,68,15' source='14,0,28,14'" 
+								pushedimage="file='label/query_flag.png' dest='54,1,68,15' source='28,0,42,14'" 
+								disabledimage="file='label/query_flag.png' dest='54,1,68,15' source='42,0,56,14'">
+							</ButtonBox>
+						</Box>
+						
+					</VBox>
+					<HBox height="37" margin="20,0,0,0" bkcolor="">
+						<Label name="" text="剩余时间" font="system_12" normaltextcolor="white1" halign="left" margin="0,0,0,0" valign="center"/>
+						<HBox width="85" bkcolor="">
+							<Label name="time_h_label" text="0000" font="microsoft_20" margin="17,0,0,0" normaltextcolor="green"/>
+							<Label text="时" font="system_12" normaltextcolor="white1" margin="2,14,0,0"/>
+						</HBox>
+						<HBox width="42" bkcolor="">
+							<Label name="time_m_label" text="00" font="microsoft_20" normaltextcolor="green" margin="2,0,0,0"/>
+							<Label text="分" font="system_12" normaltextcolor="white1" halign="right" margin="2,14,0,0"/>
+						</HBox>
+						<HBox width="43" bkcolor="">
+							<Label name="time_s_label" text="00" font="microsoft_20" normaltextcolor="green" margin="2,0,0,0"/>
+							<Label text="秒" font="system_12" normaltextcolor="white1" halign="right" margin="2,14,0,0"/>
+						</HBox>
+					</HBox>
+				</HBox>
+				<Control height="6"/>
+				<Box name=""  bkcolor="">
+					<CefControl name="cef_encharge" visible="true"/>
+				</Box>
+			</VBox>
+			
+			<VBox name="" width="470" childmargin="28" bkcolor="">
+				<HBox height="30" margin="20,6,0,0" bkcolor="">
+					<Button name="wx_btn" width="107" height="30" bkcolor="" text="微信绑定" textpadding="15,0,0,0" normaltextcolor="white" disabledtextcolor="light_gray"
+						normalimage="file='btn/wx.png' source='0,0,108,30'" 
+						hotimage="file='btn/wx.png' source='108,0,216,30'" 
+						pushedimage="file='btn/wx.png' source='216,0,324,30'" 
+						disabledimage="file='btn/wx.png' source='324,0,432,30'"/>
+					<Control width="12"/>
+					<Label text="绑定微信号可方便换机登录继续使用" font="system_12" normaltextcolor="white1" valign="center"/>
+				</HBox>
+				
+				<HBox bkcolor="" childmargin="14">
+					<Box bkcolor="">
+					<Button name="sm_g1" width="228" height="154" normalimage="label/qr_ad_1.png" hotimage="file='label/qr_ad_1.png' fade='178'" hotimage="file='label/qr_ad_1.png' fade='128'"/>
+					</Box>
+					<Box bkcolor="">
+					<Button name="sm_g2" width="228" height="154" normalimage="label/qr_ad_2.png" hotimage="file='label/qr_ad_2.png' fade='178'" hotimage="file='label/qr_ad_2.png' fade='128'"/>
+					</Box>
+				</HBox>
+			</VBox>
+		</HBox>
+		<Label name="tip_photo" width="280" height="78" float="true" margin="35,65,683,110" bkimage="label/tip_photo.png" visible="false"/>
+	</VBox>
+</Window>w>x>
+</Window>

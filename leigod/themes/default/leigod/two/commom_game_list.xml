@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+    <VBox name="" width="stretch" height="stretch" padding="37,34,12,37"  visible="false">
+		<TileListBox  name="all_game_listbox" columns="5" childmargin="19"  vscrollbar="true" visible="true">
+		
+		 </TileListBox>
+    </VBox>
+</Window>

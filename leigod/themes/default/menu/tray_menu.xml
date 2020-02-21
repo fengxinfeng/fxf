@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window>
+  <VListBox class="menu">
+    <MenuElement class="menu_element" name="mu_showframe" width="120">
+		<HBox>
+			<Control />
+			<Label class="menu_text" text="显示窗口" width="auto" margin=",0,0,0"/>
+			<Control />
+		</HBox>
+    </MenuElement>
+    <MenuElement class="menu_element" name="mu_exit" width="120">
+		<HBox>
+			<Control />
+			<Label class="menu_text" text="退出" width="auto" margin="0,0,0,0" />
+			<Control />
+		</HBox>
+    </MenuElement>
+  </VListBox>
+</Window>

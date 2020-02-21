@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+	
+	<ListContainerElement name="area_box" width="160" height="50" bkcolor="white" visible="true" borderround="4,4" bordersize="1" bordercolor="no_select_node_border_color">	
+		<HBox mouse="false">
+			<Control mouse="false"/>
+			<Control name="loc_icon" bkimage="label/location.png" valign="center" width="auto" height="auto" mouse="false" visible="false"/>
+			<Label name="area_prov" text="" width="auto" font="system_14"  normaltextcolor="areatitle" margin="3,0,0,0" valign="center" mouse="false"/>
+			<Control mouse="false"/>
+			<Control name="loc_tip" float="true" bkimage="label/loc_near.png" valign="top" halign="right" height="auto" width="auto" mouse="false" visible="false"/>	
+		</HBox>
+	</ListContainerElement>
+	
+</Window>

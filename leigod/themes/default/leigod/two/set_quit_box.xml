@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+    <VBox visible="false" >
+
+		<HBox height="20" margin="56,41,0,0" bkcolor="">
+			<Label name="" text="点击关闭时" margin="0,0,0,0" bkcolor="" font="system_bold_14" normaltextcolor="node_select_bk_color"/>
+			<Control width="49"/>
+			<Option class="myself_option_1" width="120" name="min_tory_option" text="最小化到托盘" group="quit_set_select" normaltextcolor="set_text_color" selected="true"/>
+			<Control width="32"/>
+			<Option class="myself_option_1" width="100" name="quit_app_option" text="退出加速器" group="quit_set_select" normaltextcolor="set_text_color"/>
+		</HBox>
+		<CheckBox  class="checkbox_font_warn" width="100" name="quit_warn_chbox" text="不再提醒" margin="175,19,0,0" align="center" normaltextcolor="set_text_color"/>
+		<!--<Control height="201"/>-->
+    </VBox>
+</Window>

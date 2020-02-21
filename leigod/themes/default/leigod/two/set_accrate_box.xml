@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+    <VBox visible="false" >
+		<HBox height="20" margin="56,38,0,0" childmargin="30" bkcolor="">
+			<Label name="" text="模式选择" margin="0,0,0,0" bkcolor="" font="system_bold_14" normaltextcolor="node_select_bk_color"/>
+			<Option class="myself_option_1" width="70" name="auto_pat_option" text="自动" group="quit_select" normaltextcolor="set_text_color" selected="true"/>
+			<Option class="myself_option_1" width="100" name="lsp_pat_option" text="LSP模式" group="quit_select" normaltextcolor="set_text_color"/>
+			<Option class="myself_option_1" width="100" name="hook_pat_option" text="HOOK模式" group="quit_select" normaltextcolor="set_text_color"/>
+			<Option class="myself_option_1" width="100" name="driver_pat_option" text="Driver模式" group="quit_select" normaltextcolor="set_text_color"/>
+		</HBox>
+		<VBox width="454" height="102" margin="146,15,0,0" padding="14,12,103,11" bkcolor="set_tip_bk_color" >
+			<Label name="" text="自动模式:根据算法自动选择加速模式" font="system_14" normaltextcolor="set_text_color"/>
+			<Label name="" text="LSP模式:网络正常用户可使用此模式" font="system_14" normaltextcolor="set_text_color"/>
+			<Label name="" text="HOOK模式:校园网或网吧用户使用异常时可选择此模式" font="system_14" normaltextcolor="set_text_color"/>
+			<Label name="" text="Driver模式:备选驱动模式，仅支持win7及以上" font="system_14" normaltextcolor="set_text_color"/>
+		</VBox>
+		<HBox height="20" margin="56,17,0,0" childmargin="30" bkcolor="">
+			<Label name="" text="传输模式" margin="0,0,0,0" bkcolor="" font="system_bold_14" normaltextcolor="node_select_bk_color"/>
+			<Option class="myself_option_1" width="100" name="topspeed_pat_option" text="极速模式" group="transfer_select" selected="true" normaltextcolor="set_text_color"/>
+			<Option class="myself_option_1" width="100" name="com_pat_option" text="兼容模式" group="transfer_select" normaltextcolor="set_text_color"/>
+		</HBox>
+		<VBox width="454" height="40" margin="146,15,0,0" padding="14,12,260,11" bkcolor="set_tip_bk_color" >
+			<Label name="" text="网络不稳定时,建议选择兼容模式" font="system_14" normaltextcolor="set_text_color"/>
+		</VBox>
+		<!--<Control height="30"/>-->
+		
+    </VBox>
+</Window>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+    <!--时间和广告区-->
+	<VBox name="" height="252" padding="19,17,23,14" bkcolor=""  visible="true">
+		<HBox height="40">
+			<Label name="big_logo_label" width="40" bkimage="label/big_logo_label.png"/>
+			
+			<Label name="wb_name_label_by" text="" font="system_20" valign="center" normaltextcolor="white" margin="10,0,0,0"/>
+		
+			<Label name="version_name_label_by" text="包月版" font="system_12" valign="center" normaltextcolor="white" margin="5,0,0,0"/>
+			
+			<Label name="time_game" text="到期时间: 2020.05.20 13:00" font="system_14" normaltextcolor="white" valign="center" margin="32,0,0,0"/>
+			
+			<Label height="37" bkimage="label/hz_logo.png" margin="40,0,0,0"/>
+		</HBox>
+		<Control height="29"/>
+		<HBox childmargin="26">
+			<Button name="by_g1" width="465" height="152"  bkimage="label/m_ad_1.png">
+			</Button>
+			<Button name="by_g2" width="465" height="152"  bkimage="label/m_ad_2.png">
+			</Button>
+		</HBox>
+	</VBox>
+</Window>

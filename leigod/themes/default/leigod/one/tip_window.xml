@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window size="430,278" caption="0,0,0,278">
+	<Box>
+		<VBox name="tip_window"  margin="0,0,0,0" float="true" bkcolor="white" visible="true">
+			<HBox height="43" bkcolor="">
+				<Label text="温馨提示" font="system_bold_14" margin="29,23,0,0"/>
+				<Button name="closebtn" width="24" height="24" margin="311,10,0,0" bkcolor=""
+						normalimage="file='btn/common_close_btn.png' source='0,0,24,24'" 
+						hotimage="file='btn/common_close_btn.png' source='24,0,48,24'" 
+						pushedimage="file='btn/common_close_btn.png' source='48,0,72,24'" 
+						disabledimage="file='btn/common_close_btn.png' source='72,0,96,24'"/>	
+			</HBox>
+			<Label margin="193,40,0,0" width="44" height="44" bkimage="label/quit_warn_label.png"/>
+			<Label name="msg_tip_text" text="游戏正在加速中,此操作会导致游戏断链    是否确认继续？" align="center"
+				font="system_14" margin="82,13,82,0" width="266" height="36" singleline="false"/>
+			<HBox margin="92,42,0,0" childmargin="27">
+				<Button name="tip_cancel_btn" text="取消" width="110" height="35" font="system_16"
+						normalimage="file='btn/cancel_btn.png' source='0,0,110,35'" 
+						hotimage="file='btn/cancel_btn.png' source='110,0,220,35'" 
+						pushedimage="file='btn/cancel_btn.png' source='220,0,330,35'" 
+						disabledimage="file='btn/cancel_btn.png' source='330,0,440,36'"/>			
+				<Button name="tip_ok_btn" text="确定" width="110" height="35" font="system_16" 
+						normalimage="file='label/ok_btn.png' source='0,0,110,35'" 
+						hotimage="file='label/ok_btn.png' source='110,0,220,35'" 
+						pushedimage="file='label/ok_btn.png' source='220,0,330,35'" 
+						disabledimage="file='label/ok_btn.png' source='330,0,440,36'"/>
+			</HBox>
+		</VBox>
+	</Box>
+</Window>
+

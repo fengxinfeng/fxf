@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window size="430,278" caption="0,0,0,278">
+	<Box>
+	
+		<VBox name="quit_window" bkcolor="white" visible="true">
+			<HBox height="43" bkcolor="">
+				<Label text="退出设置" font="system_bold_14" margin="29,23,0,0"/>
+				<Button name="closebtn" width="24" height="24" margin="311,10,0,0" bkcolor=""
+						normalimage="file='btn/common_close_btn.png' source='0,0,24,24'" 
+						hotimage="file='btn/common_close_btn.png' source='24,0,48,24'" 
+						pushedimage="file='btn/common_close_btn.png' source='48,0,72,24'" 
+						disabledimage="file='btn/common_close_btn.png' source='72,0,96,24'"/>		
+			</HBox>
+			<VBox>
+				<Label text="点击关闭时" font="system_bold_14" margin="67,29,0,0"/>
+				<HBox margin="67,18,0,0" height="30">
+					<Option class="myself_option_1" width="120" name="min_to_tory_option" text="最小化到托盘" group="quit_select"/>
+					<Control width="30"/>
+					<Option class="myself_option_1" width="100" name="quit_app_option" text="退出加速器" group="quit_select" selected="true"/>
+				</HBox>
+				<CheckBox  class="checkbox_font_warn" width="100" name="close_warn_chbox" text="不再提醒" bkcolor="" margin="67,18,0,0" align="top"/>
+			</VBox>
+			<Button name="one_ok_btn" width="110" height="35" margin="160,0,0,28" text="确定" bkcolor=""
+						normalimage="file='label/ok_btn.png' source='0,0,110,35'" 
+						hotimage="file='label/ok_btn.png' source='110,0,220,35'" 
+						pushedimage="file='label/ok_btn.png' source='220,0,330,35'" 
+						disabledimage="file='label/ok_btn.png' source='330,0,440,36'"/>
+		</VBox>
+		<VBox name="again_tip_quit_window"  margin="0,0,0,0" float="true" bkcolor="white" visible="false">
+			<HBox height="43" bkcolor="">
+				<Label text="温馨提示" font="system_bold_14" margin="29,23,0,0"/>
+				<Button name="close_btn2" width="24" height="24" margin="311,10,0,0" bkcolor=""
+						normalimage="file='btn/common_close_btn.png' source='0,0,24,24'" 
+						hotimage="file='btn/common_close_btn.png' source='24,0,48,24'" 
+						pushedimage="file='btn/common_close_btn.png' source='48,0,72,24'" 
+						disabledimage="file='btn/common_close_btn.png' source='72,0,96,24'"/>	
+			</HBox>
+			<Label margin="193,40,0,0" width="44" height="44" bkimage="label/quit_warn_label.png"/>
+			<Label text="您的加速时长未使用完，退出后将清零    是否确定退出？" align="center"
+				font="system_14" margin="82,13,82,0" width="266" height="36" singleline="false"/>
+			<HBox margin="92,42,0,0" childmargin="27">
+				<Button name="two_ok_btn" text="确定退出" width="110" height="35" font="system_16"
+						normalimage="file='btn/cancel_btn.png' source='0,0,110,35'" 
+						hotimage="file='btn/cancel_btn.png' source='110,0,220,35'" 
+						pushedimage="file='btn/cancel_btn.png' source='220,0,330,35'" 
+						disabledimage="file='btn/cancel_btn.png' source='330,0,440,36'"/>			
+				<Button name="two_cancel_btn" text="取消" width="110" height="35" font="system_16" 
+						normalimage="file='btn/save_btn.png' source='0,0,110,35'" 
+						hotimage="file='btn/save_btn.png' source='110,0,220,35'" 
+						pushedimage="file='btn/save_btn.png' source='220,0,330,35'" 
+						disabledimage="file='btn/save_btn.png' source='330,0,440,36'"/>
+			</HBox>
+		</VBox>
+	</Box>
+</Window>
+

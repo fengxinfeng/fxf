@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+    <VBox visible="false">
+		<HBox height="100" width="687" bkcolor="monitor_net_bk_color" margin="0,23,0,0">
+			<VBox width="72" height="60" bkcolor="" margin="77,18,0,0">
+				<HBox >
+					<Label name="lb_mn_total_delay" text="0" font="microsoft_30"  normaltextcolor="set_arccrate_numb_color"/>
+					<Label text="ms" font="microsoft_12" margin="0,19,0,0" normaltextcolor="set_arccrate_numb_color"/>
+				</HBox>
+				<Label text="游戏全程延迟" font="system_12"/>
+			</VBox>
+			<Control width="2" margin="80,16,0,15" bkcolor="monitor_net_strip_color"/>
+			<VBox width="72" height="60" bkcolor="" margin="89,18,0,0">
+				<HBox>
+					<Label name="lb_mn_total_loss" text="0" font="microsoft_30"  normaltextcolor="set_arccrate_numb_color"/>
+					<Label text="%" font="microsoft_12" margin="0,19,0,0" normaltextcolor="set_arccrate_numb_color"/>
+				</HBox>
+				<Label text="总丢包率" font="system_12"/>
+			</VBox>
+			<Control width="2" margin="91,16,0,15" bkcolor="monitor_net_strip_color"/>
+			<VBox height="34" bkcolor="" margin="44,33,0,0">
+				<HBox>
+					<Label name="" text="正在加速:" font="system_12"/>
+					<Label name="monitor_game_name" text="" font="system_12"/>
+				</HBox>
+				<HBox>
+					<Label text="当前节点:" font="system_12"/>
+					<Label name="monitor_node_name" text="" font="system_12"/>
+				</HBox>
+			</VBox>
+		</HBox>
+		<HBox height="60" bkcolor="" margin="0,25,0,0" >
+			<VBox width="30" bkcolor="" margin="18,5,0,0">
+				<Label height="30" bkimage="label/net_1.png"/>
+				<Control height="4"/>
+				<Label text="电脑" font="system_12" margin="3,0,0,0" normaltextcolor="node_select_bk_color"/>
+			</VBox>
+			<Control />
+			<VBox width="126" bkcolor="" margin="17,0,0,0">
+				<HBox>
+					<Control width="21"/>
+					<Label text="用户网络:" font="system_12" valign="center" halign="center" normaltextcolor="node_select_bk_color"/>
+					<Label name="lb_gate_delay" text="0MS" font="system_12" valign="center" halign="center"/>
+				</HBox>
+				<Control height="2" bkcolor="monitor_net_strip_color2"/>
+				<HBox>
+					<Control width="34"/>
+					<Label text="丢包率:" font="system_12" valign="center" halign="center" normaltextcolor="node_select_bk_color"/>
+					<Label name="lb_gate_loss" text="0%" font="system_12" valign="center" halign="center"/>
+				</HBox>
+			</VBox>
+			<Control />
+			<VBox width="36" margin="24,5,0,0" bkcolor="">
+				<Label height="30" bkimage="label/net_2.png" halign="center"/>
+				<Control height="4"/>
+				<Label text="路由器" font="system_12" normaltextcolor="node_select_bk_color"/>
+			</VBox>
+			<Control />
+			<VBox width="125" bkcolor="" margin="34,0,0,0">
+				<HBox>
+					<Control width="33"/>
+					<Label text="公网:" font="system_12" valign="center" halign="center" normaltextcolor="node_select_bk_color"/>
+					<Label  name="lb_outsvr_delay" text="0MS" font="system_12" valign="center" halign="center"/>
+				</HBox>
+				<Control height="2" bkcolor="monitor_net_strip_color2"/>
+				<HBox>
+					<Control width="33"/>
+					<Label text="丢包率:" font="system_12" valign="center" halign="center" normaltextcolor="node_select_bk_color"/>
+					<Label name="lb_outsvr_loss"  text="0%" font="system_12" valign="center" halign="center"/>
+				</HBox>
+			</VBox>
+			<Control />
+			<VBox width="60" margin="16,5,0,0" bkcolor="">
+				<Label height="30" bkimage="label/net_3.png" halign="center"/>
+				<Control height="4"/>
+				<Label text="节点服务器" font="system_12" normaltextcolor="node_select_bk_color"/>
+			</VBox>
+			<Control />
+			<!--VBox width="125" bkcolor="" margin="14,0,0,0">
+				<HBox>
+					<Control width="33"/>
+					<Label text="专线:" font="system_12" valign="center" halign="center" normaltextcolor="node_select_bk_color"/>
+					<Label text="MS" font="system_12" valign="center" halign="center"/>
+				</HBox>
+				<Control height="2" bkcolor="monitor_net_strip_color2"/>
+				<HBox>
+					<Control width="33"/>
+					<Label text="丢包率:" font="system_12" valign="center" halign="center" normaltextcolor="node_select_bk_color"/>
+					<Label text="%" font="system_12" valign="center" halign="center"/>
+				</HBox>
+			</VBox>
+			
+			<VBox width="62" bkcolor=""  margin="0,5,0,0">
+				<Label height="30" bkimage="label/net_4.png" halign="center"/>
+				<Control height="4"/>
+				<Label text="游戏服务器" font="system_12" normaltextcolor="node_select_bk_color"/>
+			</VBox-->
+		</HBox>
+		<VBox height="211" bkcolor="" margin="0,30,0,0">
+			<HBox height="20" bkcolor="" childmargin="24">
+				<Label text="网络延迟走趋图" font="system_14" normaltextcolor="node_select_bk_color"/>
+				<Control width="380"/>
+				<Button name="show_time_1_btn" text="1分钟" font="system_12" normaltextcolor="node_select_bk_color"/>
+				<Button name="show_time_5_btn" text="5分钟" font="system_12" normaltextcolor="monitor_time_btn_color"/>
+				<Button name="show_time_10_btn" text="10分钟" font="system_12" normaltextcolor="monitor_time_btn_color"/>
+			</HBox>
+			<Control height="20"/>
+			<VBox childmargin="14">
+				<HBox height="16" bkcolor="">
+					<Label text="1000ms" font="system_12"/>
+					<Control height="2" margin="16,0,48,0" valign="center" bkcolor="monitor_net_strip_color2" />
+				</HBox>
+				
+				<HBox height="16" bkcolor="">
+					<Label text="800ms" font="system_12"/>
+					<Control height="1" margin="22,0,48,0" valign="center" bkcolor="monitor_net_strip_color2" />
+				</HBox>
+				
+				<HBox height="16" bkcolor="">
+					<Label text="600ms" font="system_12"/>
+					<Control height="1" margin="22,0,48,0" valign="center" bkcolor="monitor_net_strip_color2" />
+				</HBox>
+				
+				<HBox height="16" bkcolor="">
+					<Label text="400ms" font="system_12"/>
+					<Control height="1" margin="22,0,48,0" valign="center" bkcolor="monitor_net_strip_color2" />
+				</HBox>
+				
+				<HBox height="16" bkcolor="">
+					<Label text="200ms" font="system_12"/>
+					<Control height="1" margin="22,0,48,0" valign="center" bkcolor="monitor_net_strip_color2" />
+				</HBox>
+				
+				<HBox height="16" bkcolor="">
+					<Label text="0ms" font="system_12"/>
+					<Control height="2" margin="34,0,48,0" valign="center" bkcolor="monitor_net_strip_color2" />
+				</HBox>
+			</VBox>
+			<HBox name="bar_box" float="true" margin="60,40,0,14" valign="bottom" visible="true">
+				<!--<Label width="15" height="170" bkcolor="blue" margin="10,20,0,0"/>-->
+			</HBox>
+		</VBox>
+    </VBox>
+</Window>
