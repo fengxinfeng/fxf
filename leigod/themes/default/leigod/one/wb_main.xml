@@ -32,7 +32,7 @@
 				<Control width="14"/>
 				<Button name="minbtn" width="18" height="18" valign="center" tooltiptext="最小化"
 						normalimage="file='btn/main_min_btn.png' source='0,0,18,18'" 
-						hotimage="file='btn/main_min_btn.png' source='18,0,36,18'" 
+						hotimage="file='btn/main_min_btn.png' source='18,0,36,18'"
 						pushedimage="file='btn/main_min_btn.png' source='36,0,54,18'" 
 						disabledimage="file='btn/main_min_btn.png' source='54,0,72,18'"/>
 				<Control width="11"/>
@@ -127,12 +127,15 @@
 		</VBox>
 		
 		<!--搜索弹框-->
+    <VBox name="nick_window_box" margin="584,85,0,0"  borderround="2,2" visible="false" float="true">
+    </VBox>
+      <!--
 		<VBox name="nick_window_box" margin="634,122,193,129" visible="false" float="true">
 			<Label margin="98,0,0,0" bkimage="bk_photo/nick_window_1.png"/>
 			<VBox name="nick_game_list" bkimage="file='bk_photo/nick_window.png' dest='0,0,197,390' corner='10,10,10,10'" visible="true">
 			</VBox>
 		</VBox>
-
+-->
 		<!--操作成功提示-->
 		<VBox name="operiton_successful_tip_label" margin="0,68,0,0" float="true" alpha="255" visible="false">
 			<VBox margin="285,127,309,172" bkcolor="" bkimage="file='bk_photo/nick_window.png' corner='15,15,15,15'">

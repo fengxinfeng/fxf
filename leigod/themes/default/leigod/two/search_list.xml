@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+  <VBox width="212" height="418"  visible="true" >
+    <Label margin="88,0,0,0"  height="8"  bkimage="bk_photo/nick_window_1.png"  visible="true"/>
+    <VBox width="212" height="410" bkimage="file='bk_photo/nick_window.png' dest='0,0,212,410' corner='10,10,10,10'" visible="true"> 
+    
+       <HBox width="212" height="40"   visible="true" bkcolor="black">
+         <Label name="search_title0" margin="10,0,0,0" valign="center" text="历史搜索" font="system_14" normaltextcolor="white"/>
+         <Control  />
+         <Label name="clear_search" margin="0,0,10,0" valign="center" text="清空搜索" font="system_14"/>
+        </HBox>
+        <TileListBox  name="search_result_listbox0" width="212" height="165" columns="1" childmargin="10" bkcolor="areabk_color" vscrollbar="true" visible="true">		
+		    </TileListBox>
+    
+      <HBox width="212" height="40"   visible="true" bkcolor="black">
+        <Label name="search_title0" margin="10,0,0,0" valign="center" text="热门搜索" font="system_14" normaltextcolor="white"/> 
+      </HBox>
+      <TileListBox  name="search_result_listbox1" width="212" height="165" columns="1" childmargin="10" bkcolor="areabk_color" vscrollbar="true" visible="true">
+      </TileListBox>
+ 
+     </VBox>
+  </VBox>
+</Window>
+
+<!--
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+
+  <VBox padding="0,0,0,0" width="600" height="517" margin="200,57,0,0" bkcolor="areabk_color" visible="false" >
+ 
+
+    <HBox height="57" >
+      <Label text="选择地区" font="system_14" margin="22,19,0,0" width="56" height="20"  normaltextcolor="white"/>
+      <Control />
+      <Button name="area_window_close_btn" width="24" height="24" margin="0,17,4,0"  halign="right"
+      normalimage="file='btn/common_close_btn.png' source='0,0,24,24'"
+      hotimage="file='btn/common_close_btn.png' source='24,0,48,24'"
+      pushedimage="file='btn/common_close_btn.png' source='48,0,72,24'"
+      disabledimage="file='btn/common_close_btn.png' source='72,0,96,24'"/>
+
+    </HBox>
+    <HBox    height="1"   bkcolor="gapline_bkcolor"/>
+ 
+    <TileListBox name="area_listbox"  columns="3" childmargin="18" padding="-10,0,0,0" halign="center" margin="30,30,20,35" bkcolor="" vscrollbar="true" visible="true">
+
+    </TileListBox>
+
+  </VBox>
+</Window>
+-->

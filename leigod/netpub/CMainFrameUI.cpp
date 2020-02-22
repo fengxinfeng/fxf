@@ -92,6 +92,7 @@ ui::VBox * CMainFrameUI::buildSubView(const wchar_t * xmlName, const wchar_t *su
 	std::wstring  areacontrol = L"area_btnbox";
 	std::wstring  servercontrol = L"server_btnbox";
 	std::wstring  operatorcontrol = L"operator_btnbox";
+	std::wstring  searchcontrol = L"search_list";
 
 	if (areacontrol.compare(subcontrolname) == 0) {
 		OutputDebugString(L"create CAreaVBox");
@@ -106,6 +107,11 @@ ui::VBox * CMainFrameUI::buildSubView(const wchar_t * xmlName, const wchar_t *su
 		OutputDebugString(L"create COperVBox");
 		item = new nui::COperVBox(this);
 		m_operVbox = dynamic_cast<nui::COperVBox*>(item);
+	}
+	else	if (searchcontrol.compare(subcontrolname) == 0) {
+		OutputDebugString(L"create CSearchVBox");
+		item = new nui::CSearchVBox(this);
+		m_searchVBox = dynamic_cast<nui::CSearchVBox*>(item);
 	}
 	else {
 		 item = new ui::VBox;
@@ -261,7 +267,8 @@ bool CMainFrameUI::CreateXmlObject()
 
 		}
 	}
-	if (!XmlToXmlObjVct(L"nick_game_list", L"leigod/two/nick_list.xml",true))
+	//if (!XmlToXmlObjVct(L"nick_game_list", L"leigod/two/nick_list.xml",true))
+	if (!XmlToXmlObjVct(L"nick_window_box", L"leigod/two/search_list.xml", true))
 	{
 		return false;
 	}
@@ -787,9 +794,14 @@ bool CMainFrameUI::OnNickTextChangeEvent(ui::EventArgs* args)
 		{
 			
 			pTipLabel->SetVisible(true);
-			auto pXml= m_mapXmlList.find(L"nick_list");
-			pXml->second->SetVisible(true);
-			CreateNickElementList(vctGotGame);
+			//auto pXml= m_mapXmlList.find(L"nick_list");
+			if (m_searchVBox) {
+				m_searchVBox->SetVisible(true);
+				m_searchVBox->CreateSearchElementList(vctGotGame);
+			}
+			//auto pXml = m_mapXmlList.find(L"search_list");
+			//pXml->second->SetVisible(true);
+			//CreateNickElementList(vctGotGame);
 
 		}
 	}
@@ -2189,7 +2201,7 @@ wstring CMainFrameUI::GetLineItemName(STLineItem & itrItem)
 	wstring wsRet;
 	vector<wstring> vctSplit;
 	stralgo::StringHelper::SplitString(itrItem.wsValue, L'|', vctSplit);
-	OutputDebugString(L"GetLineItemName");
+	//OutputDebugString(L"GetLineItemName");
 	if (vctSplit.size() > 2)
 	{
 		ui::ButtonBox * pBtnAreaBtnBox = dynamic_cast<ui::ButtonBox *>(FindControl(L"area_btnbox"));
@@ -2656,12 +2668,13 @@ bool CMainFrameUI::OnBtnOpertTabClick(ui::EventArgs* args)
 
 void CMainFrameUI::CreateNickElementList(vector<STGame> vctNickGame)
 {
+	OutputDebugString(L"CreateNickElementList--->");
 	int i = 0;
 	int spiltIndex = 0;
 	std::wstring game_id;
 	std::wstring id_numb;
 	StringVector nameVct;
-	ui::ListBox * pNickListBox = dynamic_cast<ui::ListBox*>(FindControl(L"nick_game_listbox"));
+	ui::ListBox * pNickListBox = dynamic_cast<ui::ListBox*>(FindControl(L"search_result_listbox0"));
 	pNickListBox->RemoveAll();
 	auto pNick = vctNickGame.begin();
 	for (; i < vctNickGame.size(); i++)
@@ -2693,6 +2706,7 @@ void CMainFrameUI::CreateNickElementList(vector<STGame> vctNickGame)
 		game_id = L"";
 		pNick++;
 	}
+	OutputDebugString(L"<-----     CreateNickElementList ");
 }
 
 void CMainFrameUI::CreateGameElement(ui::ListBox * gameList, vector<STGame>::iterator gameVct)

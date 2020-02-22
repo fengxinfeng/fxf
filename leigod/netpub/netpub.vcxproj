@@ -190,6 +190,7 @@
     <ClInclude Include="COpenSSL.h" />
     <ClInclude Include="COperVBox.h" />
     <ClInclude Include="CProtocalHelper.h" />
+    <ClInclude Include="CSearchVBox.h" />
     <ClInclude Include="CServerVBox.h" />
     <ClInclude Include="CSubVBox.h" />
     <ClInclude Include="engine_define.h" />
@@ -218,6 +219,7 @@
     <ClCompile Include="COpenSSL.cpp" />
     <ClCompile Include="COperVBox.cpp" />
     <ClCompile Include="CProtocalHelper.cpp" />
+    <ClCompile Include="CSearchVBox.cpp" />
     <ClCompile Include="CServerVBox.cpp" />
     <ClCompile Include="CSubVBox.cpp" />
     <ClCompile Include="EarthPoint.cpp" />
