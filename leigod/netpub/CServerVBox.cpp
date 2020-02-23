@@ -8,7 +8,7 @@
 
 namespace  nui {
 
-	CServerVBox::CServerVBox(CMainFrameUI *p) { m_parent = p; };
+	CServerVBox::CServerVBox(CMainFrameUI *p):CSubVBox(p) {   };
 
 
 	void CServerVBox::CreateServerElementList(STGame &stGame) 
@@ -172,16 +172,6 @@ namespace  nui {
 		return true;
 	}
 
-
-	ui::ListContainerElement * CServerVBox::buildSubListContainerElement(const wchar_t * xmlName)
-	{
-		//wstring s = L"CAreaVBox::buildSubListContainerElement     ";
-		//s.append(xmlName);
-		//OutputDebugString(s.c_str());
-
-		ui::ListContainerElement * item = new ui::ListContainerElement;
-		ui::GlobalManager::FillBoxWithCache(item, xmlName);
-		return item;
-	}
+ 
 
 }

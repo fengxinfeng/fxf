@@ -809,6 +809,8 @@ bool CMainFrameUI::OnNickTextChangeEvent(ui::EventArgs* args)
 }
 bool CMainFrameUI::OnNickKillFocusEvent(ui::EventArgs* args)
 {
+	OutputDebugString(L"OnNickKillFocusEvent--->");
+	return true;  //想要响应 clear_search 点击事件， 这个就要禁掉。 
 	((ui::RichEdit *)args->pSender)->SetPromptText(L"搜索游戏");
 	ui::VBox * pTipLabel = dynamic_cast<ui::VBox *>(FindControl(L"nick_window_box"));
 	if(pTipLabel)

@@ -1,21 +1,23 @@
 #pragma once
-
-#include "duilib/UIlib.h" 
-
+ 
+/*
+date: 2020.02.19
+author: fengxinfeng
+*/
+#include "CSubVBox.h"
 class CMainFrameUI;
 namespace  nui {
 
-	class CAreaVBox : public ui::VBox
+	class CAreaVBox : public CSubVBox
 	{
 	public:
-		CAreaVBox(CMainFrameUI *p) { m_parent = p;  };
+		CAreaVBox(CMainFrameUI *p);
 		~CAreaVBox() {};
 	public:
 		void CreateAreaElementList();
 		void SelectAreaItem(wstring wsKey);
 	private:
-		ui::ListContainerElement * buildSubListContainerElement(const wchar_t * xmlName);
-		CMainFrameUI *m_parent;
+		 
 	};
 }
  

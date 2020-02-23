@@ -10,6 +10,8 @@ namespace nui {
 		CSubVBox(CMainFrameUI *p);
 	protected:
 		ui::ListContainerElement * buildSubListContainerElement(const wchar_t * xmlName);
+		virtual void BindEventHandler() {};
+		bool isBindEvent;
 		CMainFrameUI *m_parent;
 	};
 }

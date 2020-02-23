@@ -7,7 +7,8 @@
        <HBox width="212" height="40"   visible="true" bkcolor="black">
          <Label name="search_title0" margin="10,0,0,0" valign="center" text="历史搜索" font="system_14" normaltextcolor="white"/>
          <Control  />
-         <Label name="clear_search" margin="0,0,10,0" valign="center" text="清空搜索" font="system_14"/>
+         <Button name="clear_search" margin="0,0,10,0" valign="center" text="清空搜索" font="system_14" hottextcolor="white"
+							pushedtextcolor="white"/>
         </HBox>
         <TileListBox  name="search_result_listbox0" width="212" height="165" columns="1" childmargin="10" bkcolor="areabk_color" vscrollbar="true" visible="true">		
 		    </TileListBox>

@@ -7,6 +7,11 @@
 #include "CMainFrameUI.h"
 
 namespace nui {
+
+	CAreaVBox::CAreaVBox(CMainFrameUI *p):CSubVBox(p) {
+
+	}
+
 	void CAreaVBox::CreateAreaElementList() {
 		OutputDebugString(L"CreateAreaElementList---------->");
 		int i = 0;
@@ -20,13 +25,15 @@ namespace nui {
 				int current = args->wParam;
 				int old = args->lParam;
 				int nTipSelect = 0;
-
+				WCHAR buf[64];
+				wsprintf(buf,L"CreateAreaElementList::    current=%d   old=%d ", current, old);
+				OutputDebugString(buf);
 				if (current != 0)
 				{
 					old = max(0, args->lParam);
 				}
 
-				if (m_parent->m_nIsArccrate)
+				if (m_parent->m_nIsArccrate) // 先停止加速
 				{
 					if (nTipSelect = m_parent->CreateTipMsgBox())
 					{
@@ -45,7 +52,7 @@ namespace nui {
 						{
 
 							//pElem->SetBorderColor(L"light_green");
-							pElem->SetBorderColor(L"select_node_border_color");
+							pElem->SetBorderColor(L"select_node_border_color"); //边框
 							//ui::Control * pLocIcon = (FindSubControlByName(pElem, L"loc_icon"));
 							//if (pLocIcon)
 							//{
@@ -64,7 +71,7 @@ namespace nui {
 							if (pBtnAreaBtnBox && pProvName)
 							{
 								bDoReplace = true;
-								m_parent->m_wsProvinceName = pProvName->GetText();
+								m_parent->m_wsProvinceName = pProvName->GetText(); //复制给主界面
 								if (m_parent->m_nIsArccrate)
 								{
 									if (nTipSelect)
@@ -103,9 +110,10 @@ namespace nui {
 
 					if (bDoReplace)
 					{
-						m_parent->OnGetGroupLineResponse(0);
+						m_parent->OnGetGroupLineResponse(0);  //通知创建节点选择数据
 					}
 
+					// 选择后隐藏
 					auto parentXml = m_parent->m_mapXmlParentBox.find(L"push_window_box");
 					parentXml->second->SetVisible(false);
 				}
@@ -220,15 +228,6 @@ namespace nui {
 	}
 
 
-	ui::ListContainerElement * CAreaVBox::buildSubListContainerElement(const wchar_t * xmlName)
-	{
-		//wstring s = L"CAreaVBox::buildSubListContainerElement     ";
-		//s.append(xmlName);
-		//OutputDebugString(s.c_str());
-
-		ui::ListContainerElement * item = new ui::ListContainerElement;
-		ui::GlobalManager::FillBoxWithCache(item, xmlName);
-		return item;
-	}
+ 
 
 }

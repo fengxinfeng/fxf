@@ -6,6 +6,7 @@ namespace nui {
 	CSubVBox::CSubVBox(CMainFrameUI *p) 
 	{ 
 		m_parent = p; 
+		isBindEvent = false;
 	}
 
 

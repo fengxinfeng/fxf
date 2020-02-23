@@ -1,3 +1,7 @@
+/*
+date: 2020.02.19
+author: fengxinfeng
+*/
 #include "stdafx.h"
 #include "CSearchVBox.h"
 #include "CAccLogicCenter.h"
@@ -7,6 +11,7 @@
 namespace nui {
 
 	CSearchVBox::CSearchVBox(CMainFrameUI *p) : CSubVBox(p) {
+		isBindEvent = false;
 		 
 	}
 
@@ -14,8 +19,22 @@ namespace nui {
 
 	}
 
+	void CSearchVBox::BindEventHandler() {
+		if (isBindEvent)  return;
+		OutputDebugString(L"CSearchVBox::BindEventHandler()");
+		ui::Button * pClearSearch= dynamic_cast<ui::Button*>(FindSubControl(L"clear_search"));
+		pClearSearch->AttachClick(  [this] (ui::EventArgs* args) {
+			OutputDebugString(L"clear_search clicked.");
+			 
+			return true;
+		});
+
+		isBindEvent = true;
+	}
+
 	void   CSearchVBox::CreateSearchElementList(vector<STGame> vctNickGame) {
 		OutputDebugString(L"CSearchVBox::CreateSearchElementList--->");
+		BindEventHandler();
 		int i = 0;
 		int spiltIndex = 0;
 		std::wstring game_id;
@@ -59,6 +78,7 @@ namespace nui {
 
 	bool CSearchVBox::OnGameListClick(ui::EventArgs* args)
 	{
+		OutputDebugString(wstring(L"CSearchVBox::OnGameListClick   ").append(args->pSender->GetName()).c_str());
 		int index = 0;
 		int spiltIndex = 0;
 		int nSelect = 0;

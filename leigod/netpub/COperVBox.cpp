@@ -111,26 +111,32 @@ namespace nui {
 
 	void COperVBox::CreateOperatorElementList(int nGameID, int nAreaID)
 	{
-		OutputDebugString(L"COperVBox::CreateOperatorElementList");
+		WCHAR dbuf[64];
+		wsprintf(dbuf, L"      gameid= %d   areaid=%d ", nGameID, nAreaID);
+		OutputDebugString(wstring(L"COperVBox::CreateOperatorElementList").append(dbuf).c_str());
 		OnOpertEvnBimd();
 		static wstring arrListTable[] = { L"operator_listbox_other", L"operator_listbox_dx", L"operator_listbox_lt", L"operator_listbox_yd", L"operator_listbox_recommend" };
 		//	STLineGroupStrore & groupData = LOGIC_CENTER()->FindLineGroup(nGameID, nAreaID);
 		STGroupItem *  pGroupItem = LOGIC_CENTER()->FindGroupItem(nGameID, nAreaID, m_parent->m_wsProvinceName);
 		
-		wstring TAG(L"COPER    ");
+		wstring TAG(L"COPER--------    ");
 		OutputDebugString(TAG.append(pGroupItem->wsGroupName).append(L"   ").append(pGroupItem->wsProvName).c_str());
 		
-		if (pGroupItem)
-		{
+		if (!pGroupItem  || pGroupItem->vctGroupLines.size() == 0) {
+			OutputDebugString(L"COperVBox::CreateOperatorElementList   can not find data. ");
+			return;
+		}
+	 
 			
 			EnableCtrl(m_parent, L"start_accrate_btn", TRUE);//激活加速按钮
+			//清空各组数据
 			ClearListCtrl(FindSubControl(L"operator_listbox_recommend"));
 			ClearListCtrl(FindSubControl(L"operator_listbox_dx"));
 			ClearListCtrl(FindSubControl(L"operator_listbox_yd"));
 			ClearListCtrl(FindSubControl(L"operator_listbox_lt"));
 			ClearListCtrl(FindSubControl(L"operator_listbox_other"));
 			ui::ListBox * pMainOperatorListBox = dynamic_cast<ui::ListBox*>(FindSubControl(L"operator_listbox_recommend"));
-			if (pMainOperatorListBox)
+			if (pMainOperatorListBox)    //初始化推荐板块数据
 			{
 				STLineItem * pFastLineItem = NULL;
 
@@ -159,12 +165,11 @@ namespace nui {
 
 				{
 					int nDelayGuard(1000);
-					if (pGroupItem->vctGroupLines.size()/*groupData.stData.vctGroups.size()*/)
-					{
+ 
 						ui::ListContainerElement * pElemBest(NULL);
 
-						STGeoIP & stGeoIP = LOGIC_CENTER()->GetGeoIP();
-						STLineItem arrFackItem[6];
+						STGeoIP & stGeoIP = LOGIC_CENTER()->GetGeoIP();  // 当前网络服务商类型
+						STLineItem arrFackItem[6];      // 初始化6个数据
 						for (int i = 0; i < 6; i++)
 						{
 							arrFackItem[i].wsLineName = L'A' + i;
@@ -179,7 +184,7 @@ namespace nui {
 									if (arrFackItem[i].wsLineName == itr.wsLineName)
 									{
 										OutputDebugString(wstring(L"COPER1----").append(itr.wsLineName).c_str());
-										arrFackItem[i] = itr;
+										arrFackItem[i] = itr;     //从数据中找出属于当前服务商的
 										bMatch = true;
 
 									}
@@ -293,7 +298,7 @@ namespace nui {
 						}
 						int nBest(-1);
 						int i = 0;
-						for (STLineItem & itr : arrFackItem)
+						for (STLineItem & itr : arrFackItem)   //  推荐栏中加入数据
 						{
 							if (1)
 							{
@@ -369,7 +374,7 @@ namespace nui {
 							i++;
 						}
 
-						if (pElemBest)
+						if (pElemBest)  // 显示最优
 						{
 							pElemBest->SetBorderColor(L"node_select_bk_color");
 
@@ -400,6 +405,9 @@ namespace nui {
 									if (itr.nIspType < 4)
 									{
 										arrIspCategory[itr.nIspType].push_back(itr);
+										WCHAR  dbuf[32];
+										wsprintf(dbuf, L"parse data   isptype %d  ", itr.nIspType);
+										OutputDebugString(dbuf);
 									}
 
 								}
@@ -514,12 +522,10 @@ namespace nui {
 
 						}
 
-					}
-
 
 				}
 			}
-		}
+	 
 	}
 
 
