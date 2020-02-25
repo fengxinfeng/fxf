@@ -8,12 +8,19 @@
 
 namespace  nui {
 
-	CServerVBox::CServerVBox(CMainFrameUI *p):CSubVBox(p) {   };
+	CServerVBox::CServerVBox(CMainFrameUI *p):CSubVBox(p) { 
+		m_container = dynamic_cast<ui::VBox*>(p->FindControl(L"push_window_box"));
+	};
 
 
 	void CServerVBox::CreateServerElementList(STGame &stGame) 
 	{
 		OutputDebugString(L"CreateServerElementList---------->");
+		ui::Button * pClose = dynamic_cast<ui::Button*>(FindSubControl(L"server_window_close_btn"));
+		pClose->AttachClick([this](ui::EventArgs* args) {
+			m_container->SetVisible(false);
+			return true;
+		});
 
 		ui::ListBox * pMainServerListBox = dynamic_cast<ui::ListBox*>(FindSubControl(L"server_listbox"));
 		if (pMainServerListBox)

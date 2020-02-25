@@ -7,6 +7,7 @@
 #include "CServerVBox.h"
 #include "COperVBox.h"
 #include "CSearchVBox.h"
+#include "CCefVBOX.h"
 
 const bool kEnableOffsetRender = true;
 class CMainFrameUI : public std::conditional<kEnableOffsetRender, ui::WindowImplBase, nim_comp::ShadowWndBase>::type,
@@ -203,13 +204,16 @@ private:
 		friend class nui::CServerVBox;
 		friend class nui::COperVBox;
 		friend class nui::CSearchVBox;
+		friend class nui::CCefVBOX;
 		nui::CAreaVBox  *m_areaVbox;
 		nui::CServerVBox *m_serverVbox;
 		nui::COperVBox *m_operVbox;
 		nui::CSearchVBox *m_searchVBox;
+		nui::CCefVBOX *m_cefVBox;
 		 
 private:
 	void SetStopAccrate();
 	bool CreateTipMsgBox(std::wstring TipText = L""); 
+	 
 };
 

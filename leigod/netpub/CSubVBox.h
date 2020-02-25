@@ -13,6 +13,7 @@ namespace nui {
 		virtual void BindEventHandler() {};
 		bool isBindEvent;
 		CMainFrameUI *m_parent;
+		ui::VBox  *m_container;
 	};
 }
  

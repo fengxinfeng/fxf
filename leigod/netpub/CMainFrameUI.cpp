@@ -93,6 +93,7 @@ ui::VBox * CMainFrameUI::buildSubView(const wchar_t * xmlName, const wchar_t *su
 	std::wstring  servercontrol = L"server_btnbox";
 	std::wstring  operatorcontrol = L"operator_btnbox";
 	std::wstring  searchcontrol = L"search_list";
+	std::wstring  cefcontrol = L"cef_loadbox";
 
 	if (areacontrol.compare(subcontrolname) == 0) {
 		OutputDebugString(L"create CAreaVBox");
@@ -112,6 +113,11 @@ ui::VBox * CMainFrameUI::buildSubView(const wchar_t * xmlName, const wchar_t *su
 		OutputDebugString(L"create CSearchVBox");
 		item = new nui::CSearchVBox(this);
 		m_searchVBox = dynamic_cast<nui::CSearchVBox*>(item);
+	}
+	else	if (cefcontrol.compare(subcontrolname) == 0) {
+		OutputDebugString(L"create CCefVBox");
+		item = new   nui::CCefVBOX(this);
+		m_cefVBox = dynamic_cast<nui::CCefVBOX*>(item);
 	}
 	else {
 		 item = new ui::VBox;
@@ -159,7 +165,9 @@ void CMainFrameUI::InitWindow()
 #endif
 
 	}
-	CreateXmlObject();
+	CreateXmlObject(); 
+ 
+
 	CreateBtnBindClick();
 	{
 		m_pCefEnCharge = dynamic_cast<nim_comp::CefControlBase*>(FindControl(L"cef_encharge"));
@@ -222,13 +230,13 @@ bool CMainFrameUI::XmlToXmlObjVct(std::wstring parentBox, std::wstring xmlName, 
 	{
 		m_mapXmlParentBox.insert(Insert_Pair(parentBox, pBox));
 		ui::VBox * pViewXml = buildSubView(xmlName.c_str(), vctName[0].c_str());
-
-		wstring  s = L"XmlToXmlObjVct         "   +  parentBox + L"   " + xmlName + L"   " + vctName[0];
-		OutputDebugString(s.c_str());
+		 
+ 
 		if (pViewXml)
 		{
 			pViewXml->SetVisible(isShow);
 			pBox->Add(pViewXml);
+			OutputDebugString(wstring(L"XmlToXmlObjVct         " + parentBox + L"   " + xmlName + L"   " + vctName[0]).c_str());
 			m_mapXmlList.insert(Insert_Pair(vctName[0], pViewXml));
 
 			return true;
@@ -272,6 +280,12 @@ bool CMainFrameUI::CreateXmlObject()
 	{
 		return false;
 	}
+
+	if (!XmlToXmlObjVct(L"cef_container_box", L"leigod/two/cef_loadbox.xml", true))
+	{
+		return false;
+	}
+
 	if (!XmlToXmlObjVct(L"push_window_box", L"leigod/two/server_btnbox.xml",false))
 	{
 		return false;
@@ -2784,7 +2798,7 @@ void CMainFrameUI::CreateGameElementList()
 }
 void CMainFrameUI::CreateCloseWndBind()
 {
-	static wstring arrClose[] = { L"server_window_close_btn", L"area_window_close_btn", L"operator_window_close_btn", L"close_set_btn",
+	static wstring arrClose[] = {  L"close_set_btn",
 								L"cancel_set_btn",L"close_Tip_window_btn",L"operiton_successful_ok_btn",L"close_wx_window_btn"};
 	for (wstring &name : arrClose)
 	{
@@ -3020,7 +3034,16 @@ void CMainFrameUI::CreateNoTypeBind()
 	if (pBtnKF)
 	{
 		pBtnKF->AttachClick([=](ui::EventArgs* args) {
-			::ShellExecuteA(NULL, "open", TOOLBAR_KF_URL, "", NULL, SW_HIDE);
+			//::ShellExecuteA(NULL, "open", TOOLBAR_KF_URL, "", NULL, SW_HIDE);
+			 
+			if(m_cefVBox) {
+				m_cefVBox->construct(0, 0, 0, 0);
+				m_cefVBox->SetVisible(true); 
+				m_cefVBox->LodUrl(L"https://www.baidu.com");
+			} 
+			else {
+				OutputDebugString(L"can not find cef...........................");
+			}
 			return true;
 		});
 	}

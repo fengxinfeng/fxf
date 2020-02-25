@@ -129,6 +129,10 @@
 		<!--搜索弹框-->
     <VBox name="nick_window_box" margin="584,85,0,0"  borderround="2,2" visible="false" float="true">
     </VBox>
+
+    <!-- 浏览器弹框-->
+    <VBox name="cef_container_box"   margin="82,58,0,0"   visible="false" float="true"   >
+    </VBox>
       <!--
 		<VBox name="nick_window_box" margin="634,122,193,129" visible="false" float="true">
 			<Label margin="98,0,0,0" bkimage="bk_photo/nick_window_1.png"/>

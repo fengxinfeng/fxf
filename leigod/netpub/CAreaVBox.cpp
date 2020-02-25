@@ -9,7 +9,7 @@
 namespace nui {
 
 	CAreaVBox::CAreaVBox(CMainFrameUI *p):CSubVBox(p) {
-
+		m_container = dynamic_cast<ui::VBox*>(p->FindControl(L"push_window_box"));
 	}
 
 	void CAreaVBox::CreateAreaElementList() {
@@ -18,6 +18,11 @@ namespace nui {
 		std::wstring game_id;
 		std::wstring id_numb;
 		ui::ListBox * pMainAreaListBox = dynamic_cast<ui::ListBox*>(FindSubControl(L"area_listbox"));
+		ui::Button * pClose = dynamic_cast<ui::Button*>(FindSubControl(L"area_window_close_btn"));
+		pClose->AttachClick([this](ui::EventArgs* args) {
+			m_container->SetVisible(false);
+			return true;
+		});
 
 		if (pMainAreaListBox)
 		{

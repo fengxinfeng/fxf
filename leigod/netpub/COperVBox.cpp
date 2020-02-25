@@ -7,6 +7,7 @@
 
 namespace nui {
 	COperVBox::COperVBox(CMainFrameUI *p) : CSubVBox(p) {
+		m_container = dynamic_cast<ui::VBox*>(p->FindControl(L"push_window_box"));
 
 	}
 
@@ -67,6 +68,12 @@ namespace nui {
 			 }
 
 		 }
+
+		 ui::Button * pClose = dynamic_cast<ui::Button*>(FindSubControl(L"operator_window_close_btn"));
+		 pClose->AttachClick([this](ui::EventArgs* args) {
+			 m_container->SetVisible(false);
+			 return true;
+		 });
 	 }
 
 

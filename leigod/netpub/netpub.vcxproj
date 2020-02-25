@@ -183,6 +183,7 @@
   <ItemGroup>
     <ClInclude Include="CAccLogicCenter.h" />
     <ClInclude Include="CAreaVBox.h" />
+    <ClInclude Include="CCefVBOX.h" />
     <ClInclude Include="CEnginModeEntryHelper.h" />
     <ClInclude Include="CEnginModeSSHelper.h" />
     <ClInclude Include="CIni.h" />
@@ -210,6 +211,7 @@
   <ItemGroup>
     <ClCompile Include="CAccLogicCenter.cpp" />
     <ClCompile Include="CAreaVBox.cpp" />
+    <ClCompile Include="CCefVBOX.cpp" />
     <ClCompile Include="CEnginModeEntryHelper.cpp" />
     <ClCompile Include="CEnginModeSSHelper.cpp" />
     <ClCompile Include="CIni.cpp">
