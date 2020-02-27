@@ -1,3 +1,7 @@
+/*
+date: 2020.02.23
+author: fengxinfeng
+*/
 #include "stdafx.h"
 #include "CServerVBox.h"
 
@@ -83,6 +87,7 @@ namespace  nui {
 
 
 		}
+		OutputDebugString(L"CreateServerElementList<-----");
 	}
 
 
@@ -175,7 +180,7 @@ namespace  nui {
 			auto parentXml = m_parent->m_mapXmlParentBox.find(L"push_window_box");
 			parentXml->second->SetVisible(false);
 		}
-
+		OutputDebugString(L"OnSvrSelected  <--------");
 		return true;
 	}
 

@@ -184,6 +184,7 @@
     <ClInclude Include="CAccLogicCenter.h" />
     <ClInclude Include="CAreaVBox.h" />
     <ClInclude Include="CCefVBOX.h" />
+    <ClInclude Include="CDownloadVBox.h" />
     <ClInclude Include="CEnginModeEntryHelper.h" />
     <ClInclude Include="CEnginModeSSHelper.h" />
     <ClInclude Include="CIni.h" />
@@ -212,6 +213,7 @@
     <ClCompile Include="CAccLogicCenter.cpp" />
     <ClCompile Include="CAreaVBox.cpp" />
     <ClCompile Include="CCefVBOX.cpp" />
+    <ClCompile Include="CDownloadVBox.cpp" />
     <ClCompile Include="CEnginModeEntryHelper.cpp" />
     <ClCompile Include="CEnginModeSSHelper.cpp" />
     <ClCompile Include="CIni.cpp">

@@ -94,6 +94,7 @@ ui::VBox * CMainFrameUI::buildSubView(const wchar_t * xmlName, const wchar_t *su
 	std::wstring  operatorcontrol = L"operator_btnbox";
 	std::wstring  searchcontrol = L"search_list";
 	std::wstring  cefcontrol = L"cef_loadbox";
+	std::wstring  downloadcontrol = L"download_listbox";
 
 	if (areacontrol.compare(subcontrolname) == 0) {
 		OutputDebugString(L"create CAreaVBox");
@@ -118,6 +119,11 @@ ui::VBox * CMainFrameUI::buildSubView(const wchar_t * xmlName, const wchar_t *su
 		OutputDebugString(L"create CCefVBox");
 		item = new   nui::CCefVBOX(this);
 		m_cefVBox = dynamic_cast<nui::CCefVBOX*>(item);
+	}
+	else	if (downloadcontrol.compare(subcontrolname) == 0) {
+		OutputDebugString(L"create CDownloadVBox");
+		item = new   nui::CDownloadVBox(this);
+		m_downloadVBox = dynamic_cast<nui::CDownloadVBox*>(item);
 	}
 	else {
 		 item = new ui::VBox;
@@ -281,7 +287,12 @@ bool CMainFrameUI::CreateXmlObject()
 		return false;
 	}
 
-	if (!XmlToXmlObjVct(L"cef_container_box", L"leigod/two/cef_loadbox.xml", true))
+	if (!XmlToXmlObjVct(L"cef_container_box", L"leigod/two/cef_loadbox.xml", false))
+	{
+		return false;
+	}
+
+	if (!XmlToXmlObjVct(L"download_box", L"leigod/two/download_listbox.xml", false))
 	{
 		return false;
 	}
@@ -399,8 +410,11 @@ bool CMainFrameUI::OnBtnTabClick(ui::EventArgs* args)
 	ui::VBox * pMainBk = dynamic_cast<ui::VBox *>(FindControl(L"main_bk"));
 	for (const auto&p : m_mapXmlList)
 	{
-		if(p.second)
+		if (p.second) {
+			OutputDebugString(L" CMainFrameUI::OnBtnTabClick Set Visible 0  ");
 			p.second->SetVisible(false);
+		}
+		 
 	}
 
 	if (wsName == arrTabButton[0])
@@ -3036,14 +3050,18 @@ void CMainFrameUI::CreateNoTypeBind()
 		pBtnKF->AttachClick([=](ui::EventArgs* args) {
 			//::ShellExecuteA(NULL, "open", TOOLBAR_KF_URL, "", NULL, SW_HIDE);
 			 
+			m_downloadVBox->CreateElementList(5,0);
+			m_downloadVBox->SetVisible(true);
+			/* 
 			if(m_cefVBox) {
-				m_cefVBox->construct(0, 0, 0, 0);
+				m_cefVBox->construct(0, 0, 500, 300);
 				m_cefVBox->SetVisible(true); 
 				m_cefVBox->LodUrl(L"https://www.baidu.com");
 			} 
 			else {
 				OutputDebugString(L"can not find cef...........................");
 			}
+			*/
 			return true;
 		});
 	}

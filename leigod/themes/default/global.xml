@@ -84,6 +84,7 @@
 	<TextColor name="monitor_net_strip_color2" value="#ffe1e3e8"/>
 	<TextColor name="set_select_color" value="#fff1f3f6"/>
 	<TextColor name="game_select_color" value="#20ffffff"/>
+  <TextColor name="download_no_color" value="#0Dffffff"/>
 	<TextColor name="web_bk_color" value="#ff3b3e57"/>
 	<TextColor name="svr_bk_color" value="#ffE1E3E8"/>
 	<TextColor name="node_noselect_bk_color" value="#ffffffff"/>
@@ -202,7 +203,8 @@
 	<Class name="my_list_topitem" normalcolor="white" hotcolor="white" pushedcolor="white" selectednormalcolor="white" fadehot="false"/>
 
     <!--进度条通用样式, 注意进度条的值使用`_value`属性-->
-    <Class name="progress_blue" valign="center" _value="0" bkimage="../public/progress/progress_blue_bg.png" height="3" width="stretch" hor="true" max="100" min="0" progressimage="../public/progress/progress_blue_fg.png"/>
+    <Class name="progress_blue" valign="center" _value="0" bkimage="../public/progress/progress_blue_bg.png" height="3" width="stretch" hor="true" max="100" min="0" progressimage="../public/progress/progress_blue_fg.png" />
+  <Class name="progress_grey" valign="center" _value="0" bkimage="../public/progress/progress_grey_bg.png" height="62" width="stretch" hor="true" max="100" min="0" progressimage="../public/progress/progress_grey_fg.png" />
     <Class name="slider_green" width="stretch" height="14" margin="4,0,0,0" valign="center" thumbsize="14,14" min="0" max="255" progressbarpadding="0,6,0,6" bkimage="file='../public/slider/slider_hor_bk.png' dest='0,6,1000,8'" progresscolor="bk_progress_progress" thumbnormalimage="../public/slider/slider_thumb.png"/>
 
     <!--菜单通用样式-->

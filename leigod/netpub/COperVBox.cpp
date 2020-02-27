@@ -1,3 +1,7 @@
+/*
+date: 2020.02.23
+author: fengxinfeng
+*/
 #include "stdafx.h"
 #include "CAreaVBox.h"
 #include "engine_define.h"
@@ -26,6 +30,7 @@ namespace nui {
 
 	 void COperVBox::ClearListCtrl(ui::Control * pCtrl)
 	 {
+		  
 		 ui::ListBox * pMainOperatorListBox = dynamic_cast<ui::ListBox*>(pCtrl);
 		 if (pMainOperatorListBox)
 		 {
@@ -54,6 +59,7 @@ namespace nui {
 
 	 void COperVBox::OnOpertEvnBimd()
 	 {
+		 OutputDebugString(L" COperVBox::OnOpertEvnBimd--->");
 		 static wstring arrTable[] = { L"tj_btn_oper", L"dx_btn_oper", L"yd_btn_oper", L"lt_btn_oper" };//, L"other_btn_oper"
 		 ui::Control * pParent = m_parent->FindControl(L"push_window_box");
 		 if (pParent)
@@ -74,11 +80,13 @@ namespace nui {
 			 m_container->SetVisible(false);
 			 return true;
 		 });
+		 OutputDebugString(L" COperVBox::OnOpertEvnBimd  <---");
 	 }
 
 
 	 bool COperVBox::OnBtnOpertTabClick(ui::EventArgs* args)
 	 {
+		 OutputDebugString(L" COperVBox::OnBtnOpertTabClick--->");
 		 static wstring arrTable[] = { L"tj_btn_oper", L"dx_btn_oper", L"yd_btn_oper", L"lt_btn_oper" };//, L"other_btn_oper"
 		 static wstring viewTable[] = { L"operator_listbox_recommend", L"operator_listbox_dx", L"operator_listbox_yd", L"operator_listbox_lt", L"operator_listbox_other" };
 		 int nHit(-1);
@@ -112,7 +120,7 @@ namespace nui {
 				 }
 			 }
 		 }
-
+		 OutputDebugString(L" COperVBox::OnBtnOpertTabClick<---");
 		 return true;
 	 }
 
@@ -120,7 +128,8 @@ namespace nui {
 	{
 		WCHAR dbuf[64];
 		wsprintf(dbuf, L"      gameid= %d   areaid=%d ", nGameID, nAreaID);
-		OutputDebugString(wstring(L"COperVBox::CreateOperatorElementList").append(dbuf).c_str());
+		OutputDebugString(wstring(L"COperVBox::CreateOperatorElementList---> ").append(dbuf).c_str());
+
 		OnOpertEvnBimd();
 		static wstring arrListTable[] = { L"operator_listbox_other", L"operator_listbox_dx", L"operator_listbox_lt", L"operator_listbox_yd", L"operator_listbox_recommend" };
 		//	STLineGroupStrore & groupData = LOGIC_CENTER()->FindLineGroup(nGameID, nAreaID);
@@ -532,6 +541,7 @@ namespace nui {
 
 				}
 			}
+			OutputDebugString(L" COperVBox::CreateOperatorElementList<-----");
 	 
 	}
 
@@ -540,6 +550,7 @@ namespace nui {
 
 	bool COperVBox::OnOpertSelected(ui::EventArgs* args)
 	{
+		OutputDebugString(L" COperVBox::OnOpertSelected----->");
 		int current = args->wParam;
 		int old = args->lParam;
 		int nTipSelect = 0;
@@ -664,7 +675,7 @@ namespace nui {
 			auto parentXml = m_parent->m_mapXmlParentBox.find(L"push_window_box");
 			parentXml->second->SetVisible(false);
 		}
-
+		OutputDebugString(L" COperVBox::OnOpertSelected<------");
 		return true;
 	}
 

@@ -8,6 +8,7 @@
 #include "COperVBox.h"
 #include "CSearchVBox.h"
 #include "CCefVBOX.h"
+#include "CDownloadVBox.h"
 
 const bool kEnableOffsetRender = true;
 class CMainFrameUI : public std::conditional<kEnableOffsetRender, ui::WindowImplBase, nim_comp::ShadowWndBase>::type,
@@ -205,11 +206,13 @@ private:
 		friend class nui::COperVBox;
 		friend class nui::CSearchVBox;
 		friend class nui::CCefVBOX;
+		friend class nui::CDownloadVBox;
 		nui::CAreaVBox  *m_areaVbox;
 		nui::CServerVBox *m_serverVbox;
 		nui::COperVBox *m_operVbox;
 		nui::CSearchVBox *m_searchVBox;
 		nui::CCefVBOX *m_cefVBox;
+		nui::CDownloadVBox *m_downloadVBox;
 		 
 private:
 	void SetStopAccrate();

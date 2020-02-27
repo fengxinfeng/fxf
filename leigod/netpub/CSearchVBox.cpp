@@ -78,7 +78,7 @@ namespace nui {
 
 	bool CSearchVBox::OnGameListClick(ui::EventArgs* args)
 	{
-		OutputDebugString(wstring(L"CSearchVBox::OnGameListClick   ").append(args->pSender->GetName()).c_str());
+		OutputDebugString(wstring(L"CSearchVBox::OnGameListClick--->   ").append(args->pSender->GetName()).c_str());
 		int index = 0;
 		int spiltIndex = 0;
 		int nSelect = 0;
@@ -114,7 +114,7 @@ namespace nui {
 		}
 
  
- 
+		OutputDebugString(wstring(L"CSearchVBox::OnGameListClick<----").c_str());
 		return true;
 	}
 

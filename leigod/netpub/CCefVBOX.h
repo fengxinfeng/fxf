@@ -1,9 +1,9 @@
-#pragma once
-
 /*
 date: 2020.02.19
 author: fengxinfeng
 */
+#pragma once
+
 #include "CSubVBox.h"
 class CMainFrameUI;
 

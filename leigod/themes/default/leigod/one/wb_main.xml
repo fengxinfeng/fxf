@@ -131,7 +131,11 @@
     </VBox>
 
     <!-- 浏览器弹框-->
-    <VBox name="cef_container_box"   margin="82,58,0,0"   visible="false" float="true"   >
+    <VBox name="cef_container_box"   margin="82,58,0,0"   visible="false"  alpha="255"  float="true"   >
+    </VBox>
+
+    <!-- 下载弹框-->
+    <VBox name="download_box"   margin="82,58,0,0"   visible="false"  alpha="255"  float="true"   >
     </VBox>
       <!--
 		<VBox name="nick_window_box" margin="634,122,193,129" visible="false" float="true">

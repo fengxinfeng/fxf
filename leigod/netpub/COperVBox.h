@@ -1,3 +1,7 @@
+/*
+date: 2020.02.23
+author: fengxinfeng
+*/
 #pragma once
 #include "CSubVBox.h"
 

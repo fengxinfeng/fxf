@@ -1,3 +1,7 @@
+/*
+date: 2020.02.19
+author: fengxinfeng
+*/
 #include "stdafx.h"
 #include "CAreaVBox.h"
 #include "engine_define.h"
@@ -8,8 +12,11 @@
 
 namespace nui {
 
-	CAreaVBox::CAreaVBox(CMainFrameUI *p):CSubVBox(p) {
+	CAreaVBox::CAreaVBox(CMainFrameUI *p) :CSubVBox(p)
+	{
+		OutputDebugString(L"CAreaVBox::CAreaVBox-->");
 		m_container = dynamic_cast<ui::VBox*>(p->FindControl(L"push_window_box"));
+		OutputDebugString(L"CAreaVBox::CAreaVBox<--");
 	}
 
 	void CAreaVBox::CreateAreaElementList() {
@@ -173,12 +180,14 @@ namespace nui {
  
 			SelectAreaItem(U2W(LOGIC_CENTER()->GetGeoIP().ssProviceCode));
 		}
+		OutputDebugString(L"CreateAreaElementList<-------");
 
 	}
 
 	void CAreaVBox::SelectAreaItem(wstring wsKey)
 	{
  
+		OutputDebugString(L"CAreaVBox::SelectAreaItem----->");
 		ui::ListBox * pMainAreaListBox = dynamic_cast<ui::ListBox*>(FindSubControl(L"area_listbox"));
 		if (pMainAreaListBox) {
 			OutputDebugString(L"CAreaVBox::SelectAreaItem ----- find area_listbox ");
@@ -230,6 +239,8 @@ namespace nui {
 				}
 			}
 		}
+		OutputDebugString(L"CAreaVBox::SelectAreaItem");
+
 	}
 
 

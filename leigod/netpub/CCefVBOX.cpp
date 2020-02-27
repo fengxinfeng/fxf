@@ -1,3 +1,7 @@
+/*
+date: 2020.02.25
+author: fengxinfeng
+*/
 #include "stdafx.h"
 #include "CCefVBOX.h"
 #include "CMainFrameUI.h"
@@ -12,14 +16,29 @@ namespace nui {
 	}
 
 	void CCefVBOX::construct(int left, int top, int width, int height) { 
-		OutputDebugString(L"CCefVBOX::construct <-----");
-		cef_control_ = dynamic_cast<nim_comp::CefControlBase*>(FindSubControl(L"cef_control"));
-		ui::Button * pClose = dynamic_cast<ui::Button*>(FindSubControl(L"close_btn"));
-		pClose->AttachClick([this](ui::EventArgs* args) {
-			m_container->SetVisible(false);
-			return true;
-		});
+		OutputDebugString(L"CCefVBOX::construct ---->");
 
+		//WCHAR margin[64];
+		//wsprintf(margin, L"%d,%d,0,0",left,top);
+		//SetAttribute(L"margin",margin);
+		WCHAR swidth[32];
+		wsprintf(swidth, L"%d", width);
+		SetAttribute(L"width", swidth);
+		WCHAR sheight[32];
+		wsprintf(sheight, L"%d", height);
+		SetAttribute(L"height", sheight);
+
+		if (!isBindEvent) {
+			cef_control_ = dynamic_cast<nim_comp::CefControlBase*>(FindSubControl(L"cef_control"));
+			ui::Button * pClose = dynamic_cast<ui::Button*>(FindSubControl(L"close_btn"));
+			pClose->AttachClick([this](ui::EventArgs* args) {
+				m_container->SetVisible(false);
+				return true;
+			});
+			isBindEvent = true;
+		}
+ 
+		OutputDebugString(L"CCefVBOX::construct <-----");
 	}
 
 
@@ -36,12 +55,15 @@ namespace nui {
 	}
 
 	void CCefVBOX::SetVisible(bool value) {
-		OutputDebugString(L"CCefVBOX::SetVisible");
+		WCHAR buf[64];
+		wsprintf(buf, L"CCefVBOX::SetVisible-----  %d", value);
+		OutputDebugString(buf);
 		if(m_container)
 		    m_container->SetVisible(value);
 		CSubVBox::SetVisible(value);
 		if(cef_control_)
 		   cef_control_->SetVisible(value);
+		OutputDebugString(L"CCefVBOX::SetVisible<------");
 	}
  
 } 

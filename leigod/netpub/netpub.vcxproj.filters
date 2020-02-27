@@ -93,6 +93,9 @@
     <ClInclude Include="CCefVBOX.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="CDownloadVBox.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -165,6 +168,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="CCefVBOX.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CDownloadVBox.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Window > 
-  <VBox width="600" height="519"   bkcolor="areabk_color" visible="true">
+  <VBox width="600" height="519"   bkcolor="areabk_color" visible="false">
     <HBox height="57" >
       <Label text="个人中心" font="system_14" margin="22,19,0,0" width="56" height="20"  normaltextcolor="white"/>
       <Control />
@@ -12,7 +12,7 @@
 
     </HBox>
     <HBox    height="1"   bkcolor="gapline_bkcolor"/>
-    <CefControl name="cef_control" />
+    <CefControl name="cef_control"  visible="false" />
   </VBox>
 </Window>
 
