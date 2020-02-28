@@ -2048,9 +2048,7 @@ void CMainFrameUI::OnAreaSelect(int nArea)
 			nbase::ThreadManager::PostTask(kThreadDown, ToWeakCallback([=]() {
 				LOGIC_CENTER()->GetLineGroup(m_nGameID, nArea, wsProvName);
 			}));
-		}
-
-		
+		}		
 	}
 
 }
@@ -3651,7 +3649,8 @@ bool CMainFrameUI::ShowSignalGame(int nGameid)
 							ui::EventArgs args;
 							args.wParam = 0;
 							args.lParam = -1;
-							OnSvrSelected(&args);
+							if(m_serverVbox) 
+							      m_serverVbox->OnSvrSelected(&args);
 							OnAreaSelect(stGame.vctAreas[0].nID);
 
 						}

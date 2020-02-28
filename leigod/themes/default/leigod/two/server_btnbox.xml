@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Window >
-    <VBox padding="0,0,0,0" width="600" height="385"  margin="199,123,0,0" bkcolor="areabk_color" visible="false"  >
+    <VBox padding="0,0,0,0" width="600" height="385"  margin="199,123,0,0"  bkimage="file='bk_photo/pop_window.png' corner='4,4,4,4'" visible="false"  >
 
       <HBox height="57" >
         <Label text="选择区服" font="system_14" margin="22,19,0,0" width="56" height="20"  normaltextcolor="white"/>

@@ -33,105 +33,7 @@ namespace nui {
 
 		if (pMainAreaListBox)
 		{
-			pMainAreaListBox->AttachSelect([this, pMainAreaListBox](ui::EventArgs* args) {
-				int current = args->wParam;
-				int old = args->lParam;
-				int nTipSelect = 0;
-				WCHAR buf[64];
-				wsprintf(buf,L"CreateAreaElementList::    current=%d   old=%d ", current, old);
-				OutputDebugString(buf);
-				if (current != 0)
-				{
-					old = max(0, args->lParam);
-				}
-
-				if (m_parent->m_nIsArccrate) // 先停止加速
-				{
-					if (nTipSelect = m_parent->CreateTipMsgBox())
-					{
-						m_parent->SetStopAccrate();
-					}
-				}
-
-				bool bDoReplace(false); 
-				if (pMainAreaListBox)
-				{
-					uint32_t ItemCount = pMainAreaListBox->GetCount();
-					if (0 <= current && current < ItemCount)
-					{
-						ui::ListContainerElement* pElem = dynamic_cast<ui::ListContainerElement*>(pMainAreaListBox->GetItemAt(current));
-						if (pElem)
-						{
-
-							//pElem->SetBorderColor(L"light_green");
-							pElem->SetBorderColor(L"select_node_border_color"); //边框
-							//ui::Control * pLocIcon = (FindSubControlByName(pElem, L"loc_icon"));
-							//if (pLocIcon)
-							//{
-							//	pLocIcon->SetVisible(true);
-							//}
-							ui::Control * pLocTip = (m_parent->FindSubControlByName(pElem, L"loc_tip"));
-							if (pLocTip)
-							{
-								//if (nTipSelect/*&&m_nIsArccrate*/)
-								pLocTip->SetVisible(true);
-							}
-
-							ui::Label * pProvName = dynamic_cast<ui::Label*>(m_parent->FindSubControlByName(pElem, L"area_prov"));
-
-							ui::ButtonBox * pBtnAreaBtnBox = dynamic_cast<ui::ButtonBox *>(m_parent->FindControl(L"area_btnbox"));
-							if (pBtnAreaBtnBox && pProvName)
-							{
-								bDoReplace = true;
-								m_parent->m_wsProvinceName = pProvName->GetText(); //复制给主界面
-								if (m_parent->m_nIsArccrate)
-								{
-									if (nTipSelect)
-									{
-										OutputDebugString(wstring(L"area selected 0   ").append(pProvName->GetText()).c_str()  );
-										pBtnAreaBtnBox->SetText(pProvName->GetText());
-									}
-								}
-								else
-								{
-									OutputDebugString(wstring(L"area selected 1   ").append(pProvName->GetText()).c_str());
-									pBtnAreaBtnBox->SetText(pProvName->GetText());
-								}
-							}
-						}
-					}
-
-					if (0 <= old && old < ItemCount && old != current)
-					{
-						ui::ListContainerElement* pElem = dynamic_cast<ui::ListContainerElement*>(pMainAreaListBox->GetItemAt(old));
-						if (pElem)
-						{
-							pElem->SetBorderColor(L"no_select_node_border_color");
-							//ui::Control * pLocIcon = (FindSubControlByName(pElem, L"loc_icon"));
-							//if (pLocIcon)
-							//{
-							//	pLocIcon->SetVisible(false);
-							//}
-							ui::Control * pLocTip = (m_parent->FindSubControlByName(pElem, L"loc_tip"));
-							if (pLocTip)
-							{
-								pLocTip->SetVisible(false);
-							}
-						}
-					}
-
-					if (bDoReplace)
-					{
-						m_parent->OnGetGroupLineResponse(0);  //通知创建节点选择数据
-					}
-
-					// 选择后隐藏
-					auto parentXml = m_parent->m_mapXmlParentBox.find(L"push_window_box");
-					parentXml->second->SetVisible(false);
-				}
-
-				return true;
-			});  //  attachselect
+			pMainAreaListBox->AttachSelect(nbase::Bind(&CAreaVBox::OnAreaSelected, this, std::placeholders::_1));
 		 
 
 			STProvice & rfProvinceInfo = LOGIC_CENTER()->GetProvince();
@@ -152,6 +54,7 @@ namespace nui {
 					{
 						pAreaLabel->SetText(itr.wsName);
 					}
+					/*
 					pElem->AttachMouseEnter([this](ui::EventArgs* args) {
 						if (args->pSender)
 						{
@@ -173,6 +76,7 @@ namespace nui {
 						}
 						return true;
 					});
+					*/
 				}
 
 			}
@@ -184,9 +88,113 @@ namespace nui {
 
 	}
 
+
+
+	bool CAreaVBox::OnAreaSelected(ui::EventArgs* args) {
+		int current = args->wParam;
+		int old = args->lParam;
+		int nTipSelect = 0;
+		WCHAR buf[64];
+		wsprintf(buf, L"CreateAreaElementList::    current=%d   old=%d ", current, old);
+		OutputDebugString(buf);
+		if (current != 0)
+		{
+			old = max(0, args->lParam);
+		}
+
+		if (m_parent->m_nIsArccrate) // 先停止加速
+		{
+			if (nTipSelect = m_parent->CreateTipMsgBox())
+			{
+				m_parent->SetStopAccrate();
+			}
+		}
+		ui::ListBox * pMainAreaListBox = dynamic_cast<ui::ListBox*>(FindSubControl(L"area_listbox"));
+		bool bDoReplace(false);
+		if (pMainAreaListBox)
+		{
+			uint32_t ItemCount = pMainAreaListBox->GetCount();
+			if (0 <= current && current < ItemCount)
+			{
+				ui::ListContainerElement* pElem = dynamic_cast<ui::ListContainerElement*>(pMainAreaListBox->GetItemAt(current));
+				if (pElem)
+				{
+
+					//pElem->SetBorderColor(L"light_green");
+					//pElem->SetBorderColor(L"select_node_border_color"); //边框
+					pElem->SetBkImage(L"file='btn/node_select_bk.png' corner='4,4,4,4'");
+					//ui::Control * pLocIcon = (FindSubControlByName(pElem, L"loc_icon"));
+					//if (pLocIcon)
+					//{
+					//	pLocIcon->SetVisible(true);
+					//}
+					ui::Control * pLocTip = (m_parent->FindSubControlByName(pElem, L"loc_tip"));
+					if (pLocTip)
+					{
+						//if (nTipSelect/*&&m_nIsArccrate*/)
+						pLocTip->SetVisible(true);
+					}
+
+					ui::Label * pProvName = dynamic_cast<ui::Label*>(m_parent->FindSubControlByName(pElem, L"area_prov"));
+
+					ui::ButtonBox * pBtnAreaBtnBox = dynamic_cast<ui::ButtonBox *>(m_parent->FindControl(L"area_btnbox"));
+					if (pBtnAreaBtnBox && pProvName)
+					{
+						bDoReplace = true;
+						m_parent->m_wsProvinceName = pProvName->GetText(); //复制给主界面
+						if (m_parent->m_nIsArccrate)
+						{
+							if (nTipSelect)
+							{
+								OutputDebugString(wstring(L"area selected 0   ").append(pProvName->GetText()).c_str());
+								pBtnAreaBtnBox->SetText(pProvName->GetText());
+							}
+						}
+						else
+						{
+							OutputDebugString(wstring(L"area selected 1   ").append(pProvName->GetText()).c_str());
+							pBtnAreaBtnBox->SetText(pProvName->GetText());
+						}
+					}
+				}
+			}
+
+			if (0 <= old && old < ItemCount && old != current)
+			{
+				ui::ListContainerElement* pElem = dynamic_cast<ui::ListContainerElement*>(pMainAreaListBox->GetItemAt(old));
+				if (pElem)
+				{
+					//pElem->SetBorderColor(L"no_select_node_border_color");
+					pElem->SetBkImage(L"file='btn/node_bk.png' corner='4,4,4,4'");
+					//ui::Control * pLocIcon = (FindSubControlByName(pElem, L"loc_icon"));
+					//if (pLocIcon)
+					//{
+					//	pLocIcon->SetVisible(false);
+					//}
+					ui::Control * pLocTip = (m_parent->FindSubControlByName(pElem, L"loc_tip"));
+					if (pLocTip)
+					{
+						pLocTip->SetVisible(false);
+					}
+				}
+			}
+
+			if (bDoReplace)
+			{
+				m_parent->OnGetGroupLineResponse(0);  //通知创建节点选择数据
+			}
+
+			// 选择后隐藏
+			auto parentXml = m_parent->m_mapXmlParentBox.find(L"push_window_box");
+			parentXml->second->SetVisible(false);
+		}
+
+		return true;
+	}
+
 	void CAreaVBox::SelectAreaItem(wstring wsKey)
 	{
- 
+
 		OutputDebugString(L"CAreaVBox::SelectAreaItem----->");
 		ui::ListBox * pMainAreaListBox = dynamic_cast<ui::ListBox*>(FindSubControl(L"area_listbox"));
 		if (pMainAreaListBox) {
@@ -210,7 +218,8 @@ namespace nui {
 				{
  
 					pMainAreaListBox->SelectItem(i);
-					pElem->SetBorderColor(L"select_node_border_color");
+					//pElem->SetBorderColor(L"select_node_border_color");
+					pElem->SetBkImage(L"file='btn/node_select_bk.png' corner='4,4,4,4'");
 					ui::Control * pLocIcon = (m_parent->FindSubControlByName(pElem, L"loc_icon"));
 					if (pLocIcon)
 					{
@@ -225,7 +234,8 @@ namespace nui {
 				else
 				{
  
-					pElem->SetBorderColor(L"no_select_node_border_color");
+					//pElem->SetBorderColor(L"no_select_node_border_color");
+					pElem->SetBkImage(L"file='btn/node_bk.png' corner='4,4,4,4'");
 					ui::Control * pLocIcon = (m_parent->FindSubControlByName(pElem, L"loc_icon"));
 					if (pLocIcon)
 					{

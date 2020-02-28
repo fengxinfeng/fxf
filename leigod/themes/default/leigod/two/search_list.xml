@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Window >
   <VBox width="212" height="418"  visible="true">
-    <Label margin="88,0,0,0"  height="8"  bkimage="bk_photo/nick_window_1.png"  visible="true"/>
-    <VBox width="212" height="410" bkimage="file='bk_photo/nick_window.png' dest='0,0,212,410' corner='10,10,10,10'" visible="true"> 
+    <Label margin="88,0,0,0"  height="8"  bkimage="bk_photo/search_retangle.png"  visible="true"/>
+    <VBox width="212" height="410" bkimage="file='bk_photo/pop_window.png'  corner='4,4,4,4'" visible="true"> 
     
-       <HBox width="212" height="40"   visible="true" bkcolor="black">
+       <HBox width="212" height="40"   visible="true" bkimage="file='bk_photo/search_title_bk.png'  corner='4,4,4,4'">
          <Label name="search_title0" margin="10,0,0,0" valign="center" text="历史搜索" font="system_14" normaltextcolor="white"/>
          <Control  />
          <Button name="clear_search" margin="0,0,10,0" valign="center" text="清空搜索" font="system_14" hottextcolor="white"

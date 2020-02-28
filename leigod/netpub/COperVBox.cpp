@@ -363,6 +363,7 @@ namespace nui {
 										}
 									}
 									pMainOperatorListBox->Add(pElem);
+									/*
 									pElem->AttachMouseEnter([this](ui::EventArgs* args) {
 										if (args->pSender)
 										{
@@ -384,6 +385,7 @@ namespace nui {
 										}
 										return true;
 									});
+									*/
 								}
 							}
 
@@ -392,7 +394,8 @@ namespace nui {
 
 						if (pElemBest)  // 显示最优
 						{
-							pElemBest->SetBorderColor(L"node_select_bk_color");
+							//pElemBest->SetBorderColor(L"node_select_bk_color");
+							pElemBest->SetBkImage(L"file='btn/node_select_bk.png' corner='4,4,4,4'");
 
 							ui::Control * pLocTip = (m_parent->FindSubControlByName(pElemBest, L"loc_tip"));
 							if (pLocTip)
@@ -511,6 +514,7 @@ namespace nui {
 											pLbDelay->SetText(stralgo::StringHelper::FormatW(L"本地延迟: %dms", itr.nDelay));
 										}
 										pMainOperatorListBoxIsp->Add(pElem);
+										/*
 										pElem->AttachMouseEnter([this](ui::EventArgs* args) {
 											if (args->pSender)
 											{
@@ -532,6 +536,7 @@ namespace nui {
 											}
 											return true;
 										});
+										*/
 									}
 								}
 							}
@@ -582,7 +587,8 @@ namespace nui {
 				{
 					if (!bNotHot)
 					{
-						pElem->SetBorderColor(L"green");
+						//pElem->SetBorderColor(L"green");
+						pElem->SetBkImage(L"file='btn/node_select_bk.png' corner='4,4,4,4'");
 
 						ui::Control * pLocTip = (m_parent->FindSubControlByName(pElem, L"loc_tip"));
 						if (pLocTip)
@@ -592,8 +598,8 @@ namespace nui {
 					}
 					else
 					{
-						pElem->SetBorderColor(L"select_node_border_color");
-
+						//pElem->SetBorderColor(L"select_node_border_color");
+						pElem->SetBkImage(L"file='btn/node_select_bk.png' corner='4,4,4,4'");
 						ui::Control * pLocTip = (m_parent->FindSubControlByName(pElem, L"loc_tip"));
 						if (pLocTip)
 						{
@@ -663,8 +669,8 @@ namespace nui {
 				ui::ListContainerElement* pElem = dynamic_cast<ui::ListContainerElement*>(pMainAreaListBox->GetItemAt(old));
 				if (pElem)
 				{
-					pElem->SetBorderColor(L"no_select_node_border_color");
-
+					//pElem->SetBorderColor(L"no_select_node_border_color");
+					pElem->SetBkImage(L"file='btn/node_bk.png' corner='4,4,4,4'");
 					ui::Control * pLocTip = (m_parent->FindSubControlByName(pElem, L"loc_tip"));
 					if (pLocTip)
 					{

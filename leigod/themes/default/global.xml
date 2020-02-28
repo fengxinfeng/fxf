@@ -95,6 +95,7 @@
 	<TextColor name="monitor_time_btn_color" value="#ffA8AAB2"/>
 	<TextColor name="no_select_node_border_color" value="#ffE0E0E8"/>
 	<TextColor name="select_node_border_color" value="#ff20D3AD"/>
+  <TextColor name="node_border_color" value="#20ffffff"/>
   <!--fxf define-->
 	<TextColor name="areabk_color" value="#ff16171D"/>
   <TextColor name="gapline_bkcolor" value="#ff333543"/>

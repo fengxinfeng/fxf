@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Window >
 	
-	<ListContainerElement  name="operator_box" width="255" height="80" bkcolor="white" visible="true" borderround="5,5" bordersize="1" bordercolor="no_select_node_border_color">	
+	<ListContainerElement  name="operator_box" width="255" height="80"  visible="true"  bkimage="file='btn/node_bk.png' corner='4,4,4,4'">	
 		<HBox mouse="false">
-			<Label name="game_logo" text="" width="auto" height="auto" margin="10,16,0,10" bkimage="label/svr_logo.png"  mouse="false" mouse="false"/>
+			<Label name="game_logo" text="" width="auto" height="auto" margin="10,16,0,10" bkimage="label/svr_logo.png"  mouse="false" />
 			<VBox bkcolor="" margin="13,0,0,0"  mouse="false"  >
-				<Label name="line_name" text="" font="system_14" margin="0,13,0,0" bkcolor="" mouse="false"  />
+				<Label name="line_name" text="" font="system_14" margin="0,13,0,0" normaltextcolor="white"  bkcolor="" mouse="false"  />
 				<HBox mouse="false" childmargin="6">
           <Label name="best_tip"   margin="0,5,0,0" bkimage="label/best.png"   visible="false" mouse="false" width="auto"/>
-					<Label name="local_delay" text="本地延迟：0ms" normaltextcolor="green" font="system_12" margin="0,5,0,0" bkcolor="" mouse="false" width="auto"/>
-					<Label name="delay_time" text="" normaltextcolor="light_green" font="system_12" margin="0,5,0,0" bkcolor=""  mouse="false" mouse="false" width="auto"/>
-					
-					 
+					<Label name="local_delay" text="本地延迟：0ms" normaltextcolor="white1" font="system_14" margin="0,5,0,0" bkcolor="" mouse="false" width="auto"/>
+					<Label name="delay_time" text="" normaltextcolor="white1" font="system_14" margin="0,5,0,0" bkcolor=""  mouse="false"   width="auto"/>					 
 				</HBox>
 
 			</VBox>

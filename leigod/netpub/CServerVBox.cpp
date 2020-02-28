@@ -49,6 +49,7 @@ namespace  nui {
 						pLbSvr->SetText(itr.wsTitle);
 					}
 
+					/* 
 					ui::Label * pLbSubTitle = dynamic_cast<ui::Label *>(m_parent->FindSubControlByName(pElem, L"game_server"));
 					if (pLbSubTitle)
 					{
@@ -60,11 +61,11 @@ namespace  nui {
 					{
 						pAreaLogo->SetBkImage(itr.wsLogoPath);
 					}
-
+					*/
 					pElem->AttachMouseEnter([this](ui::EventArgs* args) {
 						if (args->pSender)
 						{
-							args->pSender->SetBorderColor(L"green");
+							//args->pSender->SetBorderColor(L"green");
 						}
 						return true;
 					});
@@ -76,13 +77,13 @@ namespace  nui {
 							ui::ListContainerElement* pElem = dynamic_cast<ui::ListContainerElement*>(args->pSender);
 							if (pTip && pTip->IsVisible() == false && (pElem) && pElem->IsSelected() == false)
 							{
-								args->pSender->SetBorderColor(L"no_select_node_border_color");
+								//args->pSender->SetBorderColor(L"gapline_bkcolor"); 
 							}
 
 						}
 						return true;
 					});
-				}
+				} 
 			}
 
 
@@ -121,7 +122,8 @@ namespace  nui {
 				ui::ListContainerElement* pElem = dynamic_cast<ui::ListContainerElement*>(pMainAreaListBox->GetItemAt(current));
 				if (pElem)
 				{
-					pElem->SetBorderColor(L"select_node_border_color");
+					//pElem->SetBorderColor(L"node_border_color");
+					pElem->SetBkImage(L"file='btn/node_select_bk.png' corner='4,4,4,4'");
 
 					ui::Control * pLocTip = (m_parent->FindSubControlByName(pElem, L"loc_tip"));
 					if (pLocTip)
@@ -167,8 +169,8 @@ namespace  nui {
 				ui::ListContainerElement* pElem = dynamic_cast<ui::ListContainerElement*>(pMainAreaListBox->GetItemAt(old));
 				if (pElem)
 				{
-					pElem->SetBorderColor(L"no_select_node_border_color");
-
+					//pElem->SetBorderColor(L"no_select_node_border_color");
+					pElem->SetBkImage(L"file='btn/node_bk.png' corner='4,4,4,4'");
 					ui::Control * pLocTip = (m_parent->FindSubControlByName(pElem, L"loc_tip"));
 					if (pLocTip)
 					{

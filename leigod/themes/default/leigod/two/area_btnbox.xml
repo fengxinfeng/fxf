@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Window >
    
-    <VBox padding="0,0,0,0" width="600" height="517" margin="200,57,0,0" bkcolor="areabk_color" visible="false" >
+    <VBox padding="0,0,0,0" width="600" height="517" margin="200,57,0,0" bkimage="file='bk_photo/pop_window.png' corner='4,4,4,4'" visible="false" >
 
       <!--
      <VBox padding="36,0,0,0" margin="199,129,165,88" bkcolor="" visible="false" bkimage="file='bk_photo/nick_window.png' corner='15,15,15,15'">

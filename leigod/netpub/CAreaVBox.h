@@ -15,6 +15,7 @@ namespace  nui {
 	public:
 		void CreateAreaElementList();
 		void SelectAreaItem(wstring wsKey);
+		bool   OnAreaSelected(ui::EventArgs* args);
 	private:
 		 
 	};
