@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+    <VBox margin="200,15,200,38" bkcolor="green" visible="true">
+	
+		<HBox height="26" margin="22,19,0,0">
+			<Label text="选择地区" font="system_14" width="56" normaltextcolor="black" valign="center"/>
+			<Control width="492"/>
+			<Button name="area_close_btn" width="26" height="26"  halign="right"  
+					normalimage="file='btn_icon/dialog_close_btn.png' source='0,0,26,26'" 
+					hotimage="file='btn_icon/dialog_close_btn.png' source='0,0,26,26'" 
+					pushedimage="file='btn_icon/dialog_close_btn.png' source='0,0,26,26'" 
+					disabledimage="file='btn_icon/dialog_close_btn.png' source='0,0,26,26'"/>
+		</HBox>
+		
+		<TileListBox name="area_tlb"  columns="3" childmargin="21" padding="36,0,17,15" margin="0,51,0,0" bkcolor="red" vscrollbar="true" visible="true">
+		
+		</TileListBox>
+		
+    </VBox>
+</Window>

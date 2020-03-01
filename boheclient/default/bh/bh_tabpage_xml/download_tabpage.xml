@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+  <VBox  margin="32,0,13,0"  visible="true">  
+       <HBox height="47"   visible="true"  >
+           <Button name="downloading_title" margin="0,0,0,0" valign="center" text="正在下载" font="system_12" 							
+                normaltextcolor="my_start_text_color"/>
+           <Button name="downloaded_title" margin="32,0,0,0" valign="center" text="已完成" font="system_12" 							
+                normaltextcolor="my_half_white"/>
+        </HBox>
+
+  
+       <VBox name="item_none" halign="center" margin="0,106,0,0" width="164" height="197"  visible="false">
+         <Label  width="86" height="86" margin="0,0,0,0"   halign="center"  bkimage="lb_icon/todownload.png"  />
+         <Label  margin="0,10,0,0" halign="center"   text="当前没有下载记录哦" font="system_14" normaltextcolor="white" />
+         <Button name="todownload" width="164" height="45" margin="0,35,0,0" halign="center" text="去下载游戏" font="system_16"  normaltextcolor="black"
+              normalimage="file='btn_icon/pop_btn.png' source='0,0,125,44'"
+              hotimage="file='btn_icon/pop_btn.png' source='125,0,250,44'"
+              pushedimage="file='btn_icon/pop_btn.png' source='250,0,375,44'"
+              disabledimage="file='btn_icon/pop_btn.png' source='375,0,500,44'"/>
+
+       </VBox>
+    
+        <TileListBox  name="download_list"  margin="0,0,0,0" padding="0,0,12,0," columns="1" childmargin="10"   vscrollbar="true" visible="true">		
+		    </TileListBox>
+ 
+ 
+ 
+  </VBox>
+</Window>

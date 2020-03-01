@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+	
+	<ListContainerElement width="160" height="50" bkcolor="white" visible="true" borderround="4,4" bordersize="1">	
+		<Label name="area_name_lb" text="湖北" font="system_14" normaltextcolor="black" valign="center" halign="center"/>
+	</ListContainerElement>
+	
+</Window>

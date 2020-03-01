@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+	
+	<ListContainerElement name="download_item" width="796" height="62" bkcolor="" visible="true"   borderround="2,2,2,2">	
+    
+    <Progress class="progress_grey" name="progress"   value="80"     borderround="2,2,2,2"/>
+  
+    <HBox name="download_information" height="62" >
+      <Label   width="30" height="30" margin="30,0,0,0" valign="center" bkcolor="" bkimage="lb_icon/download_file.png"/>
+      <Label   width="125"  margin="14,0,0,0" valign="center" text="file name......................" font="system_12"  bkcolor="" normaltextcolor="white"/>
+      <Label   width="90"  margin="29,0,0,0" valign="center" text="135M/2.6G" font="system_12"  bkcolor="" normaltextcolor="my_half_white"/>
+      <Label   width="8" height="12" margin="3,0,0,0" valign="center" bkcolor="" bkimage="lb_icon/fast.png"/>
+      <Label   width="66"  margin="8,0,0,0" valign="center" text="77.3M/s" font="system_12"  bkcolor="" normaltextcolor="my_half_white"/>
+      <Label   width="90"  margin="11,0,0,0" valign="center" text="剩余: 00:30:00" font="system_12"  bkcolor="" normaltextcolor="my_half_white"/>
+      <Control />
+      <Button  name="pause" width="16" height="16" margin="0,0,18,0" valign="center" bkcolor="" 
+                normalimage="file='btn_icon/pause.png' source='0,0,16,16'" 
+								hotimage="file='btn_icon/pause.png' source='16,0,32,16'" 
+								pushedimage="file='btn_icon/pause.png' source='32,0,48,16'" 
+								disabledimage="file='btn_icon/pause.png' source='42,0,64,16'"/>
+      <Button  name="openfolder" width="16" height="16" margin="0,0,18,0" valign="center" bkcolor=""                
+                normalimage="file='btn_icon/openfolder.png' source='0,0,16,16'"
+								hotimage="file='btn_icon/openfolder.png' source='16,0,32,16'"
+								pushedimage="file='btn_icon/openfolder.png' source='32,0,48,16'"
+								disabledimage="file='btn_icon/openfolder.png' source='42,0,64,16'"/>
+      <Button  name="remove" width="16" height="16" margin="0,0,27,0" valign="center" bkcolor=""                
+                normalimage="file='btn_icon/del.png' source='0,0,16,16'" 
+								hotimage="file='btn_icon/del.png' source='16,0,32,16'" 
+								pushedimage="file='btn_icon/del.png' source='32,0,48,16'" 
+								disabledimage="file='btn_icon/del.png' source='42,0,64,16'"/>
+    </HBox>
+  </ListContainerElement>
+	
+</Window> 

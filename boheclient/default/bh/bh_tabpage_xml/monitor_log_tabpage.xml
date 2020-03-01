@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+    <VBox bkcolor="" visible="true" >
+		<RichEdit padding="22,27,16,0" height="323" vscrollbar="true" hscrollbar="true" text="fsaf" bkcolor="" />
+		<Button width="164" height="45" text="复制日志" font="system_18" valign="center" halign="center" normaltextcolor="white"
+			normalimage="file='btn_icon/stop_copy_btn.png' source='0,0,164,45'" 
+			hotimage="file='btn_icon/stop_copy_btn.png' source='164,0,328,45'" 
+			pushedimage="file='btn_icon/stop_copy_btn.png' source='328,0,492,45'" 
+			disabledimage="file='btn_icon/stop_copy_btn.png' source='492,0,656,45'"/>
+    </VBox>
+</Window>

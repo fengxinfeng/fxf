@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+	
+	<ListContainerElement width="255" height="80" bkcolor="blue" visible="true" borderround="4,4" bordersize="1" >	
+		<HBox margin="0,0,0,0">
+			<Label margin="19,19,0,0" width="30" height="30" bkcolor="red"/>
+			
+			<VBox margin="18,20,0,0" >
+				<Label text="湖北-电信-A" font="system_14" normaltextcolor="white"/>
+				<HBox>
+					<Label width="14" height="16" bkcolor="red" visible="true"/>
+					<Label text="本地延迟:" font="system_14" normaltextcolor="white"/>
+					<Label name="operator_delay_lb" text="14ms" font="system_14" normaltextcolor="white"/>
+				</HBox>
+			</VBox>
+		</HBox>
+	</ListContainerElement>
+	
+</Window>

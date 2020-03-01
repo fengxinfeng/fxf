@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+	
+	<ListContainerElement width="160" height="50" bkcolor="yellow" borderround="5,5" bordersize="1" bordercolor="green" visible="true">	
+		<Label name="svr_name_lb" text="AS(亚服)" font="system_14" normaltextcolor="white" valign="center" halign="center"/>
+	</ListContainerElement>
+	
+</Window>

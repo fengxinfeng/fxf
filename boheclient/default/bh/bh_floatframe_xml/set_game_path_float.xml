@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+    <VBox margin="200,74,200,111" bkcolor="my_5_white" borderround="4,4" visible="true">
+		<HBox height="26" bkcolor="" margin=",15,10,0">
+			<Label text="启动游戏路径设置" font="system_bold_14" normaltextcolor="white" margin="15,0,0,0" width="stretch" halign="left" valign="center"/>
+			<Button name="set_path_close_btn" width="26" height="26" halign="center"  
+					normalimage="file='btn_icon/dialog_close_btn.png' source='0,0,26,26'" 
+					hotimage="file='btn_icon/dialog_close_btn.png' source='0,0,26,26'" 
+					pushedimage="file='btn_icon/dialog_close_btn.png' source='0,0,26,26'" 
+					disabledimage="file='btn_icon/dialog_close_btn.png' source='0,0,26,26'"/>
+		</HBox>
+		<Label text="设置后可直接通过平台启动游戏" font="system_bold_14" normaltextcolor="white" margin="99,102,0,4" width="stretch"/>
+		
+		<HBox>
+			<RichEdit name="path_name_edit" width="330" height="35"  text="C:\progaram file(x86)\bohe"
+					font="system_12" padding="10,7,0,0" margin="99,0,0,0"  multiline="false" autohscroll="true" bkcolor="my_half_white"/>
+			<Control width="15"/>
+			<Button name="game_path_dialog_btn" width="96" height="35" text="浏览"  borderround="3,3" normaltextcolor="white" font="system_bold_14" bkcolor="my_half_white"/>
+		</HBox>
+		<Control height="76" />
+		<Button width="100" height="35" text="启动游戏" bkcolor="" halign="center" 
+				normalimage="file='btn_icon/start_btn.png' source='0,0,100,35'" 
+				hotimage="file='btn_icon/start_btn.png' source='100,0,200,35'" 
+				pushedimage="file='btn_icon/start_btn.png' source='200,0,300,35'" 
+				disabledimage="file='btn_icon/start_btn.png' source='300,0,400,35'"/>
+		<Control />
+    </VBox>
+</Window>

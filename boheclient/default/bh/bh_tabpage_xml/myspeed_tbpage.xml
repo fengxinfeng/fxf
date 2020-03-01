@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+	<VBox padding="0,0,21,22">
+		<HBox height="330" bkcolor="" bkimage="box_bk_pic/main_mid.png">
+			<VBox width="580" padding="30,23,0,26">
+				<HBox height="stretch" bkcolor="">
+					<VBox>
+						<HBox>
+							<Label name="main_game_name_bl" text="暂无游戏" font="system_bold_24" normaltextcolor="white"/>
+							<Control width="320"/>
+							<Button name="monitor_btn" text="网络监控" width="80" height="18" font="system_12" 
+								normaltextcolor="white" bkcolor="" textpadding="10,0,0,0" valign="center"
+								normalimage="file='btn_icon/main_monitor_btn.png' dest='2,2,19,19' source='0,0,17,17'" 
+								hotimage="file='btn_icon/main_monitor_btn.png' dest='2,2,19,19' source='17,0,34,17'" 
+								pushedimage="file='btn_icon/main_monitor_btn.png' dest='2,2,19,19' source='34,0,51,17'" 
+								disabledimage="file='btn_icon/main_monitor_btn.png' dest='2,2,19,19' source='51,0,68,17'"/>
+						</HBox>
+						<HBox>
+							<Label name="main_time_h_bl" text="00" font="BERNIERRegular_22" normaltextcolor="white"/>
+							<Label name="" text=":" font="BERNIERRegular_22" normaltextcolor="white"/>
+							<Label name="main_time_m_bl" text="00" font="BERNIERRegular_22" normaltextcolor="white"/>
+							<Label name="" text=":" font="BERNIERRegular_22" normaltextcolor="white"/>	
+							<Label name="main_time_s_bl" text="00" font="BERNIERRegular_22" normaltextcolor="white"/>
+						</HBox>
+					</VBox>		
+				</HBox>
+				
+				<HBox height="206" bkcolor="" childmargin="19">
+					<Button name="main_game_btn" width="140" height="206" bkcolor=""
+						bkimage="box_bk_pic/main_no_game.png"
+						hotimage="btn_icon/switch_game_front.png"/>
+					<VBox bkcolor="">
+						<HBox height="66" childmargin="15">
+							<Box width="70" bkcolor="">
+								<VBox>
+									<HBox>
+										<Label name="game_data_delay_lb" text="00" font="BERNIERRegular_40" normaltextcolor="my_half_white" align="bottom" bkcolor=""/>
+										<Label name="" text="MB" font="BERNIERRegular_14" normaltextcolor="my_half_white" margin="2,25,0,0" />
+									</HBox>
+									<Label name="" text="游戏延迟" font="system_12" normaltextcolor="my_half_white" bkcolor="" textpadding="17,0,0,0"
+										bkimage="file='lb_icon/delay_lb.png' dest='2,2,14,14'"/>
+								</VBox>
+							</Box>
+							<Box width="70" bkcolor="">
+								<VBox>
+									<HBox>
+										<Label name="game_data_improve_lb" text="00" font="BERNIERRegular_40" normaltextcolor="my_half_white" align="bottom" bkcolor=""/>
+										<Label name="" text="%" font="BERNIERRegular_14" normaltextcolor="my_half_white" margin="2,25,0,0"/>
+									</HBox>
+									<Label name="" text="综合提升" font="system_12" normaltextcolor="my_half_white" textpadding="17,0,0,0" 
+										bkimage="file='lb_icon/improve_lb.png' dest='2,2,14,14'"/>
+								</VBox>
+							</Box>
+							<Box width="70" bkcolor="">
+								<VBox>
+									<HBox>
+										<Label name="game_data_loss_lb" text="00" font="BERNIERRegular_40" normaltextcolor="my_half_white" align="bottom" bkcolor=""/>
+										<Label name="" text="%" font="BERNIERRegular_14" normaltextcolor="my_half_white" margin="2,25,0,0"/>
+									</HBox>
+									<Label name="" text="丢包率" font="system_12" normaltextcolor="my_half_white" textpadding="17,0,0,0"
+										bkimage="file='lb_icon/loss_lb.png' dest='2,2,14,14'"/>
+								</VBox>
+							</Box>
+							<Box width="70" bkcolor="">
+								<VBox>
+									<HBox>
+										<Label name="game_data_flow_lb" text="00" font="BERNIERRegular_40" normaltextcolor="my_half_white" align="bottom" bkcolor=""/>
+										<Label name="" text="MB" font="BERNIERRegular_14" normaltextcolor="my_half_white" margin="2,25,0,0"/>
+									</HBox>
+									<Label name="" text="加速流量" font="system_12" normaltextcolor="my_half_white" textpadding="17,0,0,0"
+										bkimage="file='lb_icon/flow_lb.png' dest='2,2,14,14'"/>
+								</VBox>
+							</Box>
+						</HBox>
+						<Control height="31"/>
+						<HBox height="20">
+							<Button name="svr_btn" minwidth="50" maxwidth="70" minheight="17" maxheight="20" text="区服" font="system_12" normaltextcolor="my_half_white" textpadding="5,0,0,0" bkcolor=""
+								normalimage="file='btn_icon/svr_btn.png' dest='2,2,14,14' source='0,0,12,12'" 
+								hotimage="file='btn_icon/svr_btn.png' dest='2,2,14,14' source='12,0,24,12'" 
+								pushedimage="file='btn_icon/svr_btn.png' dest='2,2,14,14' source='24,0,36,12'" 
+								disabledimage="file='btn_icon/svr_btn.png' dest='2,2,14,14' source='36,0,48,12'"/>
+							<Control width="23" />
+							<Button name="area_btn" width="60" height="17" text="地区" font="system_12" normaltextcolor="my_half_white" textpadding="5,0,0,0" bkcolor=""
+								normalimage="file='btn_icon/area_btn.png' dest='2,2,14,14' source='0,0,12,12'" 
+								hotimage="file='btn_icon/area_btn.png' dest='2,2,14,14' source='12,0,24,12'" 
+								pushedimage="file='btn_icon/area_btn.png' dest='2,2,14,14' source='24,0,36,12'" 
+								disabledimage="file='btn_icon/area_btn.png' dest='2,2,14,14' source='36,0,48,12'"/>
+							<Control width="28" />
+							<Button name="node_btn" width="60" height="17" text="节点" font="system_12" normaltextcolor="my_half_white" textpadding="5,0,0,0" bkcolor=""
+								normalimage="file='btn_icon/node_btn.png' dest='2,2,14,14' source='0,0,12,12'" 
+								hotimage="file='btn_icon/node_btn.png' dest='2,2,14,14' source='12,0,24,12'" 
+								pushedimage="file='btn_icon/node_btn.png' dest='2,2,14,14' source='24,0,36,12'" 
+								disabledimage="file='btn_icon/node_btn.png' dest='2,2,14,14' source='36,0,48,12'"/>
+							<Control width="23" />
+							<Button name="mode_btn" width="70" height="17" text="模式" font="system_12" normaltextcolor="my_half_white" textpadding="0,0,0,0" bkcolor=""
+								normalimage="file='btn_icon/mode_btn.png' dest='2,2,14,14' source='0,0,12,12'" 
+								hotimage="file='btn_icon/mode_btn.png' dest='2,2,14,14' source='12,0,24,12'" 
+								pushedimage="file='btn_icon/mode_btn.png' dest='2,2,14,14' source='0,0,26,26'" 
+								disabledimage="file='btn_icon/mode_btn.png' dest='2,2,14,14' source='36,0,48,12'"/>
+						</HBox>
+						<Control height="18"/>
+						<HBox >
+							<Button name="game_add_btn" width="164" height="45" text="添加游戏" font="system_bold_18" borderround="3,3" 
+									normaltextcolor="my_start_text_color" bkcolor="my_start_btn_bk_color"/>
+							<Control width="16" />
+							<Button name="game_stop_btn" width="164" height="45" text="停止加速" font="system_bold_18" borderround="3,3"
+									normaltextcolor="my_start_text_color" bkcolor="my_start_btn_bk_color"/>
+						</HBox>
+						<Button name="get_game_path_btn" text="游戏启动路径" font="system_12" normaltextcolor="my_half_white"/>
+					</VBox>
+				</HBox>
+			</VBox>
+				<!--游戏账号推广区-->
+			<VBox width="stretch" bkcolor="" >
+				<Label width="24" height="15" margin="166,10,0,0" bkcolor="" bkimage="lb_icon/main_advertise_icon_lb.png"/>
+				<VBox>
+					<Button text="租号" font="system_bold_16" normaltextcolor="white"/>
+					<Label text="花小钱玩全皮肤全英雄全武器大神号" font="system_12" normaltextcolor="my_half_white"/>
+					<HBox childmargin="15">
+						<Button text="LOL账号" font="system_12" normaltextcolor="white"/>
+						<Button text="吃鸡账号" font="system_12" normaltextcolor="white"/>
+						<Button text="其他账号" font="system_12" normaltextcolor="white"/>
+					</HBox>
+				</VBox>
+				<VBox>
+					<Button text="买游戏账号" font="system_bold_16" normaltextcolor="white"/>
+					<Label text="官网全新账号渠道特价" font="system_12" normaltextcolor="my_half_white"/>
+					<HBox childmargin="15">
+						<Button text="LOL排位号" font="system_12" normaltextcolor="white"/>
+						<Button text="绝地求生新号" font="system_12" normaltextcolor="white"/>
+						<Button text="更多" font="system_12" normaltextcolor="white"/>
+					</HBox>
+				</VBox>
+				<VBox>
+					<Button text="出租账号赚钱" font="system_bold_16" normaltextcolor="white"/>
+					<Label text="出租自己不用的账号赚钱" font="system_12" normaltextcolor="my_half_white"/>
+					<HBox childmargin="15">
+						<Button text="LOL账号" font="system_12" normaltextcolor="white"/>
+						<Button text="吃鸡账号" font="system_12" normaltextcolor="white"/>
+						<Button text="其他账号" font="system_12" normaltextcolor="white"/>
+					</HBox>
+				</VBox>
+			</VBox>
+		</HBox>
+		<Control />
+		<!--广告区域-->
+		<HBox height="160" bkcolor="black" childmargin="14">
+			<Button name="g1_btn" width="392" height="160" bkcolor="white"/>
+			<Button name="g2_btn" width="392" height="160" bkcolor="white"/>
+		</HBox>
+	</VBox>
+</Window>

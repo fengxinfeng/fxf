@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+    <VBox bkcolor="" visible="true" alpha="255">
+		<VBox height="257" bkcolor="black" childmargin="2">
+			<ButtonBox name="menu_person_btn" text="个人中心" textpadding="8,0,0,0" width="150" height="35" font="system_12" normaltextcolor="white" bkcolor="red">
+					<Label width="16" height="15" margin="32,0,0,0" bkimage="file='btn_icon/menu_person_btn.png'" valign="center"/> 
+			</ButtonBox>
+			<ButtonBox name="menu_arccrate_tool_btn" text="加速工具" textpadding="8,0,0,0" width="150" height="35" font="system_12" normaltextcolor="white" bkcolor="red">
+					<Label width="16" height="15" margin="32,0,0,0" bkimage="file='btn_icon/arccrate_tool_btn.png'" valign="center"/>
+			</ButtonBox>
+			<ButtonBox name="menu_system_set_btn" text="系统设置" textpadding="8,0,0,0" width="150" height="35" font="system_12" normaltextcolor="white" bkcolor="red">
+					<Label width="16" height="15" margin="32,0,0,0" bkimage="file='btn_icon/menu_system_btn.png'" valign="center"/>
+			</ButtonBox>
+			<ButtonBox name="menu_feedback_btn" text="意见反馈" textpadding="8,0,0,0" width="150" height="35" font="system_12" normaltextcolor="white" bkcolor="red">
+					<Label width="16" height="15" margin="32,0,0,0" bkimage="file='btn_icon/btn_feedback_btn.png'" valign="center"/>
+			</ButtonBox>
+			<ButtonBox name="menu_kf_btn" text="联系客服" textpadding="8,0,0,0" width="150" height="35" font="system_12" normaltextcolor="white" bkcolor="red">
+					<Label width="16" height="15" margin="32,0,0,0" bkimage="file='btn_icon/menu_kf_btn.png'" valign="center"/>
+			</ButtonBox>
+			<ButtonBox name="menu_about_btn" text="关于薄荷" textpadding="8,0,0,0" width="150" height="35" font="system_12" normaltextcolor="white" bkcolor="red">
+					<Label width="16" height="15" margin="32,0,0,0" bkimage="file='btn_icon/menu_about_btn.png'" valign="center"/>
+			</ButtonBox>
+			<ButtonBox name="exit_btn" text="退出" textpadding="8,0,0,0" width="150" height="35" font="system_12" normaltextcolor="white" bkcolor="red">
+					<Label width="16" height="15" margin="32,0,0,0" bkimage="file='btn_icon/menu_exit_btn.png'" valign="center"/>
+			</ButtonBox>
+		</VBox>
+		<Control height="8"/>
+		<Label width="16" height="8" margin="70,0,0,0" bkimage="lb_icon/sj_lb.png" bkcolor="green"/>
+    </VBox>
+</Window>

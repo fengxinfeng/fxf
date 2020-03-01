@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+
+  <!--ListContainerElement   name="server_box" width="160" height="50" bkcolor="game_select_color" visible="true" padding="0,0,0,0"  borderround="4,4" bordersize="1" bordercolor="node_border_color"-->
+  <ListContainerElement   name="server_box" width="160" height="50"   visible="true" padding="0,0,0,0"   bkimage="file='btn/node_bk.png' corner='4,4,4,4'">
+      <HBox mouse="false"  >
+      <!--  Label name="game_logo" text="" width="auto" height="auto" margin="10,26,0,10" bkimage="label/svr_logo.png"  mouse="false"  /  -->
+			<VBox bkcolor="" margin="0,0,0,0"    mouse="false"  >
+        <Label name="game_name" text="" font="system_14"  halign="center" normaltextcolor="white" margin="0,13,0,0" bkcolor="" mouse="false"  />
+        <!--Label name="game_server" text="AS" font="system_12" normaltextcolor="dark_gray" margin="0,5,0,0" bkcolor=""  mouse="false"  /-->
+			</VBox>
+			<Control name="loc_tip" float="true" bkimage="label/loc_near.png" valign="top" halign="right" height="auto" width="auto" mouse="false" visible="false"/>	
+		</HBox>
+	</ListContainerElement>
+	
+</Window>

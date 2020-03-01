@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+	
+	<VBox bkcolor="" margin="0,0,0,0" visible="true">
+			<Control height="9"/>
+			<HBox bkcolor="" margin="32,0,0,0" height="45" childmargin="26">
+				<ButtonBox name="download_list_btn" width="60"  height="35" text="下载列表" bkcolor="" font="system_bold_14" align="left" normaltextcolor="my_start_text_color">
+					<Label name="download_list_btn_lb" width="30" height="3" bkcolor="green" valign="bottom" halign="center" visible="true"/>
+				</ButtonBox>
+				<ButtonBox name="download_all_btn" width="45"  height="35" text="全部" bkcolor="" font="system_bold_14" align="top" normaltextcolor="my_half_white">
+					<Label name="download_all_btnb_lb" width="30" height="3" bkcolor="green" valign="bottom" halign="center" visible="false"/>
+				</ButtonBox>
+				<ButtonBox name="download_steam_btn" width="45" height="35" text="Steam" bkcolor="" font="system_bold_14" align="top" normaltextcolor="my_half_white">
+					<Label name="download_steam_btn_lb" width="30" height="3" bkcolor="green" valign="bottom" halign="center" visible="false"/>
+				</ButtonBox>
+				<ButtonBox name="download_origin_btn" width="45" height="35" text="Origin" bkcolor="" font="system_bold_14" align="top" normaltextcolor="my_half_white">
+					<Label name="download_origin_btn_lb" width="30" height="3" bkcolor="green" valign="bottom" halign="center" visible="false"/>
+				</ButtonBox>
+				<ButtonBox name="download_uplay_btn" width="45" height="35" text="Uplay" bkcolor="" font="system_bold_14" align="top" normaltextcolor="my_half_white">
+					<Label name="download_uplay_btn_lb" width="30" height="3" bkcolor="green" valign="bottom" halign="center" visible="false"/>
+				</ButtonBox>
+				<ButtonBox name="download_epic_btn" width="45" height="35"  text="Epic" bkcolor="" font="system_bold_14" align="top" normaltextcolor="my_half_white">
+					<Label name="download_epic_btnb_lb" width="30" height="3" bkcolor="green" valign="bottom" halign="center" visible="false"/>
+				</ButtonBox>
+				<ButtonBox name="download_free_btn" width="45" height="35" text="免费" bkcolor="" font="system_bold_14" align="top" normaltextcolor="my_half_white">
+					<Label name="download_free_btn_lb" width="30" height="3" bkcolor="green" valign="bottom" halign="center" visible="false"/>
+				</ButtonBox>
+ 
+			</HBox>
+			<Control height="2"/>
+			<!--下载页显示功能区-->
+			<VBox name="download_tabpage_vbox"  visible="true">
+			</VBox>
+	</VBox>
+
+</Window>

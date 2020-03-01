@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+  <VBox padding="49,45,0,0" visible="true">
+	<VBox height="110">
+		<HBox height="20">
+			<Control width="3" height="13" bkcolor="my_set_bar_color"/>
+			<Control width="4"/>
+			<Label text="模式选择" font="system_bold_14"/>
+		</HBox>
+		<Control />
+		<HBox>
+			<Option class="circle_option_2" text="自动模式" font="system_bold_14"/>
+			<Option class="circle_option_2" text="LSP模式" font="system_bold_14"/>
+			<Option class="circle_option_2" text="HOOK模式" font="system_bold_14"/>
+			<Option class="circle_option_2" text="Driver模式" font="system_bold_14"/>
+		</HBox>
+		<Label text="自动模式:系统自动选择最优模式" height="40" width="538" font="system_bold_14" bkcolor="red"/>
+	</VBox>
+	<Control height="20"/>
+	<VBox height="110">
+		<HBox height="20">
+			<Control width="3" height="13" bkcolor="my_set_bar_color"/>
+			<Control width="4"/>
+			<Label text="传输方式" font="system_bold_14"/>
+		</HBox>
+		<Control />
+		<HBox>
+			<Option class="circle_option_2" text="极速" font="system_bold_14"/>
+			<Option class="circle_option_2" text="兼容" font="system_bold_14"/>
+		</HBox>
+		<Label text="网络不稳定的时,建议选择兼容模式" height="40" width="538" font="system_bold_14" bkcolor="red"/>
+	</VBox>
+  </VBox>
+</Window>

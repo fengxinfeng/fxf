@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+    <VBox margin="200,38,200,62" bkcolor="green" visible="true">
+	
+		<HBox height="26" margin="22,19,0,0">
+			<Label text="选择节点" font="system_14" width="56" normaltextcolor="black" valign="center"/>
+			<Control width="492"/>
+			<Button name="node_close_btn" width="26" height="26"  halign="right"  
+					normalimage="file='btn_icon/dialog_close_btn.png' source='0,0,26,26'" 
+					hotimage="file='btn_icon/dialog_close_btn.png' source='0,0,26,26'" 
+					pushedimage="file='btn_icon/dialog_close_btn.png' source='0,0,26,26'" 
+					disabledimage="file='btn_icon/dialog_close_btn.png' source='0,0,26,26'"/>
+		</HBox>
+				
+		
+		<HBox margin="34,47,0,0" height="25" bkcolor="red" childmargin="21">
+			<ButtonBox name="tj_btn_oper" width="28" text="推荐" font="system_14" halign="center">
+				<Label width="28" height="3" valign="bottom" halign="center" bkcolor="white"/>
+			</ButtonBox>
+			<ButtonBox name="dx_btn_oper" width="28" text="电信" font="system_14" halign="center" >
+				<Label width="28" height="3" valign="bottom" halign="center" bkcolor="white"/>
+			</ButtonBox>
+			<ButtonBox name="yd_btn_oper"  width="28" text="移动" font="system_14" halign="center" >
+				<Label width="28" height="3" valign="bottom" halign="center" bkcolor="white"/>
+			</ButtonBox>
+			<ButtonBox name="lt_btn_oper" width="28" text="联通" font="system_14" halign="center" >
+				<Label width="28" height="3" valign="bottom" halign="center" bkcolor="white"/>
+			</ButtonBox>
+			<ButtonBox name="other_btn_oper" width="28" text="其他" font="system_14" halign="center">
+				<Label width="28" height="3" valign="bottom" halign="center" bkcolor="white"/>
+			</ButtonBox>
+		</HBox>
+		
+		<HBox margin="34,23,0,0" height="auto">
+			<Label text="用户IP:" font="system_12" normaltextcolor="white"/>
+			<Label name="user_ip_lb" text="10.128.136.192" font="system_12" normaltextcolor="white"/>
+			<Control width="6"/>
+			<Label text="运营商:" font="system_12" normaltextcolor="white"/>
+			<Label name="operator_name_lb" text="湖北电信" font="system_12" normaltextcolor="white"/>
+			<Control width="6"/>
+			<Label text="使用'推荐'节点更快更稳定" valign="center" font="system_12" normaltextcolor="white"/>
+		</HBox>
+		
+		
+		<TileListBox  name="operator_listbox_recommend"  columns="2" childmargin="16" margin="20,12,0,30" bkcolor="yellow" vscrollbar="true" visible="true">
+		 </TileListBox>
+		<TileListBox  name="operator_listbox_dx"  columns="2" childmargin="16" margin="0,12,0,0" bkcolor="" vscrollbar="true" visible="false">
+		 </TileListBox>
+		<TileListBox  name="operator_listbox_yd"  columns="2" childmargin="16" margin="0,12,0,0" bkcolor="" vscrollbar="true" visible="false">
+		 </TileListBox>
+		<TileListBox  name="operator_listbox_lt"  columns="2" childmargin="16" margin="0,12,0,0" bkcolor="" vscrollbar="true" visible="false">
+		 </TileListBox>
+		<TileListBox  name="operator_listbox_other"  columns="2" childmargin="16" margin="0,12,0,0" bkcolor="" vscrollbar="true" visible="false">
+		 </TileListBox>
+    </VBox>
+</Window>

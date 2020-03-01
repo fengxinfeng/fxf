@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+    <VBox margin="200,123,200,122" bkcolor="green" visible="true">
+	
+		<HBox height="26" margin="0,16,0,0" bkcolor="red">
+		
+			<Label text="加速工具" font="system_14" margin="22,0,0,0" width="56" height="20" valign="center" normaltextcolor="black"/>
+			<Control width="482" />
+			<Button name="area_close_btn" width="26" height="26" halign="right"  
+					normalimage="file='btn_icon/dialog_close_btn.png' source='0,0,26,26'" 
+					hotimage="file='btn_icon/dialog_close_btn.png' source='0,0,26,26'" 
+					pushedimage="file='btn_icon/dialog_close_btn.png' source='0,0,26,26'" 
+					disabledimage="file='btn_icon/dialog_close_btn.png' source='0,0,26,26'"/>
+					
+		</HBox>
+		<Control height="60" />
+		<HBox height="239" childmargin="21" bkcolor="red" >
+			<Control width="20"/>
+			<Box width="159" bkcolor="yellow">
+				<Button text="网络修复" width="120" height="35" margin="19,182,20,22" bkcolor="blue"/>
+			</Box>
+			<Box width="159" bkcolor="yellow">
+				<Button text="清除缓存" width="120" height="35" margin="19,182,20,22" bkcolor="blue"/>
+			</Box>
+			<Box width="159" bkcolor="yellow">
+				<Button text="修复虚拟网卡" width="120" height="35" margin="19,182,20,22" bkcolor="blue"/>
+			</Box>
+		</HBox>
+    </VBox>
+</Window>

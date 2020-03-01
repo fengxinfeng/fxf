@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+    <VBox margin="93,0,70,51" borderround="4,4" bkimage="file='box_bk_pic\monitor_bk.png' corner='20,20,20,20'"  visible="true" >
+	
+		<HBox height="56" bkcolor="">
+			<Control width="311"/>
+			<ButtonBox class="monitor_tab_color1" name="monitor_net_btnb" width="85" height="38" text="网络监控" bkcolor="" font="system_bold_14" align="top" margin="0,18,0,0" textpadding="15,0,0,0"
+				normalimage="file='btn_icon/net_btn.png' dest='0,2,17,19' source='0,0,17,17'"
+				hotimage="file='btn_icon/net_btn.png' dest='0,2,17,19' source='17,0,34,17'"
+				pushedimage="file='btn_icon/net_btn.png' dest='0,2,17,19' source='34,0,51,17'"
+				disabledimage="file='btn_icon/net_btn.png' dest='0,2,17,19' source='51,0,68,17'">
+				<Label name="monitor_net_icon_lb" width="30" height="3" bkcolor="green" valign="bottom" halign="center" visible="true"/>
+			</ButtonBox>
+			<Control width="60"/>
+			<ButtonBox class="monitor_tab_color1" name="monitor_log_btnb" width="85" height="38" text="加速日志" bkcolor="" font="system_bold_14" align="top" margin="0,18,0,0" textpadding="15,0,0,0"
+				normalimage="file='btn_icon/log_btn.png' dest='0,2,17,19' source='0,0,17,17'"
+				hotimage="file='btn_icon/log_btn.png' dest='0,2,17,19' source='17,0,34,17'"
+				pushedimage="file='btn_icon/log_btn.png' dest='0,2,17,19' source='34,0,51,17'"
+				disabledimage="file='btn_icon/log_btn.png' dest='0,2,17,19' source='51,0,68,17'">
+				<Label name="monitor_log_icon_lb" width="30" height="3" bkcolor="green" valign="bottom" halign="center" visible="false"/>
+			</ButtonBox>
+			<Control width="250"/>
+			<Button name="monitor_close_btn" width="26" height="26" valign="center"  
+					normalimage="file='btn_icon/dialog_close_btn.png' source='0,0,26,26'" 
+					hotimage="file='btn_icon/dialog_close_btn.png' source='0,0,26,26'" 
+					pushedimage="file='btn_icon/dialog_close_btn.png' source='0,0,26,26'" 
+					disabledimage="file='btn_icon/dialog_close_btn.png' source='0,0,26,26'"/>
+			
+		</HBox>
+		<Control height="1" width="stretch" bkcolor="my_monitor_color2"/>
+		<VBox name="monitor_net_log_vb" bkcolor="" visible="true">
+		</VBox>
+		
+    </VBox>
+</Window>

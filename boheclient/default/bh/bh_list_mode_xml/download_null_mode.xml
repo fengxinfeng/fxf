@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+	<VBox bkcolor="red">
+		<Label width="86" height="86" margin="0,106,0,0" bkcolor="yellow" halign="center"/>
+		<Control height="10"/>
+		<Label text="当前没有下载记录哦" font="system_14" normaltextcolor="white" halign="center"/>
+		<Control height="35"/>
+		<Button width="164" height="45" text="去下载游戏" font="system_16" halign="center" normaltextcolor="white" bkcolor="yellow"/>
+	</VBox>
+</Window>

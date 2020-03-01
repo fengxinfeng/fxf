@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+	
+	<ListContainerElement name="nick_box" width="197" height="55" bkcolor="" visible="true" nofocus="true" borderround="5,5">	
+		<HBox mouse="false">
+			<Box width="60" height="60">
+				<Label name="nick_game_logo" text="" width="48" height="48" margin="10,3,0,0" bkcolor=""  mouse="false"/>
+			</Box>
+			<VBox bkcolor="" margin="10,0,0,0"  mouse="false">
+				<Label name="nick_game_name" text="" font="system_14" width="110" margin="0,6,0,0" bkcolor="" wordbreak="true" endellipsis="true" mouse="false"/>
+				<Label name="nick_game_server" text="" font="system_12" width="110" margin="0,5,0,0" bkcolor="" wordbreak="true" endellipsis="true" mouse="false"/>
+			</VBox>
+		</HBox>
+	</ListContainerElement>
+	
+</Window>

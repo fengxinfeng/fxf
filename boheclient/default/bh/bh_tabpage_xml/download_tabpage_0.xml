@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+    <VBox bkcolor="yellow" visible="true">
+		<HBox height="17" bkcolor="green" margin="17,17,0,0">
+			<Button text="正在下载(4)" font="system_12" valign="center"/>
+			<Control width="15"/>
+			<Button text="已完成(4)" font="system_12" valign="center"/>
+		</HBox>
+		<Control height="14"/>
+		<Box>
+			<VListBox  name="download_game_vlb" childmargin="10" padding="17,0,0,5" vscrollbar="true" visible="false">
+			</VListBox>
+			<VBox name="download_null_vb" visible="true">
+			</VBox>
+		</Box>
+    </VBox>
+</Window>

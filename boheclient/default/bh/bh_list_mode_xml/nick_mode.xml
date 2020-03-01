@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+	<ListContainerElement name="game_element" width="212" height="20" visible="true" mouse="true">	
+		<VBox mouse="true">
+			<Label name="game_name_lb" text="绝地求生" font="system_14" mouse="true"
+				normaltextcolor="my_half_white"
+				hottextcolor="white"/>
+		</VBox>
+	</ListContainerElement>
+	
+</Window>

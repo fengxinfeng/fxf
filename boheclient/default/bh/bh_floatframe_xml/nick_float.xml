@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+    <VBox bkcolor="" bkimage="nick_icon/nick_bk.png" visible="true">
+		<Control height="8"/>
+		<HBox height="40" bkcolor="">
+			<Control width="10"/>
+			<Label text="历史搜索" font="system_14" valign="center" normaltextcolor="white"/>
+			<Control width="75"/>
+			<Button name="clean_history_btn" text="清空搜索" font="system_14" valign="center" normaltextcolor="white"/>
+		</HBox>
+		<VListBox name="history_nick_text_vlb" height="165" childmargin="10" padding="22,11,0,14" vscrollbar="true" bkcolor="black" visible="true">
+		 </VListBox>
+		<HBox height="40" bkcolor="">
+			<Control width="10"/>
+			<Label text="热门搜索" font="system_14" valign="center" normaltextcolor="white"/>
+		</HBox>
+		<VListBox name="hot_nick_vlb" height="165" childmargin="10" padding="22,11,0,14" vscrollbar="true" bkcolor="black" visible="true">	
+		 </VListBox>
+    </VBox>
+</Window>

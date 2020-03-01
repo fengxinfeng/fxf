@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+    <VBox margin="211,84,212,144" bkcolor="" visible="true">
+		<HBox bkimage="box_bk_pic/update_bk.png">
+			<VBox width="344" bkcolor="" >
+				<VBox margin="35,248,0,0">
+					<Label name="" text="更新说明" font="system_12" normaltextcolor="white"/>
+					<Label name="" text="1,新增热门搜索,历史搜索功能" font="system_12" normaltextcolor="white"/>
+					<Label name="" text="2,新增启动游戏功能(仅支持steam平台游戏)" font="system_12" normaltextcolor="white"/>
+					<Label name="" text="3,优化游戏体验" font="system_12" normaltextcolor="white"/>
+				</VBox>
+			</VBox>
+			<VBox width="stretch" bkcolor="">
+				<Control height="106"/>
+				<Label width="50" height="39" bkcolor="yellow" halign="center"/>
+				<Control height="18"/>
+				<Progress width="200" height="4" bkcolor="green" halign="center"/>
+				<Control height="9"/>
+				<HBox height="auto" bkcolor="">
+					<Control width="89" />
+					<Label text="进度:" font="system_12" normaltextcolor="white"/>
+					<Label name="update_numb_lb" text="60%" font="system_12" normaltextcolor="white"/>
+				</HBox>
+			</VBox>
+		</HBox>
+    </VBox>
+</Window>

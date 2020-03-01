@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+    <VBox margin="131,37,109,93" bkcolor="" visible="true" bkimage="box_bk_pic/login_bk.png">
+		<HBox >
+			<Label width="516" height="440" bkcolor="" />
+			<VBox width="stretch" height="stretch" bkcolor=""> 
+				<Control height="9"/>
+				<HBox height="26" childmargin="15" bkcolor="">
+					<Button name="login_min_btn" width="26" height="26" margin="168,0,0,0" 
+							normalimage="file='btn_icon/main_min_btn.png' source='0,0,26,26'" 
+							hotimage="file='btn_icon/main_min_btn.png' source='26,0,52,26'" 
+							pushedimage="file='btn_icon/main_min_btn.png' source='52,0,78,26'" 
+							disabledimage="file='btn_icon/main_min_btn.png' source='78,0,104,26'"/>				
+					<Button name="login_close_btn" width="26" height="26" 
+							normalimage="file='btn_icon/main_close_btn.png' source='0,0,26,26'" 
+							hotimage="file='btn_icon/main_close_btn.png' source='26,0,52,26'" 
+							pushedimage="file='btn_icon/main_close_btn.png' source='52,0,78,26'" 
+							disabledimage="file='btn_icon/main_close_btn.png' source='78,0,104,26'"/>
+				</HBox>
+				<Control height="16"/>
+				<Label width="70" height="70" bkcolor="" halign="center" bkimage="lb_icon/login_logo_lb.png"/>
+				<Control height="29"/>
+				
+				<VBox name="child_login_regedit_vb">
+				</VBox>
+			</VBox>	
+		</HBox>
+    </VBox>
+</Window>

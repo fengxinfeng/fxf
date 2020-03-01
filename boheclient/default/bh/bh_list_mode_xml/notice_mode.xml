@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+	
+	<ListContainerElement width="auto" height="20" bkcolor="" visible="true">	
+		<HBox>
+			<Label name="notice_time_lb" text="今天" font="system_14" normaltextcolor="white" valign="center" halign="center"/>
+			<Control width="10"/>
+			<Label name="notice_msg_lb" text="薄荷加速器北方线" font="system_14" normaltextcolor="white" valign="center" halign="center"/>
+		</HBox>
+	</ListContainerElement>
+	
+</Window>

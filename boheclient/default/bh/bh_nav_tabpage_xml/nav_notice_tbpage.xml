@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+	
+	<VBox padding="0,23,45,34" visible="true">
+		<HBox>
+			<VListBox name="notice_vlb" padding="32,5,0,5" childmargin="18" vscrollbar="true" bkcolor="green">
+			</VListBox>
+			<RichEdit width="523" bkcolor="red"/>
+		</HBox>
+	</VBox>
+
+</Window>

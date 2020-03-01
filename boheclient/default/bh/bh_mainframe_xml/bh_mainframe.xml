@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window size="1000,630" caption="0,0,0,56" borderround="5,5">
+	<HBox>
+		
+		<VBox bkcolor="my_navbar_bk_color" width="164">
+			<Button name="main_logo_btn" width="130" height="26" margin="18,19,0,0" bkimage="btn_icon/main_logo_btn.png"/>
+			<Control height="53"/>
+			<Button name="main_head_btn" width="60" height="60" halign="center" bkimage="btn_icon/main_head_btn.png"/>
+			<Control height="19"/>
+			<Box>
+				<Button name="main_login_btn" width="100" height="30" text="点击登录" halign="center" font="system_12" normaltextcolor="white"
+						normalimage="file='btn_icon/main_login_btn.png' source='0,0,100,30'"
+						hotimage="file='btn_icon/main_login_btn.png' source='100,0,200,30'"
+						pushedimage="file='btn_icon/main_login_btn.png' source='200,0,300,30'"
+						disabledimage="file='btn_icon/main_login_btn.png' source='300,0,400,30'" visible="true"/>
+				<VBox name="name_time_vb" visible="false">
+					<Label name="user_name_lb"  text="Kyui_y" font="system_12" normaltextcolor="white" halign="center"/>
+					<Control height="15" />
+					<HBox>
+						<Control />
+						<Label width="13" height="13"/>
+						<Label name=""  text="2020.12.12" font="system_12"  normaltextcolor="white"/>
+						<Label name=""  text="13:00" font="system_12"  normaltextcolor="white"/>
+						<Control />
+					</HBox>
+				</VBox>
+			</Box>
+			
+			<ButtonBox name="main_myspeed_btn" text="我的加速" width="164" height="50" font="system_bold_14" normaltextcolor="white" bkcolor=""
+					normalimage="file='btn_icon/nav_btn.png' source='0,0,164,50'"
+					hotimage="file='btn_icon/nav_btn.png' source='0,0,164,50'">
+					<Label width="20" height="20" margin="20,14,0,0" normalimage="file='btn_icon/arccrate_btn_icon.png'"/>
+			</ButtonBox>
+			<ButtonBox name="game_download_btn" text="游戏下载" width="164" height="50" font="system_bold_14" normaltextcolor="white" bkcolor="" alpha="255"
+					normalimage="file='btn_icon/nav_btn.png' source='328,0,492,50'"
+					hotimage="file='btn_icon/nav_btn.png' source='164,0,328,50'">
+					<Label width="20" height="20" margin="20,14,0,0" normalimage="file='btn_icon/charge_btn_icon.png'"/>
+			</ButtonBox>
+			<ButtonBox name="content_arccrate_btn" text="内容加速" width="164" height="50" font="system_bold_14" normaltextcolor="white" bkcolor="" alpha="255"
+					normalimage="file='btn_icon/nav_btn.png' source='328,0,492,50'"
+					hotimage="file='btn_icon/nav_btn.png' source='164,0,328,50'">
+					<Label width="20" height="20" margin="20,14,0,0" normalimage="file='btn_icon/charge_btn_icon.png'"/>
+			</ButtonBox>
+			<ButtonBox name="main_recharge_btn" text="充值续费" width="164" height="50" font="system_bold_14" normaltextcolor="white" bkcolor="" alpha="255"
+					normalimage="file='btn_icon/nav_btn.png' source='328,0,492,50'"
+					hotimage="file='btn_icon/nav_btn.png' source='164,0,328,50'">
+					<Label width="20" height="20" margin="20,14,0,0" normalimage="file='btn_icon/charge_btn_icon.png'"/>
+			</ButtonBox>
+			<ButtonBox name="bh_notice_btn" text="薄荷公告" width="164" height="50" font="system_bold_14" normaltextcolor="white" bkcolor="" alpha="255"
+					normalimage="file='btn_icon/nav_btn.png' source='328,0,492,50'"
+					hotimage="file='btn_icon/nav_btn.png' source='164,0,328,50'">
+					<Label width="20" height="20" margin="20,14,0,0" normalimage="file='btn_icon/charge_btn_icon.png'"/>
+			</ButtonBox>
+			<Control height="100"/>
+			<Button name="main_menu_btn" width="164" height="41" bkcolor="" valign="bottom"
+					normalimage="file='btn_icon/main_menu_btn.png' source='0,0,164,41'"
+					hotimage="file='btn_icon/main_menu_btn.png' source='164,0,328,41'"
+					pushedimage="file='btn_icon/main_menu_btn.png' source='328,0,492,41'"
+					disabledimage="file='btn_icon/main_menu_btn.png' source='492,0,656,41'"/>
+		</VBox>
+		<VBox bkcolor="" bkimage="box_bk_pic/main_right.png">
+			<!--系统操作按钮部分-->
+			<Control height="21"/>
+			<HBox height="26" childmargin="15" margin="17,0,21,0">
+				<Control />
+				<Button name="minbtn" width="26" height="26" tooltiptext="最小化"
+							normalimage="file='btn_icon/main_min_btn.png' source='0,0,26,26'" 
+							hotimage="file='btn_icon/main_min_btn.png' source='26,0,52,26'" 
+							pushedimage="file='btn_icon/main_min_btn.png' source='52,0,78,26'" 
+							disabledimage="file='btn_icon/main_min_btn.png' source='78,0,104,26'"/>				
+				<Button name="closebtn" width="26" height="26" halign="right" tooltiptext="关闭" 
+						normalimage="file='btn_icon/main_close_btn.png' source='0,0,26,26'" 
+						hotimage="file='btn_icon/main_close_btn.png' source='26,0,52,26'" 
+						pushedimage="file='btn_icon/main_close_btn.png' source='52,0,78,26'" 
+						disabledimage="file='btn_icon/main_close_btn.png' source='78,0,104,26'"/>
+			</HBox>
+			<!--导航栏显示区域-->
+			<VBox name="nav_bar_vb" visible="true">
+			</VBox>
+		</VBox>
+		<!--设置游戏启动路径-->
+		<VBox name="set_game_path_vb" margin="0,60,0,0" float="true" bkcolor="" alpha="255" visible="false">
+		</VBox>
+		<!--选择区服，地区，节点等浮层-->
+		<VBox name="select_svr_area_node_vb" margin="0,60,0,0" float="true" bkcolor="" alpha="255" visible="false">
+		</VBox>
+		<!--监控-->
+		<VBox name="monitor_vb" margin="0,60,0,0" float="true" bkcolor="" alpha="255" visible="false">
+		</VBox>
+		<!--加速工具-->
+		<VBox name="arccrate_tool_vb" margin="0,0,0,0" float="true" bkcolor="" alpha="255" visible="false">
+		</VBox>
+		<!--系统设置-->
+		<VBox name="system_set_vb" margin="0,60,0,0" float="true" bkcolor="" alpha="255" visible="false">
+		</VBox>
+		<!--搜索框显示框-->
+		<VBox name="nick_vb" margin="583,83,205,127" float="true" bkcolor="" alpha="255" visible="false">
+		</VBox>
+		<!--内容加速浮层提示-->
+		<VBox name="content_tip_vb" margin="0,60,0,0" float="true" visible="false">
+		</VBox>
+		<!--更新框-->
+		<VBox name="update_tip_vb" margin="0,60,0,0" float="true" visible="false">
+		</VBox>
+		<!--登录框-->
+		<VBox name="login_vb" margin="0,60,0,0" float="true" visible="false">
+		</VBox>
+		<!--菜单-->
+		<VBox name="menu_vb" margin="7,310,843,47" float="true" visible="false">
+		</VBox>
+		<!--三方登录弹框-->
+		<VBox name="thridparty_vb" margin="0,60,0,0"  float="true"  alpha="255" visible="false">
+		</VBox>
+	</HBox>
+	
+</Window>
+

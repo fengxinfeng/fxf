@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+  <VBox visible="false">
+	<Control height="24"/>
+	<HBox width="stretch" height="85" margin="16,0,16,0" borderround="4,4" bkcolor="my_monitor_color3">
+		<Box width="80" height="66" margin="54,8,0,0" bkcolor="">
+			<VBox>
+				<HBox>
+					<Label class="my_blod_font_moniton_40" name="" text="27"/>
+					<Label class="my_blod_font_moniton_16" name="" text="MB" margin="2,25,0,0"/>
+				</HBox>
+				<Label class="monitor_net_text1" text="游戏全程延迟"/>
+			</VBox>
+		</Box>
+		<Control width="110" />
+		<Control width="2" bkcolor="my_half_white"/>
+		<Box width="80" height="66" bkcolor="" margin="112,8,0,0">
+			<VBox>
+				<HBox>
+					<Label class="my_blod_font_moniton_40" name="" text="0"/>
+					<Label class="my_blod_font_moniton_16" name="" text="%" margin="2,25,0,0"/>
+				</HBox>
+				<Label class="monitor_net_text1"text="总丢包率"/>
+			</VBox>
+		</Box>
+		<Control width="140" />
+		<Control width="2" bkcolor="my_half_white"/>
+		<Box height="48" bkcolor="" margin="50,17,0,0">
+			<VBox>
+				<HBox>
+					<Label class="monitor_net_text1" text="正在加速:"/>
+					<Label class="monitor_net_text1" text="steam"/>
+				</HBox>
+				<HBox>
+					<Label class="monitor_net_text1" text="用户网络:"/>
+					<Label class="monitor_net_text1" text="无线网络"/>
+				</HBox>
+				<HBox>
+					<Label class="monitor_net_text1" text="当前节点:"/>
+					<Label class="monitor_net_text1" text="湖北-电信-A"/>
+				</HBox>
+			</VBox>
+		</Box>
+	</HBox>
+	<Control height="28"/>
+	
+	<HBox height="54" bkcolor="">
+		<Control width="45"/>
+		<VBox width="30" bkcolor="">
+			<Label width="30" height="30" halign="center" bkimage="lb_icon/computer_lb.png"/>
+			<Control height="5"/>
+			<Label class="monitor_net_text2" text="电脑" halign="center"/>
+		</VBox>
+		<Control width="31"/>
+		<VBox width="126" bkcolor="">
+			<HBox>
+				<Control width="20"/>
+				<Label class="monitor_net_text2" text="用户网络:" valign="center" halign="center"/>
+				<Label class="monitor_net_text2" text="22ms" valign="center" halign="center"/>
+			</HBox>
+			<Control width="126" height="2" bkcolor="my_half_white"/>
+			<HBox>
+				<Control width="33"/>
+				<Label class="monitor_net_text2" text="丢包率:"valign="center" halign="center"/>
+				<Label class="monitor_net_text2" text="0%" valign="center" halign="center"/>
+			</HBox>
+		</VBox>
+		<Control width="39"/>
+		<VBox width="40" bkcolor="">
+			<Label width="30" height="30" halign="center" bkimage="lb_icon/TP_lb.png"/>
+			<Control height="5"/>
+			<Label class="monitor_net_text2" text="路由器" halign="center"/>
+		</VBox>
+		<Control width="31"/>
+		<VBox width="125" bkcolor="">
+			<HBox>
+				<Control width="32"/>
+				<Label class="monitor_net_text2" text="公网:" valign="center" halign="center"/>
+				<Label class="monitor_net_text2" text="22ms" valign="center" halign="center"/>
+			</HBox>
+			<Control width="125" height="2" bkcolor="my_half_white"/>
+			<HBox>
+				<Control width="32"/>
+				<Label class="monitor_net_text2" text="丢包率:"valign="center" halign="center"/>
+				<Label class="monitor_net_text2" text="0%" valign="center" halign="center"/>
+			</HBox>
+		</VBox>
+		<Control width="32"/>
+		<VBox width="64" bkcolor="">
+			<Label width="30" height="30" halign="center" bkimage="lb_icon/node_svr_lb.png"/>
+			<Control height="5"/>
+			<Label class="monitor_net_text2" text="节点服务器" halign="center"/>
+		</VBox>
+		<Control width="31"/>
+		<VBox width="125" bkcolor="">
+			<HBox>
+				<Control width="32"/>
+				<Label class="monitor_net_text2" text="专线:" valign="center" halign="center"/>
+				<Label class="monitor_net_text2" text="22ms" valign="center" halign="center"/>
+			</HBox>
+			<Control width="125" height="2" bkcolor="my_half_white"/>
+			<HBox>
+				<Control width="32"/>
+				<Label class="monitor_net_text2" text="丢包率:"valign="center" halign="center"/>
+				<Label class="monitor_net_text2" text="0%" valign="center" halign="center"/>
+			</HBox>
+		</VBox>
+		<Control width="31"/>
+		<VBox width="64" bkcolor="">
+			<Label width="30" height="30" halign="center" bkimage="lb_icon/game_svr_lb.png"/>
+			<Control height="5"/>
+			<Label class="monitor_net_text2" text="游戏服务器" halign="center"/>
+		</VBox>
+	</HBox>
+	<Control height="30"/>
+	<VBox height="stretch" width="stretch" bkcolor="">
+		<HBox height="16" bkcolor="">
+			<Control width="45"/>
+			<Label class="my_font_moniton_12" text="网络延迟走势图"/>
+			<Control width="538" />
+			<HBox childmargin="5">
+				<Button class="my_font_moniton_12" text="1分钟" valign="bottom" halign="right"/>
+				<Button class="my_font_moniton_12" text="5分钟" valign="bottom" halign="right"/>
+				<Button class="my_font_moniton_12" text="10分钟" valign="bottom" halign="right"/>
+			</HBox>
+		</HBox>
+		<VBox childmargin="15" margin="45,29,0,0">
+			<Label class="monitor_net_text2" text="1000ms"/>
+			<Label class="monitor_net_text2" text="800ms"/>
+			<Label class="monitor_net_text2" text="600ms"/>
+			<Label class="monitor_net_text2" text="400ms"/>
+			<Label class="monitor_net_text2" text="200ms"/>
+			<Label class="monitor_net_text2" text="0ms"/>
+		</VBox>
+	</VBox>
+  </VBox>
+</Window>

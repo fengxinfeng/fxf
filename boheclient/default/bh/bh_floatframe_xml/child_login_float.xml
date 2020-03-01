@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+    <VBox visible="true">
+			<Box width="210" height="35" bkcolor="" halign="center">
+			  <Combo  name="nation_com" width="35" height="22" margin="12,0,0,0"  bkcolor="red" valign="center"/>
+			  <RichEdit class="prompttext_title1" name="phonenumber_edit" width="210" height="35" padding="65,7,0,0" prompttext="手机号" bkcolor="my_login_default_color"/>
+			</Box>
+			<Control height="2"/>
+			<RichEdit class="prompttext_title1" name="pwd_edit" width="210" height="35" halign="center" padding="12,7,0,0" prompttext="密码" password="true" bkcolor="my_login_default_color" />
+			<Control height="11"/>
+			<HBox  height="auto">
+				<Control width="18"/>
+				<CheckBox class="my_checkbox_font12" name="remeber_cb" text="记住我" textpadding="5,0,0,0" normaltextcolor="white"/>
+				<Control width="75"/>
+				<CheckBox class="my_checkbox_font12" name="auto_cb" text="自动登录" normaltextcolor="white"/>
+				<Control width="18"/>
+			</HBox>
+			<Control height="9"/>
+			<Button name="login_btn" text="登录" width="210" height="40" bkcolor="red" halign="center" disabledimage="file='btn_icon/login_btn.png' source='732,0,976,74'" enabled="false"/>
+			<Control height="11"/>
+			<HBox height="auto">
+				<Control />
+				<Button name="forgetpwd_btn" text="忘记密码" width="50" height="17" font="system_12" normaltextcolor="white" />
+				<Control width="114"/>
+				<Button name="reg_btn" text="立即注册" width="50" height="17" font="system_12" normaltextcolor="white" />
+				<Control />
+			</HBox>
+			<Control height="35" />
+			<Label text="第三方登录" font="system_12" normaltextcolor="white" halign="center"/>
+			<Control height="14" />
+			<HBox height="28" childmargin="19" bkcolor="">
+				<Control />
+				<Button name="QQ_login_btn" width="28" height="28" bkcolor="" bkimage="btn_icon/qq_btn.png"/>
+				<Button name="WX_login_btn" width="28" height="28" bkcolor="" bkimage="btn_icon/wx_btn.png"/>
+				<Button name="WB_login_btn" width="28" height="28" bkcolor="" bkimage="btn_icon/wb_btn.png"/>
+				<Control />
+			</HBox>
+			<Control />
+		
+    </VBox>
+</Window>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+    <VBox margin="175,111,175,100" bkcolor="" visible="true">
+		 <HBox height="57" width="stretch" bkcolor="black">
+			<Control width="21"/>
+			<Label text="第三方登录" valign="center" font="system_14" normaltextcolor="white"/>
+			<Control />
+			<Button name="thrid_close_btn" width="26" height="26" valign="center"  
+					normalimage="file='btn_icon/dialog_close_btn.png' source='0,0,26,26'" 
+					hotimage="file='btn_icon/dialog_close_btn.png' source='0,0,26,26'" 
+					pushedimage="file='btn_icon/dialog_close_btn.png' source='0,0,26,26'" 
+					disabledimage="file='btn_icon/dialog_close_btn.png' source='0,0,26,26'"/>
+			<Control width="18"/>
+		 </HBox>
+		 
+		<Box margin="1,0,1,1" bkcolor="white">
+			<CefControl name="cef_thrid"/>
+		 </Box>
+		
+    </VBox>
+</Window> 

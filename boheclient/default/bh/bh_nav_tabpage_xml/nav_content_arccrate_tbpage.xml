@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+	
+	<VBox bkcolor="" visible="true">
+		<Control height="44" />
+		<Label text="一键加速 极速访问国内网络" font="system_28" normaltextcolor="white" halign="center"/>
+		<Control height="12" />
+		<Label text="游戏    音乐    网页     视频" font="system_14" normaltextcolor="white" halign="center"/>
+		<Control height="34" />
+		<Label width="252" height="254" bkcolor="red" halign="center"/>
+		<Control height="18" />
+		<HBox visible="true">
+			<Control />
+			
+				<Label class="centent_text1" name="content_h_lb" text="00"/>
+				<Label class="centent_text1" text=":"/>
+				<Label class="centent_text1" name="content_m_lb" text="00"/>
+				<Label class="centent_text1" text=":"/>
+				<Label class="centent_text1" name="content_s_lb" text="00"/>
+			<Control width="5"/>
+			<Label class="centent_text1" name="content_flow_lb" text="168kb"/>
+			<Control width="5"/>
+			<Label class="centent_text1" name="cotent_time_lb" text="234ms"/>
+			<Control width="5"/>
+			<Label class="centent_text1" name="percent_lb" text="3%"/>
+			<Control />
+		</HBox>
+		<Control height="10" />
+		
+		<Button width="164" height="45" text="开始加速" halign="center" bkcolor="red"/>
+		<Control />
+		<Control />
+	</VBox>
+</Window>

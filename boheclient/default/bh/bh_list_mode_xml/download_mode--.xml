@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+	<ListContainerElement name="download_element" width="796" height="62" visible="true" mouse="true" bkcolor="red">	
+		<HBox>
+			<Control width="15"/>
+			<Label width="30" height="30" bkcolor="green" valign="center"/>
+			<Control width="14"/>
+			<Label width="125" text="awayqut_4.0.3_rar" font="system_12" valign="center"/>
+			<Control width="58"/>
+			<HBox>
+				<Label text="135M" font="system_12" valign="center"/>
+				<Label text="/" font="system_12" valign="center"/>
+				<Label text="1.3G" font="system_12" valign="center"/>
+			</HBox>
+			<Control width="33"/>
+			<Label width="8" height="12" bkcolor="green" valign="center"/>
+			<Control width="4"/>
+			<Label text="77.3MB" font="system_12" valign="center"/>
+			<Label text="/s" font="system_12" valign="center"/>
+			<Control width="21"/>
+			<HBox>
+				<Label text="剩余:" font="system_12" valign="center"/>
+				<Label text="00" font="system_12" valign="center"/>
+				<Label text=":" font="system_12" valign="center"/>
+				<Label text="00" font="system_12" valign="center"/>
+				<Label text=":" font="system_12" valign="center"/>
+				<Label text="00" font="system_12" valign="center"/>
+			</HBox>
+			<Control width="202"/>
+			<HBox childmargin="5">
+				<Button width="16" height="16" bkcolor="green" valign="center"/>
+				<Button width="16" height="16" bkcolor="green" valign="center"/>
+				<Button width="16" height="16" bkcolor="green" valign="center"/>
+			</HBox>
+		</HBox>
+	</ListContainerElement>
+	
+</Window>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+    <VBox margin="238,82,186,115" bkcolor="black" visible="true">
+		<Control height="19" />
+		<HBox height="26"  bkcolor="">
+			<Control width="22"/>
+			<Label text="温馨提示" font="system_14" normaltextcolor="white" valign="center"/>
+			<Control width="460"/>
+			<Button name="content_tip_close_btn" width="26" height="26" halign="right"  
+				normalimage="file='btn_icon/dialog_close_btn.png' source='0,0,26,26'" 
+				hotimage="file='btn_icon/dialog_close_btn.png' source='0,0,26,26'" 
+				pushedimage="file='btn_icon/dialog_close_btn.png' source='0,0,26,26'" 
+				disabledimage="file='btn_icon/dialog_close_btn.png' source='0,0,26,26'"/>
+		</HBox>
+		<Control height="98"/>
+		<Label width="30" height="30" bkcolor="red" halign="center"/>
+		<Control height="15"/>
+		<Label text="由于地区限制无法使用请在其他地区使用" width="140" height="38" font="system_14" normaltextcolor="white" singleline="false" align="center" halign="center"/>
+		<Control height="65"/>
+		<Button width="100" height="35" text="确定"  font="system_14" normaltextcolor="white" halign="center"/>
+    </VBox>
+</Window>
