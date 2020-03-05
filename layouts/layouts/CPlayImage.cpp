@@ -24,7 +24,7 @@ namespace nui {
 		m_hasinited = false;
 		m_steps = 10;
 		m_leftvalue = 0;
-		m_turnNumber = 0;
+		m_turnNumber = 1;
 		m_isAnimationRunning = false;
 		m_isFirstCircle = true;
 		m_animationThread = new AnimationThread(kThreadAni, "Animation Thread");
@@ -34,16 +34,14 @@ namespace nui {
 		delete m_animationThread;
 	}
 
+
+	/*
+	*  timer callback
+	*/
 	void CALLBACK PlayToLeft(HWND hwnd, UINT message, UINT iTimerID, DWORD dwTime)
 	{
 		
 		if (!g_active)  return;
-
-		//WCHAR buf[32];
-		//wsprintf(buf, L"  timer callback runs in %d", std::this_thread::get_id());
-		//OutputDebugString(buf);
-		//OutputDebugString(L"PlayNext ---->");
-		//g_player->ToLeft();
 		g_player->StartMove();
  
 	}
@@ -51,37 +49,59 @@ namespace nui {
 	 
 	void CPlayImage::StartMove() {
 
-		int  n = 4;
-		if (m_isFirstCircle) {
-			n = 3;
-			m_isFirstCircle = false;
-		}
-		WCHAR dbuf[128];
-        wsprintf(dbuf, L"animation n=  %d        m_turnNumber: %d", n, m_turnNumber);
-		OutputDebugString(dbuf);
-		if (m_turnNumber >= n) { //全部图片播完，图片复位
+		//if (m_turnNumber >= 4) { //全部图片播完，图片复位
+		//	OutputDebugString(L"全部图片播完，图片复位");
+		//	ui::Label *one = dynamic_cast<ui::Label*>(FindSubControl(L"one"));
+		//	ui::UiRect   r0 = one->GetMargin();
+		//	ui::UiRect r(one->GetFixedWidth(), 0, 0, 0);
+		//	one->SetMargin(r);
+		//	m_turnNumber = 0;
+		//}
+
+		if (m_turnNumber >= 4) { //全部图片播完，图片复位
 			OutputDebugString(L"全部图片播完，图片复位");
-			ui::Label *one = dynamic_cast<ui::Label*>(FindSubControl(L"one"));
+			ui::Label *one = dynamic_cast<ui::Label*>(FindSubControl(L"beforeone"));
 			ui::UiRect   r0 = one->GetMargin();
-			ui::UiRect r(one->GetFixedWidth(), 0, 0, 0);
+			ui::UiRect r(0, 0, 0, 0);
 			one->SetMargin(r);
 			m_turnNumber = 0;
 		}
+
 		m_turnNumber++;
-		for (int count = 0; count < m_steps; count++) {
+		StartAnimation(0);
+	}
+
+	/*
+	*  启动图片切换 animation
+	*  @param  direction     0, left;   1, right
+	*/
+	void  CPlayImage::StartAnimation(int direction) {
+		m_isAnimationRunning = true;
+		for (int count = 0; count < m_steps; count++) {			 
+			int64_t delay = count * 50;
 			nbase::ThreadManager::PostDelayedTask(kThreadAni, ToWeakCallback([=]() {
- 
-				nbase::ThreadManager::PostTask(kThreadUI, ToWeakCallback ( [this,count]() {
-					//WCHAR dbuf[128];
-					//wsprintf(dbuf, L"animation task  %d          thread id: %d", count, std::this_thread::get_id());
+
+				if (!g_active)  return;
+				nbase::ThreadManager::PostTask(kThreadUI, ToWeakCallback([this, count,direction]() {
+					if (!g_active)  return;
 					int v = m_stepLength;
 					if (count == 9)  v += m_leftvalue;
-					MoveOneStopToLeft(v);
-					//OutputDebugString(dbuf);
+					switch (direction) {
+					case 0:
+						MoveOneStepToLeft(v,count);
+						break;
+					case 1:
+						MoveOneStepToRight(v,count);
+						break;
+					}
+ 
 				}));
-			}) , nbase::TimeDelta::FromMilliseconds(100));
+			}), nbase::TimeDelta::FromMilliseconds(delay));
 		}
+
 	}
+
+
 
 	void CPlayImage::Construct() {
  
@@ -174,53 +194,62 @@ namespace nui {
 		 
 	}
 
-	void CPlayImage::MoveOneStopToLeft(int value) {
-		ui::Label *one = dynamic_cast<ui::Label*>(FindSubControl(L"one"));
+	void CPlayImage::MoveOneStepToLeft(int value,int currentstep) {
+		//ui::Label *one = dynamic_cast<ui::Label*>(FindSubControl(L"one"));
+		//ui::UiRect   r0 = one->GetMargin();
+		//ui::UiRect r(r0.left - value, 0, 0, 0);
+		//one->SetMargin(r);
+		ui::Label *one = dynamic_cast<ui::Label*>(FindSubControl(L"beforeone"));
 		ui::UiRect   r0 = one->GetMargin();
 		ui::UiRect r(r0.left - value, 0, 0, 0);
 		one->SetMargin(r);
+
+		if (currentstep >= m_steps - 1) {
+			OutputDebugString(L"Animation is finished.");
+			m_isAnimationRunning = false;
+		}
+		OutputDebugString(L"CPlayImage::MoveOneStopToLef --->");
+	}
+
+	void CPlayImage::MoveOneStepToRight(int value, int currentstep) {
+		ui::Label *one = dynamic_cast<ui::Label*>(FindSubControl(L"beforeone"));
+		ui::UiRect   r0 = one->GetMargin();
+		ui::UiRect r(r0.left + value, 0, 0, 0);
+		one->SetMargin(r);
+		if (currentstep >= m_steps - 1) {
+			OutputDebugString(L"Animation is finished.");
+			m_isAnimationRunning = false;
+		}
+		OutputDebugString(L"CPlayImage::MoveOneStepToLeft --->");
 	}
 
 	void CPlayImage::ToLeft() {
-		int i = 0;
-		for (auto v : m_vector) {
-			if (v->IsVisible()) {
-				v->SetVisible(false);
-				break;
-			}
-			i++;
+		if (m_isAnimationRunning)  return;
+		if (m_turnNumber >= 4) { //全部图片播完，图片复位
+			OutputDebugString(L"全部图片播完，图片复位");
+			ui::Label *one = dynamic_cast<ui::Label*>(FindSubControl(L"beforeone"));
+			ui::UiRect   r0 = one->GetMargin();
+			ui::UiRect r(0, 0, 0, 0);
+			one->SetMargin(r);
+			m_turnNumber = 0;
 		}
-		i--;
-
-		WCHAR buf[32];
-		wsprintf(buf, L"CPlayImage::   i= %d, size = %d", i, m_vector.size());
-		OutputDebugString(buf);
-		if (i < 0) {
-			i = m_vector.size() - 1;
-		}
-
-		m_vector.at(i)->SetVisible(true);
+		m_turnNumber++;
+		StartAnimation(0);
+	
 	}
 
 	void CPlayImage::ToRight() {
-		int i = 0;
-		for (auto v : m_vector) {
-			i++;
-			if (v->IsVisible()) {
-				v->SetVisible(false);
-				break;
-			}
-
+		if (m_isAnimationRunning)  return;
+		if (m_turnNumber <=1 ) { //全部图片播完，图片复位
+			OutputDebugString(L"全部图片播完，图片复位");
+			ui::Label *one = dynamic_cast<ui::Label*>(FindSubControl(L"beforeone"));
+			ui::UiRect   r0 = one->GetMargin();
+			ui::UiRect r(-one->GetFixedWidth()*5, 0, 0, 0);
+			one->SetMargin(r);
+			m_turnNumber = 5;
 		}
-
-		WCHAR buf[32];
-		wsprintf(buf, L"CPlayImage::   i= %d, size = %d", i, m_vector.size());
-		OutputDebugString(buf);
-		if (i >= m_vector.size()) {
-			i = 0;
-		}
-
-		m_vector.at(i)->SetVisible(true);
+		m_turnNumber--;
+		StartAnimation(1);
 	}
 		 
  

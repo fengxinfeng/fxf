@@ -50,11 +50,14 @@ namespace  nui {
 		void Start();
 		void Stop();
 		void ToLeft();
-		void ToRight();
-		void  MoveOneStopToLeft(int value);
+		void ToRight(); 
 		void StartMove();
 	private:
 		void Construct();
+		void  MoveOneStepToLeft(int value, int currentstep);
+		void  MoveOneStepToRight(int value, int currentstep);
+		void  StartAnimation(int direction);
+	private:
 		bool  m_hasinited;
 		int  m_steps;
 		int  m_stepLength;
