@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window   >
+  <VBox  bkcolor="green"> 
+  <Box  name="turn_box">
+      
+    <HBox name="image_container" width="600"  height="300" bkcolor="white">
+      <Label name="one" bkimage="b1.png"  width="600" height="300" margin="0,0,0,0" visible="true"/>
+      <Label name="two" bkimage="b2.png" width="600" height="300" margin="0,0,0,0"  visible="true"/>
+      <Label name="three" bkimage="b3.png" width="600" height="300" margin="0,0,0,0"  visible="true"/>
+      <Label name="four" bkimage="b4.png" width="600" height="300" margin="0,0,0,0" visible="true"/>
+    </HBox>
+    
+    <Button name="left" width="100"  height="50"  text="left"    halign="left"  valign="center" 							
+              normaltextcolor="black"
+							hottextcolor="white"/>
+
+    <Button name="move" width="100"  height="50"  text="left"    halign="center"  valign="center" bkcolor="red"
+          normaltextcolor="black"
+          hottextcolor="white"/>
+    
+    <Button  name="right" width="100"  height="50"  text="right"    halign="right"  valign="center"               
+             normaltextcolor="black"
+							hottextcolor="white"/>
+    
+  </Box>
+  </VBox>
+</Window>
