@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window > 
+  <VBox width="600" height="519"   bkcolor="black"  visible="true">
+    <HBox height="30" width="stretch">
+      <Label text="登录" font="system_14" width="56" height="20"   valign="center"    normaltextcolor="white"/>     
+      <Control />
+      <Button name="close_btn" width="24" height="24" margin="0,0,4,0"  visible="true"
+      normalimage="file='common_close_btn.png' source='0,0,24,24'"
+      hotimage="file='common_close_btn.png' source='24,0,48,24'"
+      pushedimage="file='common_close_btn.png' source='48,0,72,24'"
+      disabledimage="file='common_close_btn.png' source='72,0,96,24'"/>
+    </HBox>
+    
+    <HBox  height="auto">
+      <Button name="btn_dev_tool" width="auto" height="auto"   tooltiptext="开发者工具" bkimage="btn_dev_tool.png"  />
+      <RichEdit class="simple prompt input"  margin="10,0,0,0" name="edit_url" width="stretch" height="28"  padding="5,5,5,5" prompttext="请输入网址"/>
+    </HBox>
+    
+    <HBox    height="1"   bkcolor="white"/>
+    <CefControl name="cef_control"  visible="false" />
+    <CefControl name="cef_control_dev"/>
+  </VBox>
+</Window>
+
+ 
