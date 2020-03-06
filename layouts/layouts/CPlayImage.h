@@ -49,14 +49,19 @@ namespace  nui {
 	public:
 		void Start();
 		void Stop();
-		void ToLeft();
-		void ToRight(); 
 		void StartMove();
 	private:
+		void ToLeft();
+		void ToRight();
+		void FastMove(int whichclicked);
+		void FastToLeft(int steps, int steplength, int left, bool atonce=false);
+		void FastToRight(int steps, int steplength, int left, bool atonce=false);
 		void Construct();
 		void  MoveOneStepToLeft(int value, int currentstep);
 		void  MoveOneStepToRight(int value, int currentstep);
 		void  StartAnimation(int direction);
+		void  FastAnimation(int direction, int steps, int steplength, int left);
+		void  SwitchTaps(int n);
 	private:
 		bool  m_hasinited;
 		int  m_steps;
@@ -66,6 +71,7 @@ namespace  nui {
 		bool  m_isAnimationRunning;
 		bool  m_isFirstCircle;
 		std::vector<ui::Label *> m_vector;
+		std::vector<ui::Button *> m_taps;
 		HWND m_hwnd;
 		AnimationThread * m_animationThread;
 		 

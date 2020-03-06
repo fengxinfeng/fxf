@@ -5,6 +5,7 @@
 #include "stdafx.h"
 #include "CPlayImage.h"  
 #include "duilib/Animation/AnimationPlayer.h"
+#include <math.h>
 
 #define  TIMER_PLAY_TOLEFT 1002
 
@@ -57,7 +58,7 @@ namespace nui {
 		//	one->SetMargin(r);
 		//	m_turnNumber = 0;
 		//}
-
+		m_isAnimationRunning = true;
 		if (m_turnNumber >= 4) { //全部图片播完，图片复位
 			OutputDebugString(L"全部图片播完，图片复位");
 			ui::Label *one = dynamic_cast<ui::Label*>(FindSubControl(L"beforeone"));
@@ -66,9 +67,9 @@ namespace nui {
 			one->SetMargin(r);
 			m_turnNumber = 0;
 		}
-
+		 
 		m_turnNumber++;
-		StartAnimation(0);
+		StartAnimation(0); 
 	}
 
 	/*
@@ -77,6 +78,7 @@ namespace nui {
 	*/
 	void  CPlayImage::StartAnimation(int direction) {
 		m_isAnimationRunning = true;
+		SwitchTaps(m_turnNumber );
 		for (int count = 0; count < m_steps; count++) {			 
 			int64_t delay = count * 50;
 			nbase::ThreadManager::PostDelayedTask(kThreadAni, ToWeakCallback([=]() {
@@ -85,7 +87,7 @@ namespace nui {
 				nbase::ThreadManager::PostTask(kThreadUI, ToWeakCallback([this, count,direction]() {
 					if (!g_active)  return;
 					int v = m_stepLength;
-					if (count == 9)  v += m_leftvalue;
+					if (count == m_steps -1)  v += m_leftvalue;
 					switch (direction) {
 					case 0:
 						MoveOneStepToLeft(v,count);
@@ -93,6 +95,10 @@ namespace nui {
 					case 1:
 						MoveOneStepToRight(v,count);
 						break;
+					}
+					if (count >= m_steps - 1) {
+						OutputDebugString(L"Animation is finished.");
+						m_isAnimationRunning = false;
 					}
  
 				}));
@@ -102,47 +108,93 @@ namespace nui {
 	}
 
 
+	/*
+*  快速切换 animation
+*  @param  direction     0, left;   1, right
+*  @param steps   移动步数
+*  @ steplength   移动步长
+*/
+	void  CPlayImage::FastAnimation(int direction, int steps, int steplength, int leftlength) {
+		m_isAnimationRunning = true;
+		SwitchTaps(m_turnNumber);
+		for (int count = 0; count < steps; count++) {
+			int64_t delay = count * 50;
+ 
+				if (!g_active)  return;
+				nbase::ThreadManager::PostDelayedTask(kThreadUI, ToWeakCallback([this, count, steps, steplength, leftlength, direction]() {
+					if (!g_active)  return;
+					int v = steplength;
+					if (count == steps -1)  v += leftlength;
+					switch (direction) {
+					case 0:
+						MoveOneStepToLeft(v, count);
+						break;
+					case 1:
+						MoveOneStepToRight(v, count);
+						break;
+					}
+					if (count >= steps - 1) {
+						OutputDebugString(L"Animation is finished.");
+						m_isAnimationRunning = false;
+					}
+
+				}), nbase::TimeDelta::FromMilliseconds(delay));
+		}
+
+	}
+
 
 	void CPlayImage::Construct() {
  
 		m_hwnd = this->GetWindow()->GetHWND();
 
  
+		//ui::HBox *container = dynamic_cast<ui::HBox*>(FindSubControl(L"image_container"));
+		//int boxwidth = container->GetFixedWidth();
 
 		ui::Label *image = dynamic_cast<ui::Label*>(FindSubControl(L"one"));
-		if (image)   m_vector.push_back(image);
+		if (image) {
+			//image->SetFixedWidth(boxwidth);
+			m_vector.push_back(image);
+		}
 		image = dynamic_cast<ui::Label*>(FindSubControl(L"two"));
-		if (image)   m_vector.push_back(image);
+		if (image) {
+			//image->SetFixedWidth(boxwidth);
+			m_vector.push_back(image);
+		}
 		image = dynamic_cast<ui::Label*>(FindSubControl(L"three"));
-		if (image)   m_vector.push_back(image);
+		if (image) {
+			//image->SetFixedWidth(boxwidth);
+			m_vector.push_back(image);
+		}
 		image = dynamic_cast<ui::Label*>(FindSubControl(L"four"));
-		if (image)   m_vector.push_back(image);
+		if (image) {
+			//image->SetFixedWidth(boxwidth);
+			m_vector.push_back(image);
+		}
  
-
 		int width = image->GetFixedWidth();
 		m_stepLength = width / m_steps;
 		m_leftvalue = width % 10;
 
 
 		WCHAR buf[256];
-		wsprintf(buf, L"CPlayImage: handler =  %lx   image width=%d,  stepLegth=%d,  leftvalue=%d", m_hwnd,width,m_stepLength,m_leftvalue);
+		wsprintf(buf, L"CPlayImage: handler =  %lx   image width=%d,  stepLegth=%d,  leftvalue=%d", m_hwnd,  width,m_stepLength,m_leftvalue);
 		OutputDebugString(buf);
 
 		ui::Button * leftbtn = dynamic_cast<ui::Button*>(FindSubControl(L"left"));
-		ui::Button * rightbtn = dynamic_cast<ui::Button*>(FindSubControl(L"right"));
-		ui::Button * movebtn = dynamic_cast<ui::Button*>(FindSubControl(L"move"));
+		ui::Button * rightbtn = dynamic_cast<ui::Button*>(FindSubControl(L"right"));	
+		ui::Button * firstbtn = dynamic_cast<ui::Button*>(FindSubControl(L"first"));
 
-
-		if (movebtn) {
-			movebtn->AttachClick([this](ui::EventArgs* args) {
-				OutputDebugString(L"CPlayImage:::CPlayImage   movebtn  ");
-				ui::Label *one = dynamic_cast<ui::Label*>(FindSubControl(L"one"));
-				ui::UiRect r(-100,0,0,0);
-				one->SetMargin(r);
-
-				return true;
-			});
-		}
+		firstbtn->SetAttribute(L"normaltextcolor", L"green");
+		ui::Button * secondbtn = dynamic_cast<ui::Button*>(FindSubControl(L"second"));
+		ui::Button * thirdbtn = dynamic_cast<ui::Button*>(FindSubControl(L"third"));
+		ui::Button * forthbtn = dynamic_cast<ui::Button*>(FindSubControl(L"forth"));
+		m_taps.push_back(firstbtn);
+		m_taps.push_back(secondbtn);
+		m_taps.push_back(thirdbtn);
+		m_taps.push_back(forthbtn);
+ 
 
 		if (leftbtn) { 
 			leftbtn->AttachClick([this](ui::EventArgs* args) {
@@ -166,8 +218,81 @@ namespace nui {
 			});
 		}
 
+		if (firstbtn) {
+			firstbtn->AttachClick([this](ui::EventArgs* args) {
+				if (m_isAnimationRunning) {
+					OutputDebugString(L" is animation, return");
+					return true;
+				}
+ 
+				FastMove(1);
+				return true;
+			});
+		}
+		if (secondbtn) {
+			secondbtn->AttachClick([this](ui::EventArgs* args) {
+				if (m_isAnimationRunning) {
+					OutputDebugString(L" is animation, return");
+					return true;
+				}
+
+				FastMove(2);
+				return true;
+			});
+		}
+
+		if (thirdbtn) {
+			thirdbtn->AttachClick([this](ui::EventArgs* args) {
+				if (m_isAnimationRunning) {
+					OutputDebugString(L" is animation, return");
+					return true;
+				}
+
+				FastMove(3);
+				return true;
+			});
+		}
+		if (forthbtn) {
+			forthbtn->AttachClick([this](ui::EventArgs* args) {
+				if (m_isAnimationRunning) {
+					OutputDebugString(L" is animation, return");
+					return true;
+				}
+
+				FastMove(4);
+				return true;
+			});
+		}
 	}
 	    
+
+	void CPlayImage::FastMove(int whichclicked) {
+		WCHAR buf[256];
+
+		ui::Label *image = dynamic_cast<ui::Label*>(FindSubControl(L"one"));
+		int width = image->GetFixedWidth();
+		int steps = 2;
+		int steplength = width / steps;
+		int leftvalue = width % 10;
+		int  times = abs(m_turnNumber - whichclicked);
+		wsprintf(buf, L"CPlayImage::: firstbtn clicked   current is %d, steps=%d, length=%d, left=%d, times=%d", m_turnNumber, steps, steplength, leftvalue, times);
+		OutputDebugString(buf);
+
+		if (whichclicked < m_turnNumber ) {
+			for (int i = 0; i < times; i++) {
+				FastToRight(steps, steplength, leftvalue, true);
+			}
+		}
+		else if (whichclicked > m_turnNumber  ) {
+			for (int i = 0; i < times; i++) {
+				 
+				FastToLeft(steps, steplength, leftvalue, true);
+			}
+		}
+ 
+	}
+
+
 	void CPlayImage::Start() {
 		if (!m_hasinited) {
 			Construct();
@@ -204,11 +329,7 @@ namespace nui {
 		ui::UiRect r(r0.left - value, 0, 0, 0);
 		one->SetMargin(r);
 
-		if (currentstep >= m_steps - 1) {
-			OutputDebugString(L"Animation is finished.");
-			m_isAnimationRunning = false;
-		}
-		OutputDebugString(L"CPlayImage::MoveOneStopToLef --->");
+		//OutputDebugString(L"CPlayImage::MoveOneStopToLef --->");
 	}
 
 	void CPlayImage::MoveOneStepToRight(int value, int currentstep) {
@@ -216,15 +337,12 @@ namespace nui {
 		ui::UiRect   r0 = one->GetMargin();
 		ui::UiRect r(r0.left + value, 0, 0, 0);
 		one->SetMargin(r);
-		if (currentstep >= m_steps - 1) {
-			OutputDebugString(L"Animation is finished.");
-			m_isAnimationRunning = false;
-		}
 		OutputDebugString(L"CPlayImage::MoveOneStepToLeft --->");
 	}
 
 	void CPlayImage::ToLeft() {
 		if (m_isAnimationRunning)  return;
+		m_isAnimationRunning = true;
 		if (m_turnNumber >= 4) { //全部图片播完，图片复位
 			OutputDebugString(L"全部图片播完，图片复位");
 			ui::Label *one = dynamic_cast<ui::Label*>(FindSubControl(L"beforeone"));
@@ -233,13 +351,16 @@ namespace nui {
 			one->SetMargin(r);
 			m_turnNumber = 0;
 		}
+		 
 		m_turnNumber++;
 		StartAnimation(0);
+		 
 	
 	}
 
 	void CPlayImage::ToRight() {
 		if (m_isAnimationRunning)  return;
+		m_isAnimationRunning = true;
 		if (m_turnNumber <=1 ) { //全部图片播完，图片复位
 			OutputDebugString(L"全部图片播完，图片复位");
 			ui::Label *one = dynamic_cast<ui::Label*>(FindSubControl(L"beforeone"));
@@ -248,11 +369,67 @@ namespace nui {
 			one->SetMargin(r);
 			m_turnNumber = 5;
 		}
+
 		m_turnNumber--;
 		StartAnimation(1);
+		 
+	}
+
+	void CPlayImage::FastToLeft(int steps, int steplength, int left, bool atonce ) {
+		if (m_isAnimationRunning && !atonce)  return;
+		m_isAnimationRunning = true;
+		if (m_turnNumber >= 4) { //全部图片播完，图片复位
+			OutputDebugString(L"全部图片播完，图片复位");
+			ui::Label *one = dynamic_cast<ui::Label*>(FindSubControl(L"beforeone"));
+			ui::UiRect   r0 = one->GetMargin();
+			ui::UiRect r(0, 0, 0, 0);
+			one->SetMargin(r);
+			m_turnNumber = 0;
+		}
+
+		m_turnNumber++;
+		WCHAR buf[32];
+		wsprintf(buf, L"FastToLeft   current is %d", m_turnNumber);
+		OutputDebugString(buf);
+		FastAnimation(0,   steps,   steplength,   left);
+		 
+	}
+
+	void CPlayImage::FastToRight(int steps, int steplength, int left, bool atonce  ) {
+		if (m_isAnimationRunning && !atonce)  return;
+		m_isAnimationRunning = true;
+		if (m_turnNumber <= 1) { //全部图片播完，图片复位
+			OutputDebugString(L"FastToRight 全部图片播完，图片复位");
+			ui::Label *one = dynamic_cast<ui::Label*>(FindSubControl(L"beforeone"));
+			ui::UiRect   r0 = one->GetMargin();
+			ui::UiRect r(-one->GetFixedWidth() * 5, 0, 0, 0);
+			one->SetMargin(r);
+			m_turnNumber = 5;
+		}
+		 
+		m_turnNumber--;
+		WCHAR buf[32];
+		wsprintf(buf, L"FastToRight   current is %d", m_turnNumber);
+		OutputDebugString(buf);
+		FastAnimation(1, steps, steplength, left);
+		 
 	}
 		 
- 
+	void CPlayImage::SwitchTaps(int n) {
+		WCHAR buf[32];
+		wsprintf(buf, L"SwitchTaps:: current number %d", n);
+		OutputDebugString(buf);
+		for (size_t i = 1; i <= m_taps.size(); i++) {
+			if (i == n) {
+				m_taps.at(i-1)->SetAttribute(L"normaltextcolor", L"green");
+			}
+			else {
+				m_taps.at(i-1)->SetAttribute(L"normaltextcolor", L"black");
+			}
+			 
+		}
+		 
+	}
 
 	AnimationThread::AnimationThread(enum ThreadId thread_id, const char* name)
 		: FrameworkThread(name)
