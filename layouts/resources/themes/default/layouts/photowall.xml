@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window   width="600">
+  <VBox  bkcolor="green" width="600"> 
+  <Box  name="turn_box"  width="600">
+
+    <HBox name="image_container"  height="200"  width="600" padding="0,20,0,20" bkcolor="light_gray" childmargin="10">  
+    </HBox>
+      
+    <Button name="left" width="30"  height="50"  text="left"    halign="left"  valign="center" 	 bkcolor="gray"		
+              normaltextcolor="black"
+							hottextcolor="white"/>
+    <Button  name="right" width="30"  height="50"  text="right"    halign="right"  valign="center"     bkcolor="gray"
+             normaltextcolor="black"
+							hottextcolor="white"/>
+    
+  </Box>
+  </VBox>
+</Window>

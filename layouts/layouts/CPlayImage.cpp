@@ -316,7 +316,6 @@ namespace nui {
 	void CPlayImage::Stop() {
 		g_active = false;
 		m_animationThread->Stop();
-		 
 	}
 
 	void CPlayImage::MoveOneStepToLeft(int value,int currentstep) {

@@ -20,9 +20,12 @@
       <HBox height="80" bkcolor="bk_wnd_darkcolor">
       </HBox>
       <Control class="splitline_hor_level1"/>
-      <VBox name="turnimage_container"  height="300"  bkcolor="bk_wnd_darkcolor">
-        
-        
+      <VBox name="turnimage_container"  height="200"  bkcolor="bk_wnd_darkcolor" visible="false">
+      </VBox>
+      <VBox name="photoview_container"  height="400"  bkcolor="bk_wnd_darkcolor" visible="true">
+      </VBox>
+
+      <VBox name="setting_container" visible="false">
       </VBox>
       <VBox height="150" bkcolor="bk_wnd_lightcolor">
       </VBox>

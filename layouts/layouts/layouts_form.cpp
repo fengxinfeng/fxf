@@ -1,7 +1,9 @@
 #include "stdafx.h"
 #include "layouts_form.h"
-#include "CTurnImage.h"
 #include "CPlayImage.h"
+#include "CPhotoWall.h"
+#include "CPhotoViewer.h"
+#include <array>
 
 LayoutsForm::LayoutsForm(const std::wstring& class_name, const std::wstring& theme_directory, const std::wstring& layout_xml)
 	: class_name_(class_name)
@@ -32,11 +34,28 @@ std::wstring LayoutsForm::GetWindowClassName() const
 
 void LayoutsForm::InitWindow()
 {
-	ui::VBox * pBox = dynamic_cast<ui::VBox*>(FindControl(L"turnimage_container"));
+	//ui::VBox * pBox = dynamic_cast<ui::VBox*>(FindControl(L"turnimage_container"));
+	//nui::CPhotoWall *photowall = new nui::CPhotoWall(pBox);
+	//std::vector<std::wstring > arr = { L"b1.png" ,L"b2.png",L"b3.png" , L"b4.png" , L"b1-.png", L"b2-.png", L"b3-.png", L"b4-.png" };//, L"b1-.png", L"b2-.png", L"b3-.png", L"b4-.png"
+
+	//photowall->Construct(arr);
+
+	ui::VBox * pBox = dynamic_cast<ui::VBox*>(FindControl(L"photoview_container"));
+	nui::CPhotoViewer *photoviewer = new nui::CPhotoViewer(pBox);
+	std::vector<std::wstring > arr = { L"b1.png" ,L"b2.png",L"b3.png" , L"b4.png" , L"b1-.png", L"b2-.png", L"b3-.png", L"b4-.png" };//, L"b1-.png", L"b2-.png", L"b3-.png", L"b4-.png"
+
+	photoviewer->Construct(arr);
+	photoviewer->Start();
+
 	//m_TurnImage = new nui::CTurnImage(pBox);
 	//m_TurnImage->Start();
-	nui::CPlayImage * image = new nui::CPlayImage(pBox);
-	image->Start();
+	//nui::CPlayImage * image = new nui::CPlayImage(pBox);
+	//image->Start();
+
+	//ui::VBox * pSettingContainer = dynamic_cast<ui::VBox*>(FindControl(L"setting_container"));
+	//m_setting = new nui::CSetting(pSettingContainer);
+
+
 }
 
 

@@ -39,6 +39,15 @@
     <ClInclude Include="CPlayImage.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="CSetting.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CPhotoWall.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CPhotoViewer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -58,6 +67,15 @@
     </ClCompile>
     <ClCompile Include="CPlayImage.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CSetting.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CPhotoWall.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CPhotoViewer.cpp">
+      <Filter>头文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

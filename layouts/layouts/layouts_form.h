@@ -1,6 +1,8 @@
 #pragma once
 
 #include "CTurnImage.h"
+#include "CSetting.h"
+
 class LayoutsForm : public ui::WindowImplBase
 {
 public:
@@ -39,5 +41,6 @@ private:
 	std::wstring theme_directory_;
 	std::wstring layout_xml_;
 	nui::CTurnImage *m_TurnImage;
+	nui::CSetting * m_setting;
 };
 

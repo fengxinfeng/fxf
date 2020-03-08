@@ -170,7 +170,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CPhotoViewer.h" />
+    <ClInclude Include="CPhotoWall.h" />
     <ClInclude Include="CPlayImage.h" />
+    <ClInclude Include="CSetting.h" />
     <ClInclude Include="CSubVBox.h" />
     <ClInclude Include="CTurnImage.h" />
     <ClInclude Include="layouts_form.h" />
@@ -180,7 +183,10 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CPhotoViewer.cpp" />
+    <ClCompile Include="CPhotoWall.cpp" />
     <ClCompile Include="CPlayImage.cpp" />
+    <ClCompile Include="CSetting.cpp" />
     <ClCompile Include="CSubVBox.cpp" />
     <ClCompile Include="CTurnImage.cpp" />
     <ClCompile Include="layouts_form.cpp" />

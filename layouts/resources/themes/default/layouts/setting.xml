@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window size="500,400" >
+
+  <VBox>
+    <HBox height="30" bkcolor="gray">
+      <Label text="设置"   valign="center" margin="5,0,0,0"/> 
+    </HBox>
+    <Control  height="1" bkcolor="splitline_level1"/>
+    <HBox>
+
+      <!-- menu bar -->
+      <VBox width="100" bkcolor="gray">
+
+        <Button name="normalset" text="常规" width="stretch" height="50" font="system_14"   normaltextcolor="black"  bkcolor="green" />
+        <Button name="downloadset" text="下载" width="stretch" height="50" font="system_14"   normaltextcolor="black"/>
+      </VBox>
+      
+      <!-- working area-->
+      <VBox  name="downloadarea" width="stretch" bkcolor="light_gray" visible="false">
+        
+      </VBox>
+      <VBox  name="normalarea" width="stretch" bkcolor="light_gray">
+
+        <HBox  height="auto" padding="5,5,0,5">
+          <Label text="启动设置" font="system_bold_14"   normaltextcolor="black"  />
+          <VBox height ="auto" margin="30,5,0,5">
+            <CheckBox class="checkbox_font12" name="autostart"   text="开机自动启动"    />
+            <CheckBox class="checkbox_font12" name="autologin"  text="开机时自动为我登录"   margin="0,5,0,0" />
+          </VBox>
+        </HBox>
+        <Control  height="1"  bkcolor="splitline_level1" margin="5,0,5,0"/>
+
+        <HBox  height="auto" padding="5,5,0,5">
+          <Label text="截图热键" font="system_bold_14"   valign="center" normaltextcolor="black"  />
+          <Combo class="list" name="capturehotkey" height="30" width="100" valign="center" margin="30,0,0,0" padding="6" bkimage="file='../public/combo/normal.png' corner='5,5,30,5'"/>
+        </HBox>
+        <Control  height="1"  bkcolor="splitline_level1" margin="5,0,5,0"/>
+
+        <HBox  height="auto" padding="5,5,0,5">
+          <Label text="关闭面板操作" font="system_bold_14"   valign="center" normaltextcolor="black"  />
+          <VBox height ="auto" margin="30,5,0,5">
+            <Option class="circle_option_2" name="close_min"   group="close_setting" text="最小化界面到系统托盘" margin="0,3,0,0" selected="true"/>
+            <Option class="circle_option_2" name="close_quit"   group="close_setting" text="退出程序" margin="0,3,0,0"/> 
+          </VBox>
+        </HBox>
+        <Control  height="1"  bkcolor="splitline_level1" margin="5,0,5,0"/>
+
+        <HBox  height="auto" padding="5,5,0,5">
+          <Label text="启动应用后" font="system_bold_14"   valign="center" normaltextcolor="black"  />
+          <VBox height ="auto" margin="30,5,0,5">
+            <Option class="circle_option_2" name="start_min"   group="start_setting" text="最小化界面到系统托盘" margin="0,3,0,0" selected="true"/>
+            <Option class="circle_option_2" name="start_keep"  group="start_setting" text="保持界面状态" margin="0,3,0,0"/>
+          </VBox>
+        </HBox>
+        <Control  height="1"  bkcolor="splitline_level1" margin="5,0,5,0"/>
+
+
+        <HBox  height="auto" padding="5,5,0,5">
+          <Label text="启动应用后" font="system_bold_14"   valign="center" normaltextcolor="black"  />
+          <Button name="clearcache"  margin="30,5,0,5" text="清除页面缓存" normaltextcolor="black"  hottextcolor="white"  ></Button>
+        </HBox> 
+
+      </VBox>
+    </HBox>
+    <Control  height="1" bkcolor="splitline_level1"/>
+    <HBox height="50" bkcolor="gray">
+      <Control />
+      <Button name="yes" text="确定"  valign="center"  margin="0,0,10,0"  font="system_14"  halign="right" normaltextcolor="black" hottextcolor="white"/>
+      <Button name="no" text="取消"    valign="center" margin="0,0,10,0"  font="system_14"   halign="right" normaltextcolor="black" hottextcolor="white"/>
+    </HBox>
+    
+  </VBox>
+  
+ 
+</Window>

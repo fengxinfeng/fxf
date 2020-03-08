@@ -18,7 +18,12 @@
       <Button class="btn_global_blue_80x30" name="btn_navigate" text="转到" width="60" margin="5"/>
       <Button class="btn_global_blue_80x30" name="btn_refresh" text="刷新" width="60" margin="5"/>
     </HBox>
+    <!-- 浏览器弹框-->
+    <VBox name="login_container_box"   margin="82,58,0,0"    visible="true"  alpha="255"  float="true"   >
+    </VBox>
+    <!--
     <CefControl name="cef_control"/>
     <CefControl name="cef_control_dev"/>
+    -->
   </VBox>
 </Window>
