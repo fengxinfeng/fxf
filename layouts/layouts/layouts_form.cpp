@@ -3,6 +3,7 @@
 #include "CPlayImage.h"
 #include "CPhotoWall.h"
 #include "CPhotoViewer.h"
+#include "CMyCenter.h"
 #include <array>
 
 LayoutsForm::LayoutsForm(const std::wstring& class_name, const std::wstring& theme_directory, const std::wstring& layout_xml)
@@ -40,12 +41,12 @@ void LayoutsForm::InitWindow()
 
 	//photowall->Construct(arr);
 
-	ui::VBox * pBox = dynamic_cast<ui::VBox*>(FindControl(L"photoview_container"));
-	nui::CPhotoViewer *photoviewer = new nui::CPhotoViewer(pBox);
-	std::vector<std::wstring > arr = { L"b1.png" ,L"b2.png",L"b3.png" , L"b4.png" , L"b1-.png", L"b2-.png", L"b3-.png", L"b4-.png" };//, L"b1-.png", L"b2-.png", L"b3-.png", L"b4-.png"
+	//ui::VBox * pBox = dynamic_cast<ui::VBox*>(FindControl(L"photoview_container"));
+	//nui::CPhotoViewer *photoviewer = new nui::CPhotoViewer(pBox);
+	//std::vector<std::wstring > arr = { L"b1.png" ,L"b2.png",L"b3.png" , L"b4.png" , L"b1-.png", L"b2-.png", L"b3-.png", L"b4-.png" };//, L"b1-.png", L"b2-.png", L"b3-.png", L"b4-.png"
 
-	photoviewer->Construct(arr);
-	photoviewer->Start();
+	//photoviewer->Construct(arr);
+	//photoviewer->Start();
 
 	//m_TurnImage = new nui::CTurnImage(pBox);
 	//m_TurnImage->Start();
@@ -55,6 +56,10 @@ void LayoutsForm::InitWindow()
 	//ui::VBox * pSettingContainer = dynamic_cast<ui::VBox*>(FindControl(L"setting_container"));
 	//m_setting = new nui::CSetting(pSettingContainer);
 
+
+	ui::VBox * pBox = dynamic_cast<ui::VBox*>(FindControl(L"mycenter_container"));
+	nui::CMyCenter *mycenter = new nui::CMyCenter(pBox); 
+	mycenter->Construct( );
 
 }
 

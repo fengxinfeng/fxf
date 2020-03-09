@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window   >
+  <VBox   >
+
+    <Box>
+      <Label  text="我的订单" normaltextcolor="red" valign="center" halign="center"  />
+    </Box>
+  </VBox>
+</Window>

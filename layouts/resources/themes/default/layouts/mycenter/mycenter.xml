@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window   >
+  <VBox   > 
+     
+    <HBox height="30" bkcolor="white">
+      <Label text="个人中心"   valign="center" margin="10,0,0,0"/> 
+      <Control />
+      <Button name="close_btn" width="24" height="24" margin="0,0,4,0"  visible="true"
+        normalimage="file='mycenter/common_close_btn.png' source='0,0,24,24'"
+        hotimage="file='mycenter/common_close_btn.png' source='24,0,48,24'"
+        pushedimage="file='mycenter/common_close_btn.png' source='48,0,72,24'"
+        disabledimage="file='mycenter/common_close_btn.png' source='72,0,96,24'"/>
+    </HBox>
+       
+    <Box  height="100" >
+      <VBox width="stretch" height="stretch"   >
+         
+        <Box  width="stretch" height="50" bkcolor="light_gray"/>    
+        <HBox  width="stretch" height="50" bkcolor="gray">                
+           <Label name="nickname" margin="260,20,0,0" text="my nick name" normaltextcolor="black" font="system_18"/>        
+           <Label name="nnid" margin="10,25,0,0" text="my id"  font="system_14" normaltextcolor="black"/>        
+        </HBox>        
+      </VBox> 
+      <Control  name="myphoto"  width="50"  height="50"   margin="100,30,0,0" borderround="50,50" bkimage="head.png"/>     
+    </Box>
+    
+    <HBox  name="tab_container"  height="40" childmargin="20" padding="10,0,0,0" bkcolor="light_gray">
+      <ButtonBox  name="basicprofile" height="40" width="60" valign="top" text="基本资料"  font="system_14"
+                  normaltextcolor="green"
+                  hottextcolor="white"> 
+        <Control name="basicprofile_l" height="5" width="30" bkcolor="blue" valign="bottom" halign="center"/>        
+      </ButtonBox>
+      <ButtonBox  name="accountsafe" height="40" width="60" valign="top" text="账号安全"  font="system_14"
+                  normaltextcolor="black"
+                  hottextcolor="white"> 
+        <Control name="accountsafe_l" height="5" width="30" bkcolor="blue" valign="bottom" halign="center"/>        
+      </ButtonBox>
+      <ButtonBox  name="accountbind" height="40" width="60" valign="top" text="关联账号"  font="system_14"
+                  normaltextcolor="black"
+                  hottextcolor="white"> 
+        <Control name="accountbind_l" height="5" width="30" bkcolor="blue" valign="bottom" halign="center"/>        
+      </ButtonBox>
+      <ButtonBox  name="myorder" height="40" width="60" valign="top" text="我的订单"  font="system_14"
+                  normaltextcolor="black"
+                  hottextcolor="white"> 
+        <Control name="myorder_l" height="5" width="30" bkcolor="blue" valign="bottom" halign="center"/>        
+      </ButtonBox>
+      <ButtonBox  name="wallet" height="40" width="60" valign="top" text="我的钱包"  font="system_14"
+                  normaltextcolor="black"
+                  hottextcolor="white"> 
+        <Control name="wallet_l" height="5" width="30" bkcolor="blue" valign="bottom" halign="center"/>        
+      </ButtonBox>
+      <ButtonBox  name="helpcenter" height="40" width="60" valign="top" text="帮助中心"  font="system_14"
+                  normaltextcolor="black"
+                  hottextcolor="white"> 
+        <Control name="helpcenter_l" height="5" width="30" bkcolor="blue" valign="bottom" halign="center"/>        
+      </ButtonBox>
+     </HBox>
+
+    <VBox name="centerform" bordercolor="green" bordersize="2">
+      
+    </VBox>
+  
+  </VBox>
+</Window>

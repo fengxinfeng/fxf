@@ -35,6 +35,7 @@ namespace nui {
 		m_parent = p;
 		m_hasinited = false;
 		g_player = this;
+		m_ismoving = false;
 	}
 	 
 	CPhotoViewer::~CPhotoViewer() {}
@@ -46,10 +47,12 @@ namespace nui {
 
 	void CPhotoViewer::Stop() {
 		g_active = false;
+		m_ismoving = false;
 		KillTimer(m_hwnd, TIMER_PLAY_VIEWER);
 	}
 
 	void CPhotoViewer::DisplayNext() {
+		m_ismoving = true;
 		WCHAR buf[256];
 		wsprintf(buf, L"CPhotoViewer::DisplayNex--->  %d", m_Serno);
 		OutputDebugString(buf);
@@ -69,6 +72,7 @@ namespace nui {
 		WCHAR dbuf[256];
 		wsprintf(dbuf, L"CPhotoViewer::DisplayNex  %d", m_Serno);
 		OutputDebugString(dbuf);
+		m_ismoving = false;
 	}
 
  
@@ -135,6 +139,7 @@ namespace nui {
 			ui::Button * rightbtn = dynamic_cast<ui::Button*>(FindSubControl(L"right"));
 
 			if (leftbtn) {
+				if (m_ismoving)  return;
 				OutputDebugString(L"CPhotoWall::CPhotoWall find left button");
 				leftbtn->AttachClick([this](ui::EventArgs* args) {
 					OutputDebugString(L"CPhotoWall::CPhotoWall   left button");
@@ -144,6 +149,7 @@ namespace nui {
 			}
 
 			if (rightbtn) {
+				if (m_ismoving)  return;
 				OutputDebugString(L"CPhotoWall::CPhotoWall find right button");
 				rightbtn->AttachClick([this](ui::EventArgs* args) {
 					OutputDebugString(L"CTurnImage::CTurnImage   right button");
@@ -161,7 +167,7 @@ namespace nui {
 		ui::Label *p = m_vector.at(0);
 		ui::UiRect  r = p->GetMargin();
 		WCHAR dbuf[128];
-		wsprintf(dbuf, L"m_Serno = %d    %d,   m_LeftMargin=%d", m_Serno, r.left, m_LeftMargin);
+		wsprintf(dbuf, L"CPhotoViewer::ToLeft  m_Serno = %d    %d,   m_LeftMargin=%d", m_Serno, r.left, m_LeftMargin);
 		OutputDebugString(dbuf);
  
 		if (abs(r.left) >= m_LeftMargin) {
@@ -180,9 +186,10 @@ namespace nui {
 		 
 		p->SetMargin(r);
 		m_Serno++;
-		 
+
+		SetBorder(m_Serno);
 		WCHAR d2buf[128];
-		wsprintf(d2buf, L"m_Serno = %d    %d,   m_LeftMargin=%d", m_Serno, r.left, m_LeftMargin);
+		wsprintf(d2buf, L"CPhotoViewer::ToLeft m_Serno = %d    %d,   m_LeftMargin=%d", m_Serno, r.left, m_LeftMargin);
 		OutputDebugString(d2buf);
 	}
 
@@ -191,7 +198,7 @@ namespace nui {
 		ui::Label *p = m_vector.at(0);
 		ui::UiRect  r = p->GetMargin();
 		WCHAR dbuf[128];
-		wsprintf(dbuf, L"m_Serno = %d    %d,   m_LeftMargin=%d", m_Serno, r.left, m_LeftMargin);
+		wsprintf(dbuf, L"CPhotoViewer::AutoToLeft  m_Serno = %d    %d,   m_LeftMargin=%d", m_Serno, r.left, m_LeftMargin);
 		OutputDebugString(dbuf);
 
 		if (abs(r.left) >= m_LeftMargin) {
@@ -208,10 +215,9 @@ namespace nui {
 		}
 
 
-		p->SetMargin(r);
-
+		p->SetMargin(r); 
 		WCHAR d2buf[128];
-		wsprintf(d2buf, L"m_Serno = %d    %d,   m_LeftMargin=%d", m_Serno, r.left, m_LeftMargin);
+		wsprintf(d2buf, L"CPhotoViewer::AutoToLeft m_Serno = %d    %d,   m_LeftMargin=%d", m_Serno, r.left, m_LeftMargin);
 		OutputDebugString(d2buf);
 	}
 
@@ -221,9 +227,9 @@ namespace nui {
 		ui::UiRect  r = p->GetMargin();
 
 		WCHAR d2buf[128];
-		wsprintf(d2buf, L"m_Serno = %d    %d,    ", m_Serno, r.left  );
+		wsprintf(d2buf, L"CPhotoViewer::ToRight  m_Serno = %d    %d,    ", m_Serno, r.left  );
 		OutputDebugString(d2buf);
-		if (r.left >= 0) {
+		if (r.left >= 0) {     //此处border不会继续左移
 			r.left = 0;
 			p->SetMargin(r);
 			OutputDebugString(L" to right value, return");
@@ -237,12 +243,13 @@ namespace nui {
 		else {
 			r.left = r.left + m_StepLength;
 		}
- ;
+
 		p->SetMargin(r);
 		m_Serno--;
+		SetBorder(m_Serno);
 
 		WCHAR dbuf[128];
-		wsprintf(dbuf, L"m_Serno = %d    %d ", m_Serno, r.left );
+		wsprintf(dbuf, L"CPhotoViewer::ToRight m_Serno = %d    %d ", m_Serno, r.left );
 		OutputDebugString(dbuf);
 	}
 

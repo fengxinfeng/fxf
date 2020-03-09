@@ -170,6 +170,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CCenterAccountBind.h" />
+    <ClInclude Include="CCenterAccountSafe.h" />
+    <ClInclude Include="CCenterBasicprofile.h" />
+    <ClInclude Include="CCenterHelp.h" />
+    <ClInclude Include="CCenterMyOrder.h" />
+    <ClInclude Include="CCenterWallet.h" />
+    <ClInclude Include="CMyCenter.h" />
     <ClInclude Include="CPhotoViewer.h" />
     <ClInclude Include="CPhotoWall.h" />
     <ClInclude Include="CPlayImage.h" />
@@ -183,6 +190,13 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CCenterAccountBind.cpp" />
+    <ClCompile Include="CCenterAccountSafe.cpp" />
+    <ClCompile Include="CCenterBasicprofile.cpp" />
+    <ClCompile Include="CCenterHelp.cpp" />
+    <ClCompile Include="CCenterMyOrder.cpp" />
+    <ClCompile Include="CCenterWallet.cpp" />
+    <ClCompile Include="CMyCenter.cpp" />
     <ClCompile Include="CPhotoViewer.cpp" />
     <ClCompile Include="CPhotoWall.cpp" />
     <ClCompile Include="CPlayImage.cpp" />

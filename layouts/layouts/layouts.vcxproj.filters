@@ -48,6 +48,27 @@
     <ClInclude Include="CPhotoViewer.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="CMyCenter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CCenterAccountBind.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CCenterAccountSafe.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CCenterBasicprofile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CCenterHelp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CCenterMyOrder.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CCenterWallet.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -75,6 +96,27 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="CPhotoViewer.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CMyCenter.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CCenterAccountBind.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CCenterAccountSafe.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CCenterBasicprofile.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CCenterHelp.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CCenterMyOrder.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CCenterWallet.cpp">
       <Filter>头文件</Filter>
     </ClCompile>
   </ItemGroup>

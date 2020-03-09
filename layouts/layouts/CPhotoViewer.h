@@ -45,6 +45,7 @@ namespace  nui {
 		ui::Label *m_bigimage;
 		int  m_MiddleNO;
 		HWND m_hwnd;
+		bool m_ismoving;
 		 
 	};
 }

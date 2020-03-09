@@ -22,7 +22,10 @@
       <Control class="splitline_hor_level1"/>
       <VBox name="turnimage_container"  height="200"  bkcolor="bk_wnd_darkcolor" visible="false">
       </VBox>
-      <VBox name="photoview_container"  height="400"  bkcolor="bk_wnd_darkcolor" visible="true">
+      <VBox name="photoview_container"  height="400"  bkcolor="bk_wnd_darkcolor" visible="false">
+      </VBox>
+
+      <VBox name="mycenter_container"  height="500"  bkcolor="bk_wnd_darkcolor" visible="true">
       </VBox>
 
       <VBox name="setting_container" visible="false">
