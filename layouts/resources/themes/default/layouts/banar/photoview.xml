@@ -1,16 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Window   width="600">
-  <VBox  bkcolor="green" width="600">
+<Window   width="700">
+  <VBox  bkcolor="green" width="700">
 
-    <Box name="bigview" width="600" height="300"  padding="100,0,100,0">
+    <Box name="bigview" width="700" height="393"  padding="100,0,100,0">
       <Label name = "bigimage" bkimage = "" width = "stretch" height = "stretch" margin = "0,0,0,0"  visible = "true" />
       <Label name="serno" text=""  halign="center"  valign="center" margin="0,0,0,0"  visible="true"  normaltextcolor="black" />
        
     </Box>
-    
-  <Box  name="turn_box"  height="100"  width="600">
 
-    <HBox name="image_container"  height="100"  width="600" padding="0,20,0,20" bkcolor="light_gray" childmargin="10">  
+    <HBox  name="turn_box"  height="76"  width="700">
+
+      <Button name="left" width="31"  height="76"  text="L"    valign="center" 	 bkcolor="gray"
+          normaltextcolor="black"
+          hottextcolor="white"/>
+      
+      <HBox name="image_container"  height="76"  width="638" padding="0,10,0,10" bkcolor="light_gray" childmargin="10">
+      </HBox>
+ 
+      <Button  name="right" width="31"  height="76"  text="R"    halign="right"  valign="center"     bkcolor="gray"
+               normaltextcolor="black"
+                hottextcolor="white"/>
+
+    </HBox>
+    <!--
+  <Box  name="turn_box"  height="76"  width="700">
+
+    <HBox name="image_container"  height="76"  width="700" padding="0,10,0,10" bkcolor="light_gray" childmargin="10">  
     </HBox>
       
     <Button name="left" width="10"  height="50"  text="L"    halign="left"  valign="center" 	 bkcolor="gray"		
@@ -21,5 +36,6 @@
 							hottextcolor="white"/>
     
   </Box>
+  -->
   </VBox>
 </Window>

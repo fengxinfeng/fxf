@@ -26,7 +26,8 @@ namespace  nui {
 	protected:
 		//void HandleMessage(ui::EventArgs &msg);
 	private:
-		 
+		void ClickToLeft();
+		void ClickToRight();
 		void ToLeft();
 		void ToRight();
 		void AutoToLeft(); 
