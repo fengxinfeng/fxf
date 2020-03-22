@@ -1,9 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Window   >
   <VBox   >
+    <Box name="showpage" visible="true">
+      <VBox padding="50,0,0,0">
+         
+        <HBox height="50"  >
+          <Label text="绑定手机" width="100" font="system_14" normaltextcolor="black" valign="center"  />
+          <Label name="showpage_phoneno" text="135****5678"  font="system_14" normaltextcolor="black" valign="center"  />
+          <Control />
+          <Button  name="changephone"  margin="0,0,50,0" halign="right" valign="center"
+                   text="更换手机"  font="system_14" normaltextcolor="black" />     
+        </HBox>
+      
+        <HBox height="50">
+          <Label text="账号密码" width="100" font="system_14" normaltextcolor="black" />
+          <Control />
+          <Button  name="changepwd"  margin="0,0,50,0" halign="right" valign="center" text="修改密码"  font="system_14" normaltextcolor="black"/>
+        </HBox>
+        <HBox height="50">
+          <Label text="绑定QQ" width="100" font="system_14" normaltextcolor="black" />
+          <Control />
+          <Button  name="bindqq"  margin="0,0,50,0" halign="right" valign="center" text="解绑"  font="system_14" normaltextcolor="black"/>
+        </HBox>
+       
+      </VBox>
 
-    <Box>
-      <Label  text="账号安全" normaltextcolor="red" valign="center" halign="center"  />
+    </Box>
+    
+
+    <Box name="changephonepage" visible="false">
+      <VBox>
+        <HBox height="50">
+          <Label text="当前手机号" width="100" font="system_14" normaltextcolor="black" valign="center"  />
+          <Label name="change_phoneno" text="135****5678"  font="system_14" normaltextcolor="black" valign="center"  />
+          <Button  name="bindphone"  margin="0,0,50,0" halign="right" valign="center" text="更换手机"  font="system_14" normaltextcolor="black"/>
+        </HBox>
+
+        <HBox height="50">
+          <Label text="验证码" width="100" font="system_14" normaltextcolor="black" valign="center"  />
+          <RichEdit class="simple prompt input" name="phone_verifycode" width="150" height="28" valign="center" padding="5,5,5,5" prompttext="请输入验证码"/>
+          <Button  name="sendverifycode"  margin="0,0,50,0" halign="right" valign="center" text="发送验证码"  font="system_14" normaltextcolor="black"/>
+        </HBox>
+        <Button  name="next"  margin="0,0,50,0" halign="right" valign="center" text="下一步"  font="system_14" normaltextcolor="black"/>
+      </VBox>
+    </Box>
+    <Box name="changepwdpage" visible="false">
+      <VBox>
+        <HBox height="50">
+          <Label text="手机号" width="100" font="system_14" normaltextcolor="black" valign="center"  />
+          <Label name="pwd_phoneno" text="135****5678"  font="system_14" normaltextcolor="black" valign="center"  />
+        </HBox>
+
+        <HBox height="50">
+          <Label text="验证码" width="100" font="system_14" normaltextcolor="black" valign="center"  />
+          <RichEdit class="simple prompt input" name="pwd_verifycode" width="150" height="28" valign="center" padding="5,5,5,5" prompttext="请输入验证码"/>
+          <Button  name="pwd_sendverifycode"  margin="0,0,50,0" halign="right" valign="center" text="发送验证码"  font="system_14" normaltextcolor="black"/>
+        </HBox>
+
+        <HBox height="50">
+          <Label text="新密码" width="100" font="system_14" normaltextcolor="black" valign="center"  />
+          <RichEdit class="simple prompt input" name="newpwd" width="150" height="28" valign="center" padding="5,5,5,5"  />
+        </HBox>
+
+        <HBox height="50">
+          <Label text="确认新密码" width="100" font="system_14" normaltextcolor="black" valign="center"  />
+          <RichEdit class="simple prompt input" name="renewpwd" width="150" height="28" valign="center" padding="5,5,5,5"  />
+        </HBox>
+ 
+        <Button  name="pwd_yes"  margin="0,0,50,0" halign="right" valign="center" text="确认"  font="system_14" normaltextcolor="black"/>
+      </VBox>
+    </Box>
+    <Box name="bindqqpage" visible="false">
+
     </Box>
   </VBox>
 </Window>

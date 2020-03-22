@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Window   >
-  <VBox   > 
+  <VBox  width="1200"  height="722"> 
      
-    <HBox height="30" bkcolor="white">
-      <Label text="个人中心"   valign="center" margin="10,0,0,0"/> 
+    <HBox height="40" bkcolor="white">
+      <Label text="个人中心"   valign="center" margin="10,0,0,0"  font="system_14" normaltextcolor="textdefaultcolor"/> 
       <Control />
-      <Button name="close_btn" width="24" height="24" margin="0,0,4,0"  visible="true"
+      <Button name="close_btn" width="24" height="24" margin="0,0,4,0"  visible="true" valign="center"
         normalimage="file='mycenter/common_close_btn.png' source='0,0,24,24'"
         hotimage="file='mycenter/common_close_btn.png' source='24,0,48,24'"
         pushedimage="file='mycenter/common_close_btn.png' source='48,0,72,24'"
@@ -59,6 +59,9 @@
 
     <VBox name="centerform" bordercolor="green" bordersize="2">
       
+    </VBox>
+
+    <VBox name="canlendar_container" margin="0,0,0,0"  borderround="2,2" visible="false" float="true">
     </VBox>
   
   </VBox>

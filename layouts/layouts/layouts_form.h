@@ -3,7 +3,10 @@
 #include "CTurnImage.h"
 #include "CSetting.h"
 
-class LayoutsForm : public ui::WindowImplBase
+ 
+const bool kEnableOffsetRender = false;
+class LayoutsForm : public std::conditional<kEnableOffsetRender, ui::WindowImplBase, nim_comp::ShadowWndBase>::type
+//class LayoutsForm : public ui::WindowImplBase
 {
 public:
 	LayoutsForm(const std::wstring& class_name, const std::wstring& theme_directory, const std::wstring& layout_xml);
@@ -24,19 +27,22 @@ public:
 	 */
 	virtual void InitWindow() override;
 
+	virtual ui::Control* CreateControl(const std::wstring& pstrClass) override;
+
 	/**
 	 * 收到 WM_CLOSE 消息时该函数会被调用
 	 */
 	virtual LRESULT OnClose(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled);
 
 	//OVERRIDE
-	virtual LRESULT  HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam);
+	//virtual LRESULT  HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 
 public:
 	static void ShowCustomWindow(const std::wstring& class_name, const std::wstring& theme_directory, const std::wstring& layout_xml);
 
 private:
+	 
 	std::wstring class_name_;
 	std::wstring theme_directory_;
 	std::wstring layout_xml_;

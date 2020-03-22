@@ -5,18 +5,25 @@
 #include "stdafx.h"
 #include "CPhotoWall.h"    
 #include <math.h>
- 
+/*
+ui::VBox * pBox = dynamic_cast<ui::VBox*>(FindControl(L"turnimage_container"));
+nui::CPhotoWall *photowall = new nui::CPhotoWall(pBox);
+std::vector<std::wstring > arr = { L"b1.png" ,L"b2.png",L"b3.png" , L"b4.png" , L"b1-.png", L"b2-.png", L"b3-.png", L"b4-.png" };//, L"b1-.png", L"b2-.png", L"b3-.png", L"b4-.png"
+photowall->Construct(arr);
+*/
 
 namespace nui {
 	 
-	static const int childmargin = 20;
-	static std::wstring schildmargin = L"20";
+	static const int childmargin = 10;
+	static std::wstring schildmargin = L"10";
+	static const int  numberonce = 4;
 	CPhotoWall::CPhotoWall(ui::VBox *p) :CSubVBox(p)
 	{  
 		ui::GlobalManager::FillBoxWithCache(this, L"layouts/banar/photowall.xml", NULL);
 		p->Add(this); 
 		m_parent = p;
 		m_hasinited = false;
+
 	}
 	 
 	CPhotoWall::~CPhotoWall() {}
@@ -41,7 +48,7 @@ namespace nui {
 		container->SetAttribute(L"childmargin", schildmargin);
 	  
 		int fixedwidth = container->GetFixedWidth();
-		int itemwidth = fixedwidth/5; 
+		int itemwidth = (fixedwidth - childmargin *3)/numberonce;
 		m_StepLength = itemwidth + childmargin; 
 		m_Serno = 0;
 		m_LeftMargin = itemwidth * size + childmargin * (size-1) - fixedwidth;

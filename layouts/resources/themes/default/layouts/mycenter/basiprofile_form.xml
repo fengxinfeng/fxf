@@ -1,9 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Window   >
-  <VBox   >
+  <VBox  >
+ 
+    <Box name="showpage" visible="true">
+       
+      <VBox padding="50,20,0,0">
+        <HBox height="50">
+          <Label text="昵称:" width="100" font="system_14" normaltextcolor="black" />
+          <Label name="nickname" text="nickname"  font="system_14" normaltextcolor="black" />
+        </HBox>
 
-    <Box>
-      <Label  text="基本资料" normaltextcolor="red" valign="center" halign="center"  />
+        <HBox height="50">
+          <Label text="性别:" width="100" font="system_14" normaltextcolor="black" />
+          <Label name="sexuality" text="sexuality"  font="system_14" normaltextcolor="black" />
+        </HBox>
+
+        <HBox height="50">
+          <Label text="个性签名:" width="100" font="system_14" normaltextcolor="black" />
+          <Label name="signature" text="signature"  font="system_14" normaltextcolor="black" />
+        </HBox>
+
+        <HBox height="50">
+          <Label text="所在地:" width="100" font="system_14" normaltextcolor="black" />
+          <Label name="livingarea" text="signature"  font="system_14" normaltextcolor="black" />
+        </HBox>
+
+        <HBox height="50">
+          <Label text="生日:" width="100" font="system_14" normaltextcolor="black" />
+          <Label name="birthday" text="birthday"  font="system_14" normaltextcolor="black" />
+        </HBox>
+        
+      </VBox>
+ 
+      <Button  name="edit"  text="编辑资料"  margin="0,0,50,50" valign="bottom" halign="right"  font="system_14" normaltextcolor="black"/>
+     
+   </Box>
+ 
+    <Box name="editpage" visible="false">
+      <VBox padding="50,20,0,0">
+
+        <HBox height ="auto">
+          <Label text="昵称:" width="100" font="system_14" normaltextcolor="black" valign="center" />
+          <RichEdit class="simple prompt input" name="edit_nickname" width="150" height="28" valign="center" padding="5,5,5,5" prompttext="请输入昵称"/>
+        </HBox>
+
+ 
+        <HBox height ="auto" margin="0,20,0,0">
+          <Label text="性别:" width="100" font="system_14" normaltextcolor="black" valign="center" />
+          <HBox height ="auto" >
+            <Option class="circle_option_2" name="male"      group="sexuality_group" text="男" margin="0,3,0,0" selected="true"/>
+            <Option class="circle_option_2" name="female"   group="sexuality_group" text="女" margin="0,3,0,0"/>
+          </HBox>
+        </HBox>
+
+        <HBox height ="auto" margin="0,20,0,0">
+          <Label text="个性签名:" width="100" font="system_14" normaltextcolor="black" />
+          <RichEdit class="edit prompt input" name="edit_signature" width="200" height="60" valign="center" padding="5,5,5,5" /> 
+        </HBox>
+
+        <HBox height="50" margin="0,20,0,0">
+          <Label text="所在地:" width="100" font="system_14" normaltextcolor="black" valign="center" />  
+        </HBox>
+
+        <HBox height="50">
+          <Label text="生日:" width="100" font="system_14" normaltextcolor="black" valign="center" />
+          <RichEdit class="simple prompt input" name="edit_birthday"  valign="center" width="100" height="28"  padding="5,5,5,5" />
+        </HBox>   
+       
+      </VBox>
+ 
+      <HBox width="100" height="50"  valign="bottom" halign="right"  margin="0,0,50,50" >
+        <Button  name="cancel" valign="center" text="取消"     font="system_14" normaltextcolor="black"/>
+        <Button  name="save" valign="center"  text="确认"   margin="20,0,0,0"  font="system_14" normaltextcolor="black"/>
+      </HBox>
+       
     </Box>
+ 
   </VBox>
 </Window>

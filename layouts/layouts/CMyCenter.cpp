@@ -10,6 +10,7 @@
 #include "CCenterHelp.h"
 #include "CCenterMyOrder.h"
 #include "CCenterWallet.h"
+#include "CCalendar.h"
 
 
 namespace nui { 
@@ -25,6 +26,7 @@ namespace nui {
 	 
 	void CMyCenter::SetVisibe(bool v) {
 		m_parent->SetVisible(v);
+		__super::SetVisible(v);
 	}
 
 	void CMyCenter::Construct() {
@@ -35,8 +37,9 @@ namespace nui {
 		//OutputDebugString(buf);
 		OutputDebugString(L"CMyCenter::Construct  --->");
 		ui::Button *close = dynamic_cast<ui::Button*>(FindSubControl(L"close_btn"));
-		close->AttachClick([this](ui::EventArgs* args) {
-			m_parent->SetVisible(false);
+		close->AttachClick([=](ui::EventArgs* args) {
+			SetVisible(false);
+			//calendar->ShowCalendar();
 			return true;
 		});
  
@@ -93,15 +96,31 @@ namespace nui {
 			return true;
 		});
 		 
+		ui::VBox *showcalendar = dynamic_cast<ui::VBox*>(FindSubControl(L"canlendar_container"));
+		nui::CCalendar  *calendar = new nui::CCalendar(showcalendar);
+		calendar->Construct();
+
 		ui::VBox *formcontainer = dynamic_cast<ui::VBox*>(FindSubControl(L"centerform"));
-		m_Forms.push_back( new CCenterBasicprofile(formcontainer) );
-		m_Forms.push_back(new CCenterAccountSafe(formcontainer));
-		m_Forms.push_back(new CCenterAccountBind(formcontainer));
+		CCenterBasicprofile *basicform = new CCenterBasicprofile(formcontainer, calendar);
+		basicform->Construct();			
+		m_Forms.push_back(basicform);
+ 
+
+		CCenterAccountSafe *accountsafeform = new CCenterAccountSafe(formcontainer);
+		accountsafeform->Construct();
+		m_Forms.push_back(accountsafeform);
+
+		CCenterAccountBind * accountbindform = new CCenterAccountBind(formcontainer);
+		accountbindform->Construct();
+		m_Forms.push_back(accountbindform);
+
 		m_Forms.push_back(new CCenterMyOrder(formcontainer));
 		m_Forms.push_back(new CCenterWallet(formcontainer));
 		m_Forms.push_back(new CCenterHelp(formcontainer)); 
+
 		SwitchTab(0);
 		OutputDebugString(L"CMyCenter::Construct  <------");
+
 	}
 	     
 	void CMyCenter::SwitchTab(int serno) {

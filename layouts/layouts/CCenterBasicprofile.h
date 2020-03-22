@@ -6,19 +6,27 @@
 */
 #include "CSubVBox.h"
 #include <vector>
+#include "CCalendar.h"
 
 namespace  nui {
 
-	class CCenterBasicprofile : public CSubVBox
+	class CCenterBasicprofile : public CSubVBox, public ICalendarCallback
 	{
 	public:
-		CCenterBasicprofile(ui::VBox *p);
+		CCenterBasicprofile(ui::VBox *p, CCalendar * calendar);
 		~CCenterBasicprofile();
+		void Construct(); 
+		virtual  void OnDateSelected(Birthday&);
 	protected: 
+		 
+	private: 
+		bool  m_hasinited; 
 
 	private:
-		void Construct(); 
-		bool  m_hasinited; 
+		ui::Box * m_ShowPage;
+		ui::Box * m_EditPage;
+		nui::CCalendar *m_Calendar;
+		ui::RichEdit* m_BirthdayEdit;
 	};
 }
  

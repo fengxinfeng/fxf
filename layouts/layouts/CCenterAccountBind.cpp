@@ -15,10 +15,24 @@ namespace nui {
 	}
 	 
 	CCenterAccountBind::~CCenterAccountBind() {}
-	  
-
+ 
 	void CCenterAccountBind::Construct() {
  
+		ui::ListBox * bindedgamelist = dynamic_cast<ui::ListBox*>(FindSubControl(L"bindedgame_list"));
+		WCHAR  buf[64];
+		for (int i = 0; i < 20; i++) {
+			ui::ListContainerElement* item = buildSubListContainerElement(L"layouts\\mycenter\\game_item.xml");
+			if (item) {
+				OutputDebugString(L"CCenterAccountBind::Construct build item ok");
+				ui::Label * account = dynamic_cast<ui::Label*>(item->FindSubControl(L"accountid")); 
+				wsprintf(buf,L"game_%d",i);
+				account->SetText(buf);
+				bindedgamelist->Add(item);
+			}
+			else {
+				OutputDebugString(L"CCenterAccountBind::Construct build item failed");
+			}
+		}
 	}
 	      
 

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window >
+                                                                                            <!--bkimage="file='btn/node_bk.png' corner='4,4,4,4'"--> 
+  <ListContainerElement name="game_item" width="120" height="150"   visible="true" bordersize="1" bordercolor="green">	
+		<VBox >
+      
+      <!--    文件在同一个目录下到底加不加路径    mycenter/gamelogo.png  -->
+			<Control name="game_icon" bkimage="mycenter/gamelogo.png" halign="center" width="auto" height="auto" mouse="false" />
+      <HBox height="auto" width="auto" halign="center" >
+        <Label  width="auto" height="auto"  text="账号:" font="system_14" normaltextcolor="black" halign="center" />
+        <Label  name="accountid" width="auto" height="auto"  text="123455" font="system_14" normaltextcolor="black" halign="center" />
+      </HBox>
+     
+      <Button name="area_window_close_btn" width="60" height="36"  margin="0,10,0,0"   halign="center"
+              text="切换账号"
+         normalimage="file='mycenter/temp.png' source='0,0,130,36' dest='0,0,60,36'" 
+         hotimage="file='mycenter/temp.png' source='130,0,260,36' dest='0,0,60,36'"
+         pushedimage="file='mycenter/temp.png' source='260,0,390,36' dest='0,0,60,36'"
+         disabledimage="file='mycenter/temp.png' source='390,0,520,24' dest='0,0,60,36'"/>
+      <Button name="area_window_close_btn" width="60" height="36"  margin="0,10,0,0"   halign="center"
+               text="解绑账号"
+         normalimage="file='mycenter/temp.png' source='0,0,130,36' dest='0,0,60,36'" 
+         hotimage="file='mycenter/temp.png' source='130,0,260,36' dest='0,0,60,36'"
+         pushedimage="file='mycenter/temp.png' source='260,0,390,36' dest='0,0,60,36'"
+         disabledimage="file='mycenter/temp.png' source='390,0,520,24' dest='0,0,60,36'"/>
+          
+		</VBox>
+    
+	</ListContainerElement>
+	
+</Window>

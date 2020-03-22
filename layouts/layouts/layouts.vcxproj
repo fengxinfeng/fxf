@@ -75,8 +75,8 @@
     <IntDir>$(ProjectDir)..\..\tmp\$(PlatformName)\$(ProjectName)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)_d</TargetName>
     <OutDir>..\..\bin\</OutDir>
-    <IncludePath>..\..\;$(IncludePath)</IncludePath>
-    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\;..\..\third_party\cef_wrapper\;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\libs\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -114,6 +114,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <DelayLoadDLLs>nim_libcef.dll</DelayLoadDLLs>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -170,12 +171,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\cef\CSubVBox.h" />
+    <ClInclude Include="CCalendar.h" />
     <ClInclude Include="CCenterAccountBind.h" />
     <ClInclude Include="CCenterAccountSafe.h" />
     <ClInclude Include="CCenterBasicprofile.h" />
     <ClInclude Include="CCenterHelp.h" />
     <ClInclude Include="CCenterMyOrder.h" />
     <ClInclude Include="CCenterWallet.h" />
+    <ClInclude Include="CDownloadVBox.h" />
+    <ClInclude Include="CLoginVBOX.h" />
+    <ClInclude Include="CLogin_Wnd.h" />
     <ClInclude Include="CMyCenter.h" />
     <ClInclude Include="CPhotoViewer.h" />
     <ClInclude Include="CPhotoWall.h" />
@@ -190,12 +196,16 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CCalendar.cpp" />
     <ClCompile Include="CCenterAccountBind.cpp" />
     <ClCompile Include="CCenterAccountSafe.cpp" />
     <ClCompile Include="CCenterBasicprofile.cpp" />
     <ClCompile Include="CCenterHelp.cpp" />
     <ClCompile Include="CCenterMyOrder.cpp" />
     <ClCompile Include="CCenterWallet.cpp" />
+    <ClCompile Include="CDownloadVBox.cpp" />
+    <ClCompile Include="CLoginVBOX.cpp" />
+    <ClCompile Include="CLogin_Wnd.cpp" />
     <ClCompile Include="CMyCenter.cpp" />
     <ClCompile Include="CPhotoViewer.cpp" />
     <ClCompile Include="CPhotoWall.cpp" />
@@ -225,6 +235,9 @@
     </ProjectReference>
     <ProjectReference Include="..\..\duilib\duilib.vcxproj">
       <Project>{e106acd7-4e53-4aee-942b-d0dd426db34e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ui_components\ui_components.vcxproj">
+      <Project>{0149ba6e-3c0a-426d-aa0a-0b9ec7742f19}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

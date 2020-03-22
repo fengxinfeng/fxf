@@ -23,3 +23,6 @@ enum ThreadId
 
 // duilib
 #include "duilib/UIlib.h"
+// ui components
+#include "ui_components/ui_components.h"
+#include "ui_components/ui_cef_control.h"

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window size="450,450"  shadowattached="false"> 
+  <VBox width="stretch" height="stretch">
+    <HBox height="30" width="stretch" bkcolor="bk_wnd_darkcolor">
+      <Button name="btn_dev_tool" width="auto" height="auto"   tooltiptext="开发者工具" bkimage="btn_dev_tool.png"  />  
+      <Control />
+      <Button name="close_btn" width="24" height="24" margin="0,0,4,0"  visible="true"
+      normalimage="file='common_close_btn.png' source='0,0,24,24'"
+      hotimage="file='common_close_btn.png' source='24,0,48,24'"
+      pushedimage="file='common_close_btn.png' source='48,0,72,24'"
+      disabledimage="file='common_close_btn.png' source='72,0,96,24'"/>
+    </HBox>
+    <CefControl name="cef_control"  visible="true"/> 
+      
+  </VBox>
+   
+</Window>
+
+ 

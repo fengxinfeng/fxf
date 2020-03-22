@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Window   width="600">
-  <VBox  bkcolor="green" width="600"> 
-  <Box  name="turn_box"  width="600">
+<Window   width="766">
+  <VBox  bkcolor="green" width="766"> 
+  <Box  name="turn_box"  width="766">
 
-    <HBox name="image_container"  height="200"  width="600" padding="0,20,0,20" bkcolor="light_gray" childmargin="10">  
+    <HBox name="image_container"  height="135"  width="766" padding="0,0,0,0" bkcolor="light_gray" childmargin="10">  
     </HBox>
       
     <Button name="left" width="30"  height="50"  text="left"    halign="left"  valign="center" 	 bkcolor="gray"		

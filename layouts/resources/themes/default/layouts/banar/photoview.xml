@@ -2,24 +2,29 @@
 <Window   width="700">
   <VBox  bkcolor="green" width="700">
 
-    <Box name="bigview" width="700" height="393"  padding="100,0,100,0">
+    <Box name="bigview" width="700" height="393"  padding="0,0,0,0">
       <Label name = "bigimage" bkimage = "" width = "stretch" height = "stretch" margin = "0,0,0,0"  visible = "true" />
-      <Label name="serno" text=""  halign="center"  valign="center" margin="0,0,0,0"  visible="true"  normaltextcolor="black" />
-       
+      <Label name="playcontrol" width="50" height="50" halign="center"  valign="center" margin="0,0,0,0"  visible="false"   
+             normalimage="file='banar/play.png' source='0,0,64,64'" />
+
+      <CefControl name="cef_video" visible="false"/>
+      <CefControl name="cef_control_dev"/>
+      <!--
+    <CefControl name="cef_control"/>
+    <CefControl name="cef_control_dev"/>
+    -->
     </Box>
 
     <HBox  name="turn_box"  height="76"  width="700">
 
-      <Button name="left" width="31"  height="76"  text="L"    valign="center" 	 bkcolor="gray"
-          normaltextcolor="black"
-          hottextcolor="white"/>
+      <Button name="left" width="31"  height="76"    valign="center"  	 bkcolor="gray"
+          normalimage="file='banar/left.png' source='0,0,48,48'" />
       
       <HBox name="image_container"  height="76"  width="638" padding="0,10,0,10" bkcolor="light_gray" childmargin="10">
       </HBox>
  
-      <Button  name="right" width="31"  height="76"  text="R"    halign="right"  valign="center"     bkcolor="gray"
-               normaltextcolor="black"
-                hottextcolor="white"/>
+      <Button  name="right" width="31"  height="76"     halign="right"  valign="center"    bkcolor="gray"
+                normalimage="file='banar/right.png' source='0,0,48,48'" />
 
     </HBox>
     <!--

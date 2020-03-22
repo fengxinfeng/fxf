@@ -69,6 +69,21 @@
     <ClInclude Include="CCenterWallet.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="CCalendar.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cef\CSubVBox.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CLoginVBOX.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CDownloadVBox.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CLogin_Wnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -118,6 +133,18 @@
     </ClCompile>
     <ClCompile Include="CCenterWallet.cpp">
       <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CCalendar.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CLoginVBOX.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CDownloadVBox.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CLogin_Wnd.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

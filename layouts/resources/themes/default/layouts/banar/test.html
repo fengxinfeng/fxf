@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ 
+    <video id="myVideo" width="320" height="176" controls >
+        <!---  source src="file:///C:/work/big-buck-bunny_trailer.webm" type="video/webm" -->
+        Your browser does not support HTML5 video.
+    </video>
+ 
+
+</body>
+    <script type="text/javascript">//禁用掉video的右键菜单
+        var video=document.getElementsByTagName("video")[0];
+        video.οncοntextmenu=function(){
+            return false;
+        }
+
+        video.onloadeddata = function () {
+            video.play();
+            console.log("Browser has loaded the current frame");
+        };
+
+        function setsrc(data) {
+            console.log(data);
+            ///var obj = JSON.parse(data);
+            console.log(data.url);
+            video.src = data.url;
+            video.load();
+            return {
+                message: 'change url ' +  data.url
+            }
+        }
+
+        function playvideo() {
+            video.play();
+            return {
+                message: 'play'
+            }
+        }
+
+        function pausevideo() {
+            video.pause();
+            return {
+                message: 'pause'
+            }
+        }
+
+        NimCefWebInstance.register('setsrc', setsrc);  //  参数1是函数名字， 参数2 指向函数
+
+        NimCefWebInstance.register('playvideo', playvideo);  //  参数1是函数名字， 参数2 指向函数
+        NimCefWebInstance.register('pausevideo', pausevideo);  //  参数1是函数名字， 参数2 指向函数
+
+    </script>
+         
+    </html>

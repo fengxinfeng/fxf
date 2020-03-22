@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window > 
+  <VBox width="862" height="516"  visible="true">
+    <HBox height="30" width="stretch" bkcolor="bk_wnd_darkcolor">
+      <Button name="btn_dev_tool" width="auto" height="auto"   tooltiptext="开发者工具" bkimage="btn_dev_tool.png"  />  
+      <Control />
+      <Button name="close_btn" width="24" height="24" margin="0,0,4,0"  visible="true"
+      normalimage="file='common_close_btn.png' source='0,0,24,24'"
+      hotimage="file='common_close_btn.png' source='24,0,48,24'"
+      pushedimage="file='common_close_btn.png' source='48,0,72,24'"
+      disabledimage="file='common_close_btn.png' source='72,0,96,24'"/>
+    </HBox>
+    <!--  正常窗口渲染不到浏览器窗口前，所以如果后面是浏览器，button栏看不见-->  
+    <VBox name="third_box"  margin="0,0,0,0"  visible="false" float="true"  >
+      <HBox height="30" width="stretch" bkcolor="black">
+        
+        <Button name="close_btn_3" width="24" height="24" margin="0,0,4,0"  visible="true"
+        normalimage="file='common_close_btn.png' source='0,0,24,24'"
+        hotimage="file='common_close_btn.png' source='24,0,48,24'"
+        pushedimage="file='common_close_btn.png' source='48,0,72,24'"
+        disabledimage="file='common_close_btn.png' source='72,0,96,24'"/>
+      </HBox>
+      <CefControl name="cef_control_3"  visible="true" />
+    </VBox> 
+ 
+    <HBox    height="1"   bkcolor="splitline_level1"/>
+    <CefControl name="cef_control"  visible="true"/>
+      
+  </VBox>
+  <CefControl name="cef_control_dev" float="true"/>
+</Window>
+
+ 

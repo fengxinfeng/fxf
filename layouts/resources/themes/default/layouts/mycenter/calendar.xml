@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window   >
+  <VBox width="260" height="240" bordersize="1" bordercolor="green" bkcolor="white" >
+
+    <Box> 
+    
+    <VBox name="normalwordarea" visible="true">
+      <HBox height="30">
+        <Button name="deyear"  valign="center" width="10" height="10" margin="20,0,0,0"
+                 normalimage="file='mycenter/leftarrow.png' source='0,0,16,16'"/>
+
+        <Box width="40" height="30"  valign="center" margin="20,0,0,0"  >
+          <Label name="year"  width="auto" height="auto" halign="center" valign="center"   text="2020年"  font="system_12" normaltextcolor="black"/>
+        </Box>
+
+        <Button name="addyear"  valign="center" width="10" height="10" margin="20,0,0,0"
+             normalimage="file='mycenter/rightarrow.png' source='0,0,16,16'"/>
+
+        <Button name="demonth"  valign="center" width="10" height="10" margin="20,0,0,0"
+           normalimage="file='mycenter/leftarrow.png' source='0,0,16,16'"/>
+        <Box width="40" height="30"  valign="center" margin="20,0,0,0">
+          <Label name="month"  width="auto" height="auto" halign="center" valign="center"   text="3月"  font="system_12" normaltextcolor="black"/>
+        </Box>
+
+        <Button name="addmonth"  valign="center" width="10" height="10" margin="20,0,0,0"
+             normalimage="file='mycenter/rightarrow.png' source='0,0,16,16'"/>
+      </HBox>
+
+      <HBox height="30" bkcolor="light_gray" margin="1,0,1,0">
+        <Label width="37" valign="center" text="日" textpadding="10,0,0,0"/>
+        <Label width="37" valign="center" text="一" textpadding="10,0,0,0"/>
+        <Label width="37" valign="center" text="二" textpadding="10,0,0,0"/>
+        <Label width="37" valign="center" text="三" textpadding="10,0,0,0"/>
+        <Label width="37" valign="center" text="四" textpadding="10,0,0,0"/>
+        <Label width="37" valign="center" text="五" textpadding="10,0,0,0"/>
+        <Label width="37" valign="center" text="六" textpadding="10,0,0,0"/>
+      </HBox>
+
+      <HBox height="30"  >
+        <Label  name="d1" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d2" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d3" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d4" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d5" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d6" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d7" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+      </HBox>
+
+      <HBox height="30"  >
+        <Label  name="d8" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d9" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d10" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d11" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d12" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d13" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d14" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+      </HBox>
+
+      <HBox height="30"  >
+        <Label  name="d15" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d16" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d17" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d18" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d19" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d20" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d21" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+      </HBox>
+
+      <HBox height="30"  >
+        <Label  name="d22" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d23" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d24" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d25" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d26" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d27" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d28" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+      </HBox>
+
+      <HBox height="30"  >
+        <Label  name="d29" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d30" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d31" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d32" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d33" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d34" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d35" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+      </HBox>
+
+      <HBox height="30">
+        <Label  name="d36" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d37" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d38" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d39" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d40" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d41" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+        <Label  name="d42" width="37" valign="center" text="" textpadding="10,0,0,0"/>
+      </HBox>
+
+    </VBox>
+
+    <VBox name="selectyeararea" width="stretch" height="stretch" visible="false" bkcolor="transbkblack">
+      <HBox height="30" ></HBox>
+      
+      <!--  transbkblackE0   应当被新工程定义-->
+      <VBox width="stretch" height="stretch"  bkcolor="transbkblackC0">
+        <HBox height="40"  >
+          <Label name="fromto" width="65" valign="center" text="选择年份" normaltextcolor="white" textpadding="15,0,0,0"/>
+          <Button name="upyear"  margin="100,0,0,0" valign="center" width="16" height="16" normalimage="file='mycenter/up.png' source='0,0,16,16'"/>
+          <Button name="afteryear"  margin="20,0,0,0" valign="center" width="16" height="16" normalimage="file='mycenter/down.png' source='0,0,16,16'"/>
+    
+        </HBox>
+        
+        <HBox height="40"  >
+          <Label name="y0" width="65" valign="center" text="2345" normaltextcolor="white" textpadding="15,0,0,0"/>
+          <Label name="y1" width="65" valign="center" text="1234" normaltextcolor="white"  textpadding="15,0,0,0"/>
+          <Label name="y2" width="65" valign="center" text="4563" normaltextcolor="white" textpadding="15,0,0,0"/>
+          <Label name="y3" width="65" valign="center" text="1234" normaltextcolor="white" textpadding="15,0,0,0"/> 
+        </HBox>
+        <HBox height="40"  >
+          <Label name="y4" width="65" valign="center" text="2345" normaltextcolor="white" textpadding="15,0,0,0"/>
+          <Label name="y5" width="65" valign="center" text="1234" normaltextcolor="white"  textpadding="15,0,0,0"/>
+          <Label name="y6" width="65" valign="center" text="4563" normaltextcolor="white" textpadding="15,0,0,0"/>
+          <Label name="y7" width="65" valign="center" text="1234" normaltextcolor="white" textpadding="15,0,0,0"/>
+        </HBox>
+        <HBox height="40"  >
+          <Label name="y8" width="65" valign="center" text="2345" normaltextcolor="white" textpadding="15,0,0,0"/>
+          <Label name="y9" width="65" valign="center" text="1234" normaltextcolor="white"  textpadding="15,0,0,0"/>
+          <Label name="y10" width="65" valign="center" text="4563" normaltextcolor="white" textpadding="15,0,0,0"/>
+          <Label name="y11" width="65" valign="center" text="1234" normaltextcolor="white" textpadding="15,0,0,0"/>
+        </HBox>
+        <HBox height="40"  >
+          <Label name="y12" width="65" valign="center" text="2345" normaltextcolor="white" textpadding="15,0,0,0"/>
+          <Label name="y13" width="65" valign="center" text="1234" normaltextcolor="white"  textpadding="15,0,0,0"/>
+          <Label name="y14" width="65" valign="center" text="4563" normaltextcolor="white" textpadding="15,0,0,0"/>
+          <Label name="y15" width="65" valign="center" text="1234" normaltextcolor="white" textpadding="15,0,0,0"/>
+        </HBox>
+      </VBox>
+      
+    </VBox>
+
+    </Box>
+  </VBox>
+</Window>
